@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parfums de Niche - DCT France</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <h1>DCT FRANCE</h1>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Accueil</a></li>
+                    <li><a href="presentation.html" class="nav-link">Présentation</a></li>
+                    <li><a href="designers.html" class="nav-link">Parfums Designers</a></li>
+                    <li><a href="niche.html" class="nav-link active">Parfums de Niche</a></li>
+                    <li><a href="#panier" class="nav-link cart-link">
+                        Panier <span class="cart-count" id="cartCount">0</span>
+                    </a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="perfumes-section">
+            <div class="container">
+                <h1 class="page-title">Parfums de Niche</h1>
+                <p class="section-subtitle">Des fragrances rares et exclusives pour les connaisseurs</p>
+                
+                <div class="filter-bar">
+                    <input type="text" id="searchInput" placeholder="Rechercher un parfum..." class="search-input">
+                    <select id="brandFilter" class="filter-select">
+                        <option value="">Toutes les marques</option>
+                    </select>
+                </div>
+
+                <div id="perfumesGrid" class="perfumes-grid">
+                    <!-- Les parfums seront chargés ici par JavaScript -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>DCT FRANCE</h3>
+                    <p class="footer-quote">"Le parfum est une forme d'art qui voyage dans le temps, capturant les émotions et les souvenirs en une seule respiration."</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Contactez-nous</h4>
+                    <div class="contact-info">
+                        <p><strong>Snapchat:</strong> dctfrance</p>
+                        <p><strong>Discord:</strong> <a href="https://discord.gg/Bgh3JmP7" target="_blank">discord.gg/Bgh3JmP7</a></p>
+                        <p><strong>Email:</strong> <a href="mailto:Matteo.frgc@outlook.fr">Matteo.frgc@outlook.fr</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 DCT France. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Panier Modal -->
+    <div id="cartModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Votre Panier</h2>
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div id="cartItems" class="cart-items"></div>
+                <div class="cart-total">
+                    <strong>Total: <span id="cartTotal">0,00 €</span></strong>
+                </div>
+                <div class="cart-message">
+                    <p>💬 Pour finaliser votre commande, contactez-nous via :</p>
+                    <div class="cart-actions">
+                        <a href="https://www.snapchat.com/add/dctfrance" target="_blank" class="btn btn-primary">Snapchat</a>
+                        <a href="https://discord.gg/Bgh3JmP7" target="_blank" class="btn btn-secondary">Discord</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="data-niche.js"></script>
+    <script src="script.js"></script>
+    <script src="perfumes.js"></script>
+</body>
+</html>
