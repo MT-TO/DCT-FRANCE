@@ -13,7 +13,7 @@ Site web pour DCT France proposant des décants de parfums en formats 5ml, 10ml 
 - **perfumes.js** : Affichage et filtrage des parfums
 - **data-designers.js** : Données des parfums de designers
 - **data-niche.js** : Données des parfums de niche
-- **images/** : Dossier contenant les images 
+- **images/** : Dossier contenant les images
 
 ## Fonctionnalités
 
@@ -30,6 +30,9 @@ Site web pour DCT France proposant des décants de parfums en formats 5ml, 10ml 
 
 ### Images principales
 
+Placez les images suivantes dans le dossier `images/` :
+- **hero-collection.jpg** : Image pour la page d'accueil (hero section)
+- **presentation-collection.jpg** : Image pour la page de présentation
 
 ### Images des parfums
 
