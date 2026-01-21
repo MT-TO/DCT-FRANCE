@@ -65,7 +65,7 @@ window.designersData = [
         id: 'dior-7',
         brand: 'DIOR',
         name: 'Sauvage EDT',
-        image: 'images/designers/sauvage-edt.jpg',
+        image: 'images/designers/dior-sauvage.webp',
         pricePerMl: 1,
         price5ml: 5,
         price10ml: 10,
@@ -148,5 +148,65 @@ window.designersData = [
         price5ml: 10,
         price10ml: 20,
         price30ml: 40
+    },
+
+    // PRADA
+    {
+        id: 'prada-1',
+        brand: 'Prada',
+        name: 'Prada Paradigme',
+        image: 'images/designers/prada-paradigme.avif',
+        pricePerMl: 2,
+        price5ml: 10,
+        price10ml: 20,
+        price30ml: 40
+    },
+
+    // VERSACE
+    {
+        id: 'versace-1',
+        brand: 'Versace',
+        name: 'Eros EDT',
+        image: 'images/designers/versace-eros-edt.avif',
+        pricePerMl: 1,
+        price5ml: 5,
+        price10ml: 10,
+        price30ml: 20
+    },
+
+    // JEAN PAUL GAULTIER (NOUVEAUTES)
+    {
+        id: 'jpg-3',
+        brand: 'Jean Paul Gaultier',
+        name: 'Scandal Intense',
+        image: 'images/designers/scandal-intense.jpg',
+        pricePerMl: 1.5,
+        price5ml: 7.5,
+        price10ml: 15,
+        price30ml: 30
+    },
+
+    // PACO RABANNE
+    {
+        id: 'paco-1',
+        brand: 'Paco Rabanne',
+        name: 'Invictus EDT',
+        image: 'images/designers/invictus-edt.jpg',
+        pricePerMl: 1,
+        price5ml: 5,
+        price10ml: 10,
+        price30ml: 20
+    },
+
+    // ARMANI
+    {
+        id: 'armani-1',
+        brand: 'Armani',
+        name: 'Stronger With You Intensely',
+        image: 'images/designers/stronger-with-you-intensely.avif',
+        pricePerMl: 1.7,
+        price5ml: 8.5,
+        price10ml: 17,
+        price30ml: 33
     }
 ];
