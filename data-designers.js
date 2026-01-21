@@ -34,7 +34,7 @@ window.designersData = [
     {
         id: 'dior-4',
         brand: 'DIOR',
-        name: 'Vanilla Diorama',
+        name: 'Vanilla Diorama EDP',
         image: 'images/designers/vanilla-diorama.jpg',
         pricePerMl: 4,
         price5ml: 20,
@@ -79,7 +79,7 @@ window.designersData = [
         pricePerMl: 3,
         price5ml: 15,
         price10ml: 30,
-        price30ml: 80
+        price30ml: 70
     },
     
     // LOUIS VUITTON
@@ -109,7 +109,7 @@ window.designersData = [
         id: 'ysl-1',
         brand: 'Yves Saint Laurent',
         name: 'Babycat',
-        image: 'images/designers/babycat.webp',
+        image: 'images/designers/babycat ysl.webp',
         pricePerMl: 3,
         price5ml: 15,
         price10ml: 30,
@@ -133,7 +133,7 @@ window.designersData = [
         id: 'jpg-1',
         brand: 'Jean Paul Gaultier',
         name: 'Le Mâle EDT',
-        image: 'images/designers/le-male.jpg',
+        image: 'images/designers/le male jpg edt.webp',
         pricePerMl: 1,
         price5ml: 5,
         price10ml: 10,
@@ -147,7 +147,7 @@ window.designersData = [
         pricePerMl: 2,
         price5ml: 10,
         price10ml: 20,
-        price30ml: 40
+        price30ml: 30
     },
 
     // PRADA
@@ -227,7 +227,7 @@ window.designersData = [
         id: 'horace-1',
         brand: 'Horace',
         name: 'Vintage Vanilla',
-        image: 'images/designers/horace-vintage-vanilla.jpg',
+        image: 'images/designers/horace vintage vanilla.png',
         pricePerMl: 2,
         price5ml: 10,
         price10ml: 20,

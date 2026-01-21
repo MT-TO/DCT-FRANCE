@@ -34,14 +34,24 @@ window.nicheData = [
         price30ml: 165
     },
     {
+        id: 'mfk-3',
+        brand: 'Maison Francis Kurkdjian',
+        name: 'Baccarat rouge 540 EDP',
+        image: 'images/niches/baccarat rouge eau de parfum.webp',
+        pricePerMl: 3,
+        price5ml: 15,
+        price10ml: 30,
+        price30ml: 70
+    },
+    {
         id: 'mfk-2',
         brand: 'Maison Francis Kurkdjian',
-        name: 'Oud Satin mood',
+        name: 'Oud Satin mood EDP',
         image: 'images/niches/oud-satin-mood-mfk.webp',
         pricePerMl: 4,
         price5ml: 20,
         price10ml: 40,
-        price30ml: 115
+        price30ml: 105
     },
     
     // KILLIAN
@@ -85,7 +95,7 @@ window.nicheData = [
         id: 'xerjoff-1',
         brand: 'Xerjoff',
         name: 'Naxos',
-        image: 'images/niches/naxos.webp',
+        image: 'images/niches/xerjoff naxos copie.jpg',
         pricePerMl: 3,
         price5ml: 15,
         price10ml: 30,

@@ -561,6 +561,11 @@ section {
     transition: var(--transition);
 }
 
+.perfume-image[src*="horace vintage vanilla.png"] {
+    transform: scale(1.45);
+    transform-origin: center;
+}
+
 @media (max-width: 980px) {
     .perfumes-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));

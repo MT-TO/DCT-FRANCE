@@ -1,6 +1,6 @@
 # DCT France - Site de Décants de Parfums
 
-Site web pour DCT France proposant des décants de parfums en formats 5ml, 10ml et 30ml.
+Site web pour DCT France proposant des décantes de parfums en formats 5ml, 10ml et 30ml.
 
 ## Structure du site
 
