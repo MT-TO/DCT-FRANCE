@@ -102,7 +102,7 @@ function createPerfumeCard(perfume) {
     // Déterminer le chemin de l'image selon la catégorie (vérifier la page actuelle)
     const isNichePage = window.location.pathname.includes('niche.html') || 
                         (typeof window.nicheData !== 'undefined' && window.nicheData.some(p => p.id === perfume.id));
-    const imageFolder = isNichePage ? 'images/niche' : 'images/designers';
+    const imageFolder = isNichePage ? 'images/niches' : 'images/designers';
     // Nettoyer le nom pour le chemin d'image (enlever apostrophes, accents, espaces)
     const imageName = perfume.name.toLowerCase()
         .replace(/'/g, '')
@@ -115,7 +115,7 @@ function createPerfumeCard(perfume) {
         .replace(/[^a-z0-9]/g, '-')
         .replace(/-+/g, '-')
         .replace(/^-|-$/g, '');
-    const imagePath = `${imageFolder}/${imageName}.jpg`;
+    const imagePath = perfume.image ? perfume.image : `${imageFolder}/${imageName}.jpg`;
     
     return `
         <div class="perfume-card">
