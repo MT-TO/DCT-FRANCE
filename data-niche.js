@@ -37,7 +37,7 @@ window.nicheData = [
         id: 'mfk-2',
         brand: 'Maison Francis Kurkdjian',
         name: 'Oud Satin mood',
-        image: 'images/niches/oud-satin-mood-mfk.jpg',
+        image: 'images/niches/oud-satin-mood-mfk.webp',
         pricePerMl: 4,
         price5ml: 20,
         price10ml: 40,
@@ -98,6 +98,30 @@ window.nicheData = [
         brand: 'BDK',
         name: 'Vanille Leather',
         image: 'images/niches/vanille-leather.jpg',
+        pricePerMl: 3,
+        price5ml: 15,
+        price10ml: 30,
+        price30ml: 80
+    },
+
+    // FASCENT
+    {
+        id: 'fascent-1',
+        brand: 'Fascent',
+        name: 'Creme Brulante',
+        image: 'images/niches/fascent-creme-brulante.webp',
+        pricePerMl: 2.5,
+        price5ml: 12.5,
+        price10ml: 25,
+        price30ml: null
+    },
+
+    // HAROLD & MAUDE
+    {
+        id: 'harold-1',
+        brand: 'Harold & Maude',
+        name: 'Resolument Affranchi',
+        image: 'images/niches/resolument-affranchi.webp',
         pricePerMl: 3,
         price5ml: 15,
         price10ml: 30,
