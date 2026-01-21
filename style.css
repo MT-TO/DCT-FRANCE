@@ -280,6 +280,68 @@ section {
     line-height: 1.8;
 }
 
+/* Offers Section */
+.offers {
+    background-color: var(--background);
+}
+
+.offer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.offer-card {
+    background-color: var(--white);
+    padding: 2.5rem 2rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+}
+
+.offer-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+}
+
+.offer-card h3 {
+    font-family: var(--font-primary);
+    font-size: 1.6rem;
+    color: var(--primary-color);
+    margin-bottom: 0.75rem;
+}
+
+.offer-notes {
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+}
+
+.offer-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 0.6rem;
+}
+
+.offer-list li {
+    font-weight: 600;
+    color: var(--accent-color);
+}
+
+.offer-actions {
+    margin-top: 1.5rem;
+    display: grid;
+    gap: 0.75rem;
+}
+
+.offer-actions .btn {
+    width: 100%;
+    text-align: center;
+}
+
 /* Formats Section */
 .formats {
     background-color: var(--background);
