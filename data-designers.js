@@ -121,7 +121,7 @@ window.designersData = [
         id: 'tf-1',
         brand: 'Tom Ford',
         name: 'Oud Voyager',
-        image: 'images/designers/oud-voyager.jpg',
+        image: 'images/designers/tom ford oud voyage.webp',
         pricePerMl: 7.5,
         price5ml: 37.5,
         price10ml: 75,

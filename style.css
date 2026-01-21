@@ -236,6 +236,14 @@ section {
     margin-bottom: 3rem;
 }
 
+.section-note {
+    text-align: center;
+    color: var(--text-light);
+    font-size: 0.95rem;
+    margin-top: -2rem;
+    margin-bottom: 3rem;
+}
+
 /* Categories Grid */
 .categories {
     background-color: var(--white);
@@ -243,9 +251,15 @@ section {
 
 .category-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 2.5rem;
     margin-top: 3rem;
+}
+
+@media (max-width: 720px) {
+    .category-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 .category-card {
