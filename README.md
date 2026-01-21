@@ -75,5 +75,5 @@ Même format pour `data-designers.js`
 ## Contact
 
 - **Snapchat** : dctfrance
-- **Discord** : https://discord.gg/Bgh3JmP7
+- **Discord** : https://discord.gg/BvJNDeu4dR
 - **Email** : Matteo.frgc@outlook.fr
