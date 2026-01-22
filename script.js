@@ -161,7 +161,7 @@ function renderCart() {
             <div class="cart-item">
                 <div class="cart-item-info">
                     <div class="cart-item-name">${item.name}</div>
-                    <div class="cart-item-details">${item.brand} - ${item.size}ml</div>
+                    <div class="cart-item-details">${item.brand} - ${item.size} ML</div>
                 </div>
                 <div style="display: flex; align-items: center;">
                     <span class="cart-item-price">${item.price.toFixed(2)} €</span>

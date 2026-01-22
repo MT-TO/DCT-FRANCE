@@ -636,6 +636,8 @@ section {
     background-color: var(--background);
     border-radius: 4px;
     transition: var(--transition);
+    gap: 1rem;
+    flex-wrap: wrap;
 }
 
 .format-option:hover {
@@ -645,6 +647,28 @@ section {
 .format-info {
     display: flex;
     flex-direction: column;
+}
+
+.format-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.size-select {
+    padding: 8px 10px;
+    border: 1px solid #d8d8d8;
+    border-radius: 4px;
+    background-color: var(--white);
+    font-family: var(--font-secondary);
+    font-size: 0.95rem;
+    color: var(--primary-color);
+}
+
+.size-select:focus {
+    outline: none;
+    border-color: var(--accent-color);
 }
 
 .format-size-label {

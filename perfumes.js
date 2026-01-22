@@ -1,5 +1,6 @@
 // Récupérer les données depuis les fichiers data
 let perfumesData = [];
+const availableSizes = [1, 2, 3, 4, 5, 10, 30];
 
 // Initialisation
 document.addEventListener('DOMContentLoaded', function() {
@@ -29,73 +30,69 @@ function renderPerfumes(perfumes) {
     
     grid.innerHTML = perfumes.map(perfume => createPerfumeCard(perfume)).join('');
     
-    // Ajouter les event listeners pour les boutons "Ajouter au panier"
+    // Ajouter les event listeners pour les menus de formats et les boutons "Ajouter au panier"
     perfumes.forEach((perfume) => {
-        const formats = [];
-        if (perfume.price5ml && perfume.price5ml > 0) {
-            formats.push({ size: '5ml', price: perfume.price5ml, label: '5 ML' });
-        }
-        if (perfume.price10ml && perfume.price10ml > 0) {
-            formats.push({ size: '10ml', price: perfume.price10ml, label: '10 ML' });
-        }
-        if (perfume.price30ml && perfume.price30ml > 0) {
-            formats.push({ size: '30ml', price: perfume.price30ml, label: '30 ML' });
+        const select = document.querySelector(`.size-select[data-perfume-id="${perfume.id}"]`);
+        const priceEl = document.querySelector(`.size-price[data-perfume-id="${perfume.id}"]`);
+        const button = document.querySelector(`.add-to-cart-${perfume.id}`);
+        
+        if (select && priceEl) {
+            const updatePrice = () => {
+                const option = select.selectedOptions[0];
+                const price = option ? option.dataset.price : null;
+                priceEl.textContent = price ? `${parseFloat(price).toFixed(2)} €` : '';
+            };
+            
+            updatePrice();
+            select.addEventListener('change', updatePrice);
         }
         
-        formats.forEach((format, formatIndex) => {
-            const button = document.querySelector(`.add-to-cart-${perfume.id}[data-size="${format.size}"]`);
-            if (button) {
-                button.addEventListener('click', function() {
-                    if (typeof addToCart === 'function') {
-                        addToCart(perfume.name, perfume.brand, format.size, format.price);
-                    }
-                });
-            }
-        });
+        if (button && select) {
+            button.addEventListener('click', function() {
+                const option = select.selectedOptions[0];
+                if (!option) return;
+                const size = option.value;
+                const price = parseFloat(option.dataset.price);
+                if (typeof addToCart === 'function' && !Number.isNaN(price)) {
+                    addToCart(perfume.name, perfume.brand, size, price);
+                }
+            });
+        }
     });
 }
 
 // Créer une carte de parfum
 function createPerfumeCard(perfume) {
-    const formats = [];
+    const formats = availableSizes.map((size) => {
+        const price = getPriceForSize(perfume, size);
+        if (!price || price <= 0) return null;
+        return {
+            size: size,
+            price: price,
+            label: `${size} ML`
+        };
+    }).filter(Boolean);
     
-    if (perfume.price5ml && perfume.price5ml > 0) {
-        formats.push({
-            size: '5ml',
-            price: perfume.price5ml,
-            label: '5 ML'
-        });
-    }
+    const optionsHtml = formats.map((format) => `
+        <option value="${format.size}" data-price="${format.price.toFixed(2)}">${format.label}</option>
+    `).join('');
     
-    if (perfume.price10ml && perfume.price10ml > 0) {
-        formats.push({
-            size: '10ml',
-            price: perfume.price10ml,
-            label: '10 ML'
-        });
-    }
-    
-    if (perfume.price30ml && perfume.price30ml > 0) {
-        formats.push({
-            size: '30ml',
-            price: perfume.price30ml,
-            label: '30 ML'
-        });
-    }
-    
-    const formatsHtml = formats.map((format) => `
+    const formatsHtml = `
         <div class="format-option">
             <div class="format-info">
-                <span class="format-size-label">${format.label}</span>
+                <span class="format-size-label">Format</span>
             </div>
-            <div style="display: flex; align-items: center; gap: 1rem;">
-                <span class="format-price">${format.price.toFixed(2)} €</span>
-                <button class="add-to-cart-btn add-to-cart-${perfume.id}" data-size="${format.size}">
+            <div class="format-actions">
+                <select class="size-select" data-perfume-id="${perfume.id}">
+                    ${optionsHtml}
+                </select>
+                <span class="size-price format-price" data-perfume-id="${perfume.id}"></span>
+                <button class="add-to-cart-btn add-to-cart-${perfume.id}">
                     Ajouter
                 </button>
             </div>
         </div>
-    `).join('');
+    `;
     
     const priceMlText = perfume.pricePerMl ? `(${perfume.pricePerMl.toFixed(2)} €/ml)` : '';
     
@@ -130,6 +127,32 @@ function createPerfumeCard(perfume) {
             </div>
         </div>
     `;
+}
+
+function getPriceForSize(perfume, size) {
+    if (size === 5 && perfume.price5ml) {
+        return perfume.price5ml;
+    }
+    if (size === 10 && perfume.price10ml) {
+        return perfume.price10ml;
+    }
+    if (size === 30 && perfume.price30ml) {
+        return perfume.price30ml;
+    }
+    
+    if (perfume.pricePerMl) {
+        return perfume.pricePerMl * size;
+    }
+    if (perfume.price5ml) {
+        return (perfume.price5ml / 5) * size;
+    }
+    if (perfume.price10ml) {
+        return (perfume.price10ml / 10) * size;
+    }
+    if (perfume.price30ml) {
+        return (perfume.price30ml / 30) * size;
+    }
+    return null;
 }
 
 // Remplir le filtre de marques
