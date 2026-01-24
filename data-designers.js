@@ -220,6 +220,40 @@ window.designersData = [
         price30ml: 50
     },
 
+    // HUGO BOSS
+    {
+        id: 'hugo-1',
+        brand: 'Hugo Boss',
+        name: 'Bottled EDT',
+        image: 'images/designers/hugo boss bottled edt.webp',
+        pricePerMl: 1,
+        price5ml: 5,
+        price10ml: 10,
+        price30ml: 30
+    },
+
+    // AZZARO
+    {
+        id: 'azzaro-1',
+        brand: 'Azzaro',
+        name: 'Chrome EDT',
+        image: 'images/designers/azzaro chrome edt.jpg',
+        pricePerMl: 0.7,
+        price5ml: 3.5,
+        price10ml: 7,
+        price30ml: 15
+    },
+    {
+        id: 'azzaro-2',
+        brand: 'Azzaro',
+        name: 'Chrome EDP',
+        image: 'images/designers/azzaro chrome edp.webp',
+        pricePerMl: 1,
+        price5ml: 5,
+        price10ml: 10,
+        price30ml: 25
+    },
+
     // VALENTINO
     {
         id: 'valentino-1',
