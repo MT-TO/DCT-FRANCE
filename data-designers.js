@@ -209,6 +209,16 @@ window.designersData = [
         price10ml: 17,
         price30ml: 33
     },
+    {
+        id: 'armani-2',
+        brand: 'Armani',
+        name: 'Stronger With You Amber',
+        image: 'images/designers/stronger with you amber.webp',
+        pricePerMl: 2,
+        price5ml: 10,
+        price10ml: 20,
+        price30ml: 50
+    },
 
     // VALENTINO
     {
