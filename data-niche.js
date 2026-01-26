@@ -61,7 +61,7 @@ window.nicheData = [
         id: 'crivelli-1',
         brand: 'Maison Crivelli',
         name: 'Hibiscus Mahajad',
-        image: 'images/niches/hibiscus-mahajad.webp',
+        image: 'images/niches/hibiscus mahajad maison crivelli.webp',
         pricePerMl: 5,
         price5ml: 25,
         price10ml: 50,
