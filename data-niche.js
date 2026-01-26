@@ -34,16 +34,6 @@ window.nicheData = [
         price30ml: 165
     },
     {
-        id: 'mfk-3',
-        brand: 'Maison Francis Kurkdjian',
-        name: 'Baccarat rouge 540 EDP',
-        image: 'images/niches/baccarat rouge eau de parfum.webp',
-        pricePerMl: 3,
-        price5ml: 15,
-        price10ml: 30,
-        price30ml: 70
-    },
-    {
         id: 'mfk-2',
         brand: 'Maison Francis Kurkdjian',
         name: 'Oud Satin mood EDP',
