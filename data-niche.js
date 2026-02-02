@@ -138,5 +138,51 @@ window.nicheData = [
         price5ml: 7.5,
         price10ml: 15,
         price30ml: 39.99
+    },
+
+    // FRAGANZA
+    {
+        id: 'fraganza-1',
+        brand: 'Fraganza',
+        name: 'Cœur blanc',
+        image: 'images/flacons entier/coeur blanc.webp',
+        pricePerMl: 0.7,
+        price5ml: 3.5,
+        price10ml: 7,
+        price30ml: 15
+    },
+    {
+        id: 'fraganza-2',
+        brand: 'Fraganza',
+        name: 'Rosa Vento',
+        image: 'images/flacons entier/rosa vento.webp',
+        pricePerMl: 0.7,
+        price5ml: 3.5,
+        price10ml: 7,
+        price30ml: 15
+    },
+
+    // GIARDINI DI TOSCANA
+    {
+        id: 'giardini-1',
+        brand: 'Giardini di Toscana',
+        name: 'Bianco Latte',
+        image: 'images/flacons entier/bianco latte.jpg',
+        pricePerMl: 1.3,
+        price5ml: 6.5,
+        price10ml: 13,
+        price30ml: 34.99
+    },
+
+    // ROSENDO MATEU
+    {
+        id: 'rosendo-1',
+        brand: 'Rosendo Mateu',
+        name: 'Rosendo Mateu 5',
+        image: 'images/flacons entier/R5.jpg',
+        pricePerMl: 2,
+        price5ml: 10,
+        price10ml: 20,
+        price30ml: 44.99
     }
 ];
