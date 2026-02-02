@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initCart();
     initModal();
     updateCartCount();
+    initFlaconsSearch();
 });
 
 // Navigation mobile
@@ -135,6 +136,30 @@ function updateCartCount() {
     if (cartCountElements) {
         cartCountElements.textContent = count;
     }
+}
+
+// Recherche sur la page Flacons Entiers
+function initFlaconsSearch() {
+    const grid = document.querySelector('.flacons-grid');
+    const searchInput = document.getElementById('searchInput');
+    if (!grid || !searchInput) return;
+
+    const cards = Array.from(grid.querySelectorAll('.perfume-card'));
+
+    const filterCards = () => {
+        const query = searchInput.value.trim().toLowerCase();
+
+        cards.forEach((card) => {
+            const nameEl = card.querySelector('.perfume-name');
+            const brandEl = card.querySelector('.perfume-brand');
+            const name = nameEl ? nameEl.textContent.toLowerCase() : '';
+            const brand = brandEl ? brandEl.textContent.toLowerCase() : '';
+            const matches = name.includes(query) || brand.includes(query);
+            card.style.display = matches ? '' : 'none';
+        });
+    };
+
+    searchInput.addEventListener('input', filterCards);
 }
 
 // Afficher le panier
