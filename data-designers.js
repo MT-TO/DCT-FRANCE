@@ -91,7 +91,7 @@ window.designersData = [
         pricePerMl: 4,
         price5ml: 20,
         price10ml: 40,
-        price30ml: 100
+        price30ml: 105
     },
     {
         id: 'lv-2',
@@ -102,6 +102,16 @@ window.designersData = [
         price5ml: 25,
         price10ml: 50,
         price30ml: 130
+    },
+    {
+        id: 'lv-3',
+        brand: 'Louis Vuitton',
+        name: 'Afternoon Swim',
+        image: 'images/designers/afternoon swim lv.jpg',
+        pricePerMl: 4,
+        price5ml: 20,
+        price10ml: 40,
+        price30ml: 105
     },
     
     // YVES SAINT LAURENT
@@ -276,5 +286,17 @@ window.designersData = [
         price5ml: 10,
         price10ml: 20,
         price30ml: 50
+    },
+
+    // GUERLAIN
+    {
+        id: 'guerlain-1',
+        brand: 'Guerlain',
+        name: 'Spiritueuse Double Vanille',
+        image: 'images/designers/spiritueuse double vanille guerlain.avif',
+        pricePerMl: 4.5,
+        price5ml: 22.5,
+        price10ml: 45,
+        price30ml: 125
     }
 ];
