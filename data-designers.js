@@ -54,12 +54,12 @@ window.designersData = [
     {
         id: 'dior-6',
         brand: 'DIOR',
-        name: 'Dior Homme Intense',
-        image: 'images/designers/dior-homme-intense.jpg',
-        pricePerMl: 2,
-        price5ml: 10,
-        price10ml: 20,
-        price30ml: 50
+        name: 'Cuir Saddle EDP',
+        image: 'images/designers/dior cuir saddle.webp',
+        pricePerMl: 4,
+        price5ml: 20,
+        price10ml: 40,
+        price30ml: 100
     },
     {
         id: 'dior-7',
@@ -80,6 +80,16 @@ window.designersData = [
         price5ml: 15,
         price10ml: 30,
         price30ml: 70
+    },
+    {
+        id: 'dior-9',
+        brand: 'DIOR',
+        name: 'Dior Homme Intense',
+        image: 'images/designers/dior-homme-intense.jpg',
+        pricePerMl: 2,
+        price5ml: 10,
+        price10ml: 20,
+        price30ml: 50
     },
     
     // LOUIS VUITTON
