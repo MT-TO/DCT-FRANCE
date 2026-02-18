@@ -174,6 +174,18 @@ window.nicheData = [
         price30ml: 34.99
     },
 
+    // JEAN COUTURIER
+    {
+        id: 'jean-couturier-1',
+        brand: 'Jean Couturier',
+        name: 'Vanilla Exotica',
+        image: 'images/flacons entier/Vanilla exotica.avif',
+        pricePerMl: 1,
+        price5ml: 5,
+        price10ml: 10,
+        price30ml: 25
+    },
+
     // ROSENDO MATEU
     {
         id: 'rosendo-1',
