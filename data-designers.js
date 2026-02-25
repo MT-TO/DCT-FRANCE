@@ -52,6 +52,16 @@ window.designersData = [
         price30ml: 180
     },
     {
+        id: 'dior-10',
+        brand: 'DIOR',
+        name: 'Gris Dior Esprit',
+        image: 'images/designers/gris-dior-esprit-de-parfum.jpg',
+        pricePerMl: 6,
+        price5ml: 30,
+        price10ml: 60,
+        price30ml: 160
+    },
+    {
         id: 'dior-6',
         brand: 'DIOR',
         name: 'Cuir Saddle EDP',
