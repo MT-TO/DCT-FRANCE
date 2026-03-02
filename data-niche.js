@@ -22,28 +22,6 @@ window.nicheData = [
         price30ml: 80
     },
     
-    // Maison Francis Kurkdjian (MFK)
-    {
-        id: 'mfk-1',
-        brand: 'Maison Francis Kurkdjian',
-        name: 'Baccarat Rouge 540 extrait',
-        image: 'images/niches/baccarat-rouge-540.webp',
-        pricePerMl: 6,
-        price5ml: 30,
-        price10ml: 60,
-        price30ml: 165
-    },
-    {
-        id: 'mfk-2',
-        brand: 'Maison Francis Kurkdjian',
-        name: 'Oud Satin mood EDP',
-        image: 'images/niches/oud-satin-mood-mfk.webp',
-        pricePerMl: 4,
-        price5ml: 20,
-        price10ml: 40,
-        price30ml: 105
-    },
-    
     // KILLIAN
     {
         id: 'killian-1',
