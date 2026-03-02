@@ -46,7 +46,6 @@ Placez les images de chaque parfum dans les dossiers correspondants :
 Exemples :
 - "Bois D'argent EDP" → `bois-dargent-edp.jpg`
 - "Angels' Share" → `angels-share.jpg`
-- "Baccarat Rouge 540 extrait" → `baccarat-rouge-540-extrait.jpg`
 
 Le système convertit automatiquement les noms des parfums en noms de fichiers.
 
