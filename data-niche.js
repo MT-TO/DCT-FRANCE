@@ -106,18 +106,6 @@ window.nicheData = [
         price30ml: 80
     },
 
-    // MANCERA
-    {
-        id: 'mancera-1',
-        brand: 'Mancera',
-        name: 'Roses Vanille',
-        image: 'images/niches/roses vanille mancera.jpg',
-        pricePerMl: 1.5,
-        price5ml: 7.5,
-        price10ml: 15,
-        price30ml: 39.99
-    },
-
     // FRAGANZA
     {
         id: 'fraganza-1',

@@ -22,16 +22,6 @@ window.designersData = [
         price30ml: 100
     },
     {
-        id: 'dior-3',
-        brand: 'DIOR',
-        name: 'Tobacolor EDP',
-        image: 'images/designers/tobacolor-dior.jpg',
-        pricePerMl: 4,
-        price5ml: 20,
-        price10ml: 40,
-        price30ml: 100
-    },
-    {
         id: 'dior-4',
         brand: 'DIOR',
         name: 'Vanilla Diorama EDP',
@@ -248,18 +238,6 @@ window.designersData = [
         price5ml: 10,
         price10ml: 20,
         price30ml: 50
-    },
-
-    // HUGO BOSS
-    {
-        id: 'hugo-1',
-        brand: 'Hugo Boss',
-        name: 'Bottled EDT',
-        image: 'images/designers/hugo boss bottled edt.webp',
-        pricePerMl: 1,
-        price5ml: 5,
-        price10ml: 10,
-        price30ml: 30
     },
 
     // AZZARO
