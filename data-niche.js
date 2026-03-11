@@ -1,16 +1,5 @@
 // Données des parfums de niche
 window.nicheData = [
-    // MATIERE PREMIERE
-    {
-        id: 'matiere-1',
-        brand: 'Matiere Premiere',
-        name: 'Vanilla Powder EDP',
-        image: 'images/niches/vanilla-powder.webp',
-        pricePerMl: 3,
-        price5ml: 15,
-        price10ml: 30,
-        price30ml: 80
-    },
     {
         id: 'matiere-2',
         brand: 'Matiere Premiere',
@@ -32,18 +21,6 @@ window.nicheData = [
         price5ml: 30,
         price10ml: 60,
         price30ml: 160
-    },
-    
-    // Maison Crivelli
-    {
-        id: 'crivelli-1',
-        brand: 'Maison Crivelli',
-        name: 'Hibiscus Mahajad',
-        image: 'images/niches/hibiscus mahajad maison crivelli.webp',
-        pricePerMl: 5,
-        price5ml: 25,
-        price10ml: 50,
-        price30ml: 135
     },
     
     // CREED

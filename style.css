@@ -206,6 +206,12 @@ body {
     color: var(--white);
 }
 
+.btn-disabled {
+    opacity: 0.55;
+    pointer-events: none;
+    cursor: not-allowed;
+}
+
 /* Sections */
 section {
     padding: 80px 20px;
@@ -292,6 +298,18 @@ section {
     color: var(--text-light);
     margin-bottom: 2rem;
     line-height: 1.8;
+}
+
+.coming-soon-label {
+    display: inline-block;
+    margin-top: -0.75rem;
+    margin-bottom: 1.25rem;
+    padding: 0.3rem 0.8rem;
+    border-radius: 999px;
+    background-color: #f7efe2;
+    color: var(--accent-color);
+    font-weight: 600;
+    font-size: 0.9rem;
 }
 
 /* Offers Section */
