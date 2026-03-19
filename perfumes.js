@@ -5,10 +5,12 @@ const availableSizes = [1, 2, 3, 4, 5, 10, 30];
 // Initialisation
 document.addEventListener('DOMContentLoaded', function() {
     // Charger les données selon la page
-    if (typeof window.designersData !== 'undefined') {
+    if (Array.isArray(window.designersData)) {
         perfumesData = window.designersData;
-    } else if (typeof window.nicheData !== 'undefined') {
+    } else if (Array.isArray(window.nicheData)) {
         perfumesData = window.nicheData;
+    } else if (Array.isArray(window.exclusiveData)) {
+        perfumesData = window.exclusiveData;
     }
     
     if (perfumesData && perfumesData.length > 0) {
@@ -97,8 +99,8 @@ function createPerfumeCard(perfume) {
     const priceMlText = perfume.pricePerMl ? `(${perfume.pricePerMl.toFixed(2)} €/ml)` : '';
     
     // Déterminer le chemin de l'image selon la catégorie (vérifier la page actuelle)
-    const isNichePage = window.location.pathname.includes('niche.html') || 
-                        (typeof window.nicheData !== 'undefined' && window.nicheData.some(p => p.id === perfume.id));
+    const isNichePage = window.location.pathname.includes('niche.html') ||
+                        (Array.isArray(window.nicheData) && window.nicheData.some(p => p.id === perfume.id));
     const imageFolder = isNichePage ? 'images/niches' : 'images/designers';
     // Nettoyer le nom pour le chemin d'image (enlever apostrophes, accents, espaces)
     const imageName = perfume.name.toLowerCase()

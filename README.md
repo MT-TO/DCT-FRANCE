@@ -8,16 +8,18 @@ Site web pour DCT France proposant des décantes de parfums en formats 5ml, 10ml
 - **presentation.html** : Page de présentation avec l'histoire et l'engagement qualité
 - **designers.html** : Page des parfums de designers
 - **niche.html** : Page des parfums de niche
+- **exclusive.html** : Page des parfums exclusifs
 - **style.css** : Styles CSS du site
 - **script.js** : Gestion du panier et de la navigation
 - **perfumes.js** : Affichage et filtrage des parfums
 - **data-designers.js** : Données des parfums de designers
 - **data-niche.js** : Données des parfums de niche
+- **data-exclusive.js** : Données des parfums exclusifs
 - **images/** : Dossier contenant les images
 
 ## Fonctionnalités
 
-- ✅ Affichage des parfums par catégorie (Designers / Niche)
+- ✅ Affichage des parfums par catégorie (Designers / Niche / Exclusive)
 - ✅ Panier permettant de visualiser les prix (pas de commande en ligne)
 - ✅ Redirection vers Snapchat (dctfrance) ou Discord pour commander
 - ✅ Filtrage par marque et recherche de parfums

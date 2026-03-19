@@ -138,7 +138,7 @@ function updateCartCount() {
     }
 }
 
-// Recherche sur la page Flacons Entiers
+// Recherche sur les pages catalogue
 function initFlaconsSearch() {
     const grid = document.querySelector('.flacons-grid');
     const searchInput = document.getElementById('searchInput');

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DCT France - Décants de Parfums</title>
+    <title>Décantes Exclusive - DCT France</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,11 +17,11 @@
                     <a href="index.html" class="logo-link"><h1>DCT FRANCE</h1></a>
                 </div>
                 <ul class="nav-menu">
-                    <li><a href="index.html" class="nav-link active">Accueil</a></li>
+                    <li><a href="index.html" class="nav-link">Accueil</a></li>
                     <li><a href="presentation.html" class="nav-link">Présentation</a></li>
                     <li><a href="designers.html" class="nav-link">Décantes Designers</a></li>
                     <li><a href="niche.html" class="nav-link">Décantes Niches</a></li>
-                    <li><a href="exclusive.html" class="nav-link">Décantes Exclusive</a></li>
+                    <li><a href="exclusive.html" class="nav-link active">Décantes Exclusive</a></li>
                     <li><a href="#panier" class="nav-link cart-link">
                         Panier <span class="cart-count" id="cartCount">0</span>
                     </a></li>
@@ -36,62 +36,20 @@
     </header>
 
     <main>
-        <section class="hero">
-            <div class="hero-content">
-                <h2 class="hero-title">Décantes de Parfums d'Exception</h2>
-                <p class="hero-subtitle">Avec DCT FRANCE, sentir bon n'est pas un privilège</p>
-                <div class="hero-buttons">
-                    <a href="presentation.html" class="btn btn-primary">Présentation</a>
-                </div>
-            </div>
-        </section>
-
-        <section class="categories">
+        <section class="perfumes-section">
             <div class="container">
-                <h2 class="section-title">Nos Collections</h2>
-                <div class="category-grid">
-                    <div class="category-card">
-                        <div class="category-icon">🎩</div>
-                        <h3>Décantes Designers</h3>
-                        <p>Les créations emblématiques des grandes maisons</p>
-                        <a href="designers.html" class="btn btn-outline">Découvrir</a>
-                    </div>
-                    <div class="category-card">
-                        <div class="category-icon">✨</div>
-                        <h3>Décantes Niches</h3>
-                        <p>Des fragrances rares et exclusives</p>
-                        <a href="niche.html" class="btn btn-outline">Découvrir</a>
-                    </div>
-                    <div class="category-card category-card-centered">
-                        <div class="category-icon">👑</div>
-                        <h3>Décantes Exclusive</h3>
-                        <p>Une sélection exclusive désormais disponible</p>
-                        <a href="exclusive.html" class="btn btn-outline">Découvrir</a>
-                    </div>
-                </div>
-            </div>
-        </section>
+                <h1 class="page-title">Décantes Exclusive</h1>
+                <p class="section-subtitle">Une sélection exclusive de fragrances disponibles dès maintenant</p>
 
-        <section class="formats">
-            <div class="container">
-                <h2 class="section-title">Formats Disponibles</h2>
-                <div class="format-grid">
-                    <div class="format-card">
-                        <div class="format-size">1-4 ML</div>
-                        <p>Découverte rapide</p>
-                    </div>
-                    <div class="format-card">
-                        <div class="format-size">5 ML</div>
-                        <p>Idéal pour découvrir une fragrance</p>
-                    </div>
-                    <div class="format-card">
-                        <div class="format-size">10 ML</div>
-                        <p>Parfait pour tester plusieurs fois</p>
-                    </div>
-                    <div class="format-card">
-                        <div class="format-size">30 ML</div>
-                        <p>Pour une utilisation prolongée</p>
-                    </div>
+                <div class="filter-bar">
+                    <input type="text" id="searchInput" placeholder="Rechercher un parfum..." class="search-input">
+                    <select id="brandFilter" class="filter-select">
+                        <option value="">Toutes les marques</option>
+                    </select>
+                </div>
+
+                <div id="perfumesGrid" class="perfumes-grid">
+                    <!-- Les parfums seront chargés ici par JavaScript -->
                 </div>
             </div>
         </section>
@@ -144,6 +102,8 @@
         </div>
     </div>
 
+    <script src="data-exclusive.js"></script>
     <script src="script.js"></script>
+    <script src="perfumes.js"></script>
 </body>
 </html>

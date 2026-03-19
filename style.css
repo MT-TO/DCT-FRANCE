@@ -266,6 +266,10 @@ section {
     .category-grid {
         grid-template-columns: 1fr;
     }
+
+    .category-card-centered {
+        width: 100%;
+    }
 }
 
 .category-card {
@@ -275,6 +279,12 @@ section {
     text-align: center;
     box-shadow: var(--shadow-md);
     transition: var(--transition);
+}
+
+.category-card-centered {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: min(100%, calc(50% - 1.25rem));
 }
 
 .category-card:hover {
