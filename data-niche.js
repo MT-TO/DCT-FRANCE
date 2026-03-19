@@ -83,28 +83,6 @@ window.nicheData = [
         price30ml: 80
     },
 
-    // FRAGANZA
-    {
-        id: 'fraganza-1',
-        brand: 'Fraganza',
-        name: 'Cœur blanc',
-        image: 'images/flacons entier/coeur blanc.webp',
-        pricePerMl: 0.7,
-        price5ml: 3.5,
-        price10ml: 7,
-        price30ml: 15
-    },
-    {
-        id: 'fraganza-2',
-        brand: 'Fraganza',
-        name: 'Rosa Vento',
-        image: 'images/flacons entier/rosa vento.webp',
-        pricePerMl: 0.7,
-        price5ml: 3.5,
-        price10ml: 7,
-        price30ml: 15
-    },
-
     // GIARDINI DI TOSCANA
     {
         id: 'giardini-1',
