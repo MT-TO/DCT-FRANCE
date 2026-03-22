@@ -46,6 +46,16 @@ window.nicheData = [
         price10ml: 30,
         price30ml: 80
     },
+    {
+        id: 'xerjoff-2',
+        brand: 'Xerjoff',
+        name: 'Erba Pura',
+        image: 'images/flacons entier/xerjoff erba pura.webp',
+        pricePerMl: 2,
+        price5ml: 10,
+        price10ml: 20,
+        price30ml: 50
+    },
     
     // BDK
     {

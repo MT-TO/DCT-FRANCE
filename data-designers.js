@@ -123,7 +123,7 @@ window.designersData = [
         price10ml: 40,
         price30ml: 105
     },
-    
+
     // YVES SAINT LAURENT
     {
         id: 'ysl-1',
