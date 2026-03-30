@@ -5,9 +5,9 @@ window.exclusiveData = [
         brand: 'DIOR',
         name: 'Vétiver Dior',
         image: 'images/designers/dior vétiver.jpg',
-        pricePerMl: 5,
-        price5ml: 25,
-        price10ml: 50,
+        pricePerMl: 4,
+        price5ml: 20,
+        price10ml: 40,
         price30ml: 110
     },
     {
@@ -15,9 +15,9 @@ window.exclusiveData = [
         brand: 'DIOR',
         name: 'Fève Délicieuse Dior',
         image: 'images/designers/feve delicieuse dior.webp',
-        pricePerMl: 5,
-        price5ml: 25,
-        price10ml: 50,
+        pricePerMl: 4,
+        price5ml: 20,
+        price10ml: 40,
         price30ml: 110
     }
 ];

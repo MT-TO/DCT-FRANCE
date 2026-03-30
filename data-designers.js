@@ -16,10 +16,10 @@ window.designersData = [
         brand: 'DIOR',
         name: 'Bois D\'argent EDP',
         image: 'images/designers/bois-dargent-dior.webp',
-        pricePerMl: 4,
-        price5ml: 20,
-        price10ml: 40,
-        price30ml: 100
+        pricePerMl: 2,
+        price5ml: 10,
+        price10ml: 20,
+        price30ml: 50
     },
     {
         id: 'dior-4',
@@ -98,9 +98,9 @@ window.designersData = [
         brand: 'Louis Vuitton',
         name: 'Imagination',
         image: 'images/designers/imagination-lv.webp',
-        pricePerMl: 4,
-        price5ml: 20,
-        price10ml: 40,
+        pricePerMl: 3.5,
+        price5ml: 17.5,
+        price10ml: 35,
         price30ml: 105
     },
     {
@@ -118,9 +118,9 @@ window.designersData = [
         brand: 'Louis Vuitton',
         name: 'Afternoon Swim',
         image: 'images/designers/afternoon swim lv.jpg',
-        pricePerMl: 4,
-        price5ml: 20,
-        price10ml: 40,
+        pricePerMl: 3.5,
+        price5ml: 17.5,
+        price10ml: 35,
         price30ml: 105
     },
 
@@ -219,16 +219,6 @@ window.designersData = [
     },
 
     // ARMANI
-    {
-        id: 'armani-1',
-        brand: 'Armani',
-        name: 'Stronger With You Intensely',
-        image: 'images/designers/stronger-with-you-intensely.jpg',
-        pricePerMl: 1.7,
-        price5ml: 8.5,
-        price10ml: 17,
-        price30ml: 33
-    },
     {
         id: 'armani-2',
         brand: 'Armani',

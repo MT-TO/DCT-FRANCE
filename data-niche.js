@@ -17,22 +17,10 @@ window.nicheData = [
         brand: 'Kilian',
         name: 'Angels\' Share',
         image: 'images/niches/angels-share.webp',
-        pricePerMl: 6,
-        price5ml: 30,
-        price10ml: 60,
-        price30ml: 160
-    },
-    
-    // CREED
-    {
-        id: 'creed-1',
-        brand: 'Creed',
-        name: 'Absolu AVENTUS',
-        image: 'images/niches/absolu-aventus-creed.jpg',
-        pricePerMl: 6.5,
-        price5ml: 32.5,
-        price10ml: 65,
-        price30ml: 175
+        pricePerMl: 4,
+        price5ml: 20,
+        price10ml: 40,
+        price30ml: 110
     },
     
     // XERJOFF
