@@ -108,10 +108,10 @@ window.designersData = [
         brand: 'Louis Vuitton',
         name: 'Ombre Nomade',
         image: 'images/designers/ombre-nomade-lv.jpg',
-        pricePerMl: 5,
-        price5ml: 25,
-        price10ml: 50,
-        price30ml: 130
+        pricePerMl: 4.5,
+        price5ml: 22.5,
+        price10ml: 45,
+        price30ml: 125
     },
     {
         id: 'lv-3',
@@ -134,18 +134,6 @@ window.designersData = [
         price5ml: 15,
         price10ml: 30,
         price30ml: 80
-    },
-    
-    // TOM FORD
-    {
-        id: 'tf-1',
-        brand: 'Tom Ford',
-        name: 'Oud Voyager',
-        image: 'images/designers/tom ford oud voyage.webp',
-        pricePerMl: 7.5,
-        price5ml: 37.5,
-        price10ml: 75,
-        price30ml: null
     },
     
     // JEAN PAUL GAULTIER

@@ -1,16 +1,5 @@
 // Données des parfums de niche
 window.nicheData = [
-    {
-        id: 'matiere-2',
-        brand: 'Matiere Premiere',
-        name: 'Radical Rose EDP',
-        image: 'images/niches/radical-rose.webp',
-        pricePerMl: 3,
-        price5ml: 15,
-        price10ml: 30,
-        price30ml: 80
-    },
-    
     // KILLIAN
     {
         id: 'killian-1',
