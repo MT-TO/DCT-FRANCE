@@ -112,9 +112,21 @@ window.nicheData = [
         brand: 'Place de la Reverie',
         name: 'Santal de Paris',
         image: 'images/niches/santal de paris place de la reverie.jpg',
-        pricePerMl: 5.5,
-        price5ml: 27.5,
-        price10ml: 55,
-        price30ml: 150
+        pricePerMl: 5,
+        price5ml: 25,
+        price10ml: 50,
+        price30ml: 135
+    },
+
+    // MANUFACTURE
+    {
+        id: 'manufacture-1',
+        brand: 'Manufacture',
+        name: 'Le Rare',
+        image: 'images/niches/rare la manufacture.webp',
+        pricePerMl: 2,
+        price5ml: 10,
+        price10ml: 20,
+        price30ml: 50
     }
 ];
