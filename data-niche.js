@@ -118,11 +118,11 @@ window.nicheData = [
         price30ml: 135
     },
 
-    // MANUFACTURE
+    // LA MANUFACTURE
     {
         id: 'manufacture-1',
-        brand: 'Manufacture',
-        name: 'Le Rare',
+        brand: 'La Manufacture',
+        name: 'Rare',
         image: 'images/niches/rare la manufacture.webp',
         pricePerMl: 2,
         price5ml: 10,
