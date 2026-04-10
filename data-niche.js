@@ -128,5 +128,17 @@ window.nicheData = [
         price5ml: 10,
         price10ml: 20,
         price30ml: 50
+    },
+
+    // LES EAUX PRIMORDIALES
+    {
+        id: 'les-eaux-primordiales-1',
+        brand: 'Les Eaux Primordiales',
+        name: 'Ambre Supermassive',
+        image: 'images/niches/ambre supermassive.webp',
+        pricePerMl: 2,
+        price5ml: 10,
+        price10ml: 20,
+        price30ml: 55
     }
 ];
