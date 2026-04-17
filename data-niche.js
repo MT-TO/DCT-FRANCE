@@ -112,9 +112,9 @@ window.nicheData = [
         brand: 'Place de la Reverie',
         name: 'Santal de Paris',
         image: 'images/niches/santal de paris place de la reverie.jpg',
-        pricePerMl: 5,
-        price5ml: 25,
-        price10ml: 50,
+        pricePerMl: 4.5,
+        price5ml: 22.5,
+        price10ml: 45,
         price30ml: 135
     },
 
