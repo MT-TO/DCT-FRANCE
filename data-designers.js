@@ -6,10 +6,10 @@ window.designersData = [
         brand: 'DIOR',
         name: 'Gris Dior EDP',
         image: 'images/designers/gris dior.jpg',
-        pricePerMl: 4,
-        price5ml: 20,
-        price10ml: 40,
-        price30ml: 100
+        pricePerMl: 3.5,
+        price5ml: 17.5,
+        price10ml: 35,
+        price30ml: 94
     },
     {
         id: 'dior-2',
@@ -26,40 +26,40 @@ window.designersData = [
         brand: 'DIOR',
         name: 'Vanilla Diorama EDP',
         image: 'images/designers/vanilla-diorama.jpg',
-        pricePerMl: 4,
-        price5ml: 20,
-        price10ml: 40,
-        price30ml: 100
+        pricePerMl: 3.5,
+        price5ml: 17.5,
+        price10ml: 35,
+        price30ml: 94
     },
     {
         id: 'dior-5',
         brand: 'DIOR',
         name: 'Bois D\'argent ESPRIT',
         image: 'images/designers/bois-dargent-esprit-de-parfum.png',
-        pricePerMl: 7,
-        price5ml: 35,
-        price10ml: 70,
-        price30ml: 180
+        pricePerMl: 5.5,
+        price5ml: 27.5,
+        price10ml: 55,
+        price30ml: 164
     },
     {
         id: 'dior-10',
         brand: 'DIOR',
         name: 'Gris Dior Esprit',
         image: 'images/designers/gris-dior-esprit-de-parfum.jpg',
-        pricePerMl: 6,
-        price5ml: 30,
-        price10ml: 60,
-        price30ml: 160
+        pricePerMl: 4,
+        price5ml: 20,
+        price10ml: 40,
+        price30ml: 110
     },
     {
         id: 'dior-6',
         brand: 'DIOR',
         name: 'Cuir Saddle EDP',
         image: 'images/designers/dior cuir saddle.webp',
-        pricePerMl: 4,
-        price5ml: 20,
-        price10ml: 40,
-        price30ml: 100
+        pricePerMl: 3.5,
+        price5ml: 17.5,
+        price10ml: 35,
+        price30ml: 94
     },
     {
         id: 'dior-7',
