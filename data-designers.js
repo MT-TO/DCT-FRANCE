@@ -123,6 +123,26 @@ window.designersData = [
         price10ml: 35,
         price30ml: 105
     },
+    {
+        id: 'lv-4',
+        brand: 'Louis Vuitton',
+        name: 'Spell on You',
+        image: 'images/designers/louis-vuitton-spell-on-you--LP0214_PM2_Front view.webp',
+        pricePerMl: 3,
+        price5ml: 15,
+        price10ml: 30,
+        price30ml: 85
+    },
+    {
+        id: 'lv-5',
+        brand: 'Louis Vuitton',
+        name: 'City of Stars',
+        image: 'images/designers/louis-vuitton-city-of-stars--LP0282_PM2_Front view.webp',
+        pricePerMl: 3,
+        price5ml: 15,
+        price10ml: 30,
+        price30ml: 85
+    },
 
     // YVES SAINT LAURENT
     {
