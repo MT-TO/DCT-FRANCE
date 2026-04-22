@@ -14,16 +14,6 @@ window.nicheData = [
     
     // XERJOFF
     {
-        id: 'xerjoff-1',
-        brand: 'Xerjoff',
-        name: 'Naxos',
-        image: 'images/niches/xerjoff naxos copie.jpg',
-        pricePerMl: 3,
-        price5ml: 15,
-        price10ml: 30,
-        price30ml: 80
-    },
-    {
         id: 'xerjoff-2',
         brand: 'Xerjoff',
         name: 'Erba Pura',
