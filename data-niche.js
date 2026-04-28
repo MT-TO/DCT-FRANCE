@@ -60,18 +60,6 @@ window.nicheData = [
         price30ml: 80
     },
 
-    // GIARDINI DI TOSCANA
-    {
-        id: 'giardini-1',
-        brand: 'Giardini di Toscana',
-        name: 'Bianco Latte',
-        image: 'images/flacons entier/bianco latte.jpg',
-        pricePerMl: 1.3,
-        price5ml: 6.5,
-        price10ml: 13,
-        price30ml: 34.99
-    },
-
     // JEAN COUTURIER
     {
         id: 'jean-couturier-1',

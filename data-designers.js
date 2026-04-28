@@ -32,16 +32,6 @@ window.designersData = [
         price30ml: 94
     },
     {
-        id: 'dior-5',
-        brand: 'DIOR',
-        name: 'Bois D\'argent ESPRIT',
-        image: 'images/designers/bois-dargent-esprit-de-parfum.png',
-        pricePerMl: 5.5,
-        price5ml: 27.5,
-        price10ml: 55,
-        price30ml: 164
-    },
-    {
         id: 'dior-10',
         brand: 'DIOR',
         name: 'Gris Dior Esprit',
@@ -284,15 +274,4 @@ window.designersData = [
         price30ml: 50
     },
 
-    // GUERLAIN
-    {
-        id: 'guerlain-1',
-        brand: 'Guerlain',
-        name: 'Spiritueuse Double Vanille',
-        image: 'images/designers/spiritueuse double vanille guerlain.avif',
-        pricePerMl: 4.5,
-        price5ml: 22.5,
-        price10ml: 45,
-        price30ml: 125
-    }
 ];
