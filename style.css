@@ -921,6 +921,68 @@ footer {
     color: var(--primary-color);
 }
 
+.sample-section {
+    margin: 1.5rem 0;
+    padding: 1.25rem;
+    background-color: var(--background);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+}
+
+.sample-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.sample-header h3 {
+    margin: 0;
+    color: var(--primary-color);
+    font-family: var(--font-primary);
+    font-size: 1.25rem;
+}
+
+.sample-header span {
+    color: var(--accent-color);
+    font-size: 0.9rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.sample-section p {
+    margin: 0 0 1rem;
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+.sample-choices {
+    display: grid;
+    gap: 0.75rem;
+}
+
+.sample-choice {
+    display: grid;
+    gap: 0.35rem;
+}
+
+.sample-choice span {
+    color: var(--text-dark);
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.sample-select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background-color: var(--white);
+    color: var(--text-dark);
+    font-family: var(--font-secondary);
+}
+
 .cart-message {
     text-align: center;
     padding: 1.5rem;
