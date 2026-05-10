@@ -4,7 +4,6 @@ let selectedSamples = JSON.parse(localStorage.getItem('dctSamples')) || [];
 let checkoutCustomer = JSON.parse(localStorage.getItem('dctCheckoutCustomer')) || {};
 
 const paymentConfig = {
-    paypalMeUsername: 'https://www.paypal.me/mxmbr57',
     contactEmail: 'Matteo.frgc@outlook.fr'
 };
 
@@ -328,7 +327,7 @@ function renderCheckout(total) {
         <div class="checkout-panel">
             <div class="checkout-header">
                 <h3>Finaliser la commande</h3>
-                <p>Renseignez vos informations, vérifiez vos échantillons, puis choisissez un paiement en ligne.</p>
+                <p>Renseignez vos informations, vérifiez vos échantillons, puis envoyez votre commande.</p>
             </div>
             ${renderSampleValidation(total)}
             <form id="checkoutForm" class="checkout-form">
@@ -367,13 +366,11 @@ function renderCheckout(total) {
                         <span>Total à payer</span>
                         <strong>${formatPrice(total)}</strong>
                     </div>
-                    <small>Référence générée au moment du paiement pour retrouver la commande.</small>
+                    <small>Référence générée au moment de l'envoi pour retrouver la commande.</small>
                 </div>
                 <div class="payment-actions">
-                    <button type="submit" class="btn btn-primary" data-payment-method="paypal">Payer avec PayPal</button>
-                    <button type="button" class="btn btn-outline" id="emailOrderBtn">Envoyer la commande</button>
+                    <button type="submit" class="btn btn-primary" id="emailOrderBtn">Envoyer la commande</button>
                 </div>
-                ${renderPaymentConfigNotice()}
             </form>
         </div>
     `;
@@ -386,7 +383,7 @@ function renderEmptyCheckoutMessage() {
         <div class="checkout-panel">
             <div class="checkout-header">
                 <h3>Finaliser la commande</h3>
-                <p>Ajoutez au moins un parfum au panier pour choisir vos échantillons et payer en ligne.</p>
+                <p>Ajoutez au moins un parfum au panier pour choisir vos échantillons et envoyer votre commande.</p>
             </div>
         </div>
     `;
@@ -402,27 +399,13 @@ function renderSampleValidation(total) {
     return `
         <div class="checkout-sample-status ${statusClass}">
             <strong>${selectedCount}/${sampleCount} échantillon${sampleCount > 1 ? 's' : ''} choisi${sampleCount > 1 ? 's' : ''}</strong>
-            <span>${selectedCount === sampleCount ? 'Votre sélection est prête.' : 'Choisissez tous vos échantillons offerts avant le paiement.'}</span>
+            <span>${selectedCount === sampleCount ? 'Votre sélection est prête.' : 'Choisissez tous vos échantillons offerts avant d'envoyer la commande.'}</span>
         </div>
-    `;
-}
-
-function renderPaymentConfigNotice() {
-    const hasPaypal = Boolean(paymentConfig.paypalMeUsername);
-
-    if (hasPaypal) return '';
-
-    return `
-        <p class="payment-config-note">
-            Paiement PayPal prêt côté interface. Pour encaisser réellement, renseignez
-            <code>paypalMeUsername</code> dans <code>script.js</code>.
-        </p>
     `;
 }
 
 function initCheckoutHandlers(total) {
     const checkoutForm = document.getElementById('checkoutForm');
-    const emailOrderBtn = document.getElementById('emailOrderBtn');
     if (!checkoutForm) return;
 
     checkoutForm.addEventListener('input', function() {
@@ -432,32 +415,8 @@ function initCheckoutHandlers(total) {
 
     checkoutForm.addEventListener('submit', function(event) {
         event.preventDefault();
-        const submitter = event.submitter;
-        const method = submitter ? submitter.dataset.paymentMethod : 'paypal';
-        startPayment(method, total, checkoutForm);
+        sendOrderByEmail(total, checkoutForm);
     });
-
-    if (emailOrderBtn) {
-        emailOrderBtn.addEventListener('click', function() {
-            sendOrderByEmail(total, checkoutForm);
-        });
-    }
-}
-
-function startPayment(method, total, form) {
-    if (!validateCheckout(total, form)) return;
-
-    const order = createOrder(total, form);
-    const paymentUrl = buildPaymentUrl(method, order);
-
-    if (!paymentUrl) {
-        showNotification('Configurez PayPal dans script.js pour activer ce paiement.');
-        return;
-    }
-
-    localStorage.setItem('dctPendingOrder', JSON.stringify(order));
-    window.open(paymentUrl, '_blank', 'noopener');
-    showNotification('Page de paiement ouverte. Conservez la référence de commande.');
 }
 
 function sendOrderByEmail(total, form) {
@@ -476,7 +435,7 @@ function validateCheckout(total, form) {
     const selectedCount = selectedSamples.filter(Boolean).length;
 
     if (selectedCount < requiredSampleCount) {
-        showNotification('Choisissez tous vos échantillons avant de payer.');
+        showNotification('Choisissez tous vos échantillons avant d'envoyer la commande.');
         return false;
     }
 
@@ -523,18 +482,6 @@ function createOrder(total, form) {
         samples: selectedSamples.filter(Boolean),
         total: total
     };
-}
-
-function buildPaymentUrl(method, order) {
-    if (method === 'paypal') {
-        if (!paymentConfig.paypalMeUsername) return '';
-        const paypalBaseUrl = paymentConfig.paypalMeUsername.startsWith('http')
-            ? paymentConfig.paypalMeUsername.replace(/\/$/, '')
-            : `https://www.paypal.me/${encodeURIComponent(paymentConfig.paypalMeUsername)}`;
-        return `${paypalBaseUrl}/${order.total.toFixed(2)}`;
-    }
-
-    return '';
 }
 
 function formatOrderMessage(order) {
