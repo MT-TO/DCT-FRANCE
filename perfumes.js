@@ -73,9 +73,25 @@ function initCartButtons() {
         const price = parseFloat(option.dataset.price);
 
         if (typeof addToCart === 'function' && !Number.isNaN(price)) {
-            addToCart(perfume.name, perfume.brand, size, price);
+            const wasAdded = addToCart(perfume.name, perfume.brand, size, price);
+            if (!wasAdded) return;
+
+            confirmCartButton(button);
+        } else if (typeof showNotification === 'function') {
+            showNotification('Impossible d\'ajouter cet article au panier.');
         }
     });
+}
+
+function confirmCartButton(button) {
+    const originalText = button.textContent;
+    button.textContent = 'Ajouté';
+    button.disabled = true;
+
+    setTimeout(() => {
+        button.textContent = originalText;
+        button.disabled = false;
+    }, 900);
 }
 
 // Créer une carte de parfum
