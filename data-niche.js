@@ -24,18 +24,6 @@ window.nicheData = [
         price30ml: 50
     },
     
-    // BDK
-    {
-        id: 'bdk-1',
-        brand: 'BDK',
-        name: 'Vanille Leather',
-        image: 'images/niches/vanille-leather.jpg',
-        pricePerMl: 3,
-        price5ml: 15,
-        price10ml: 30,
-        price30ml: 80
-    },
-
     // FASCENT
     {
         id: 'fascent-1',
@@ -58,18 +46,6 @@ window.nicheData = [
         price5ml: 15,
         price10ml: 30,
         price30ml: 80
-    },
-
-    // JEAN COUTURIER
-    {
-        id: 'jean-couturier-1',
-        brand: 'Jean Couturier',
-        name: 'Vanilla Exotica',
-        image: 'images/flacons entier/Vanilla exotica.avif',
-        pricePerMl: 1,
-        price5ml: 5,
-        price10ml: 10,
-        price30ml: 25
     },
 
     // ROSENDO MATEU

@@ -88,20 +88,20 @@ window.designersData = [
         brand: 'Louis Vuitton',
         name: 'Imagination',
         image: 'images/designers/imagination-lv.webp',
-        pricePerMl: 3.5,
-        price5ml: 17.5,
-        price10ml: 35,
-        price30ml: 105
+        pricePerMl: 2.4,
+        price5ml: 12,
+        price10ml: 24,
+        price30ml: 70
     },
     {
         id: 'lv-2',
         brand: 'Louis Vuitton',
         name: 'Ombre Nomade',
         image: 'images/designers/ombre-nomade-lv.jpg',
-        pricePerMl: 4.5,
-        price5ml: 22.5,
-        price10ml: 45,
-        price30ml: 125
+        pricePerMl: 3,
+        price5ml: 15,
+        price10ml: 30,
+        price30ml: 85
     },
     {
         id: 'lv-3',
@@ -132,6 +132,26 @@ window.designersData = [
         price5ml: 15,
         price10ml: 30,
         price30ml: 85
+    },
+    {
+        id: 'lv-6',
+        brand: 'Louis Vuitton',
+        name: 'Symphony',
+        image: 'images/designers/louis-vuitton-symphony--LP0249_PM1_Interior view.webp',
+        pricePerMl: 3.9,
+        price5ml: 19.5,
+        price10ml: 39,
+        price30ml: 110
+    },
+    {
+        id: 'lv-7',
+        brand: 'Louis Vuitton',
+        name: 'Heure d\'Absences',
+        image: 'images/designers/heure d\'absences lv.jpg',
+        pricePerMl: 2.5,
+        price5ml: 12.5,
+        price10ml: 25,
+        price30ml: 70
     },
 
     // YVES SAINT LAURENT
