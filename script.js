@@ -1,11 +1,6 @@
 // Gestion du panier
 let cart = normalizeCartItems(readStorageArray('dctCart'));
 let selectedSamples = readStorageArray('dctSamples');
-let checkoutCustomer = readStorageObject('dctCheckoutCustomer');
-
-const orderConfig = {
-    contactEmail: 'Matteo.frgc@outlook.fr'
-};
 
 const samplePerfumes = [
     'JPG Le Mâle EDT',
@@ -317,7 +312,7 @@ function renderCart() {
         cartTotalElement.textContent = total.toFixed(2) + ' €';
     }
 
-    renderCheckout(total);
+    renderCartInstructions();
 }
 
 function getCartTotal() {
@@ -389,201 +384,29 @@ function initSampleChoiceHandlers(total) {
     });
 }
 
-function renderCheckout(total) {
+function renderCartInstructions() {
     const checkoutContainer = document.querySelector('.cart-message');
     if (!checkoutContainer) return;
 
     checkoutContainer.innerHTML = `
         <div class="order-panel">
             <div class="order-header">
-                <h3>Valider le panier</h3>
-                <p>Renseignez vos informations, vérifiez vos échantillons, puis envoyez votre demande de commande.</p>
+                <h3>Envoyer votre panier</h3>
+                <p>Prenez simplement un screen de votre panier, puis envoyez-le à DCT FRANCE sur nos réseaux sociaux.</p>
             </div>
-            ${renderSampleValidation(total)}
-            <form id="orderForm" class="order-form">
-                <div class="order-grid">
-                    <label>
-                        <span>Nom complet</span>
-                        <input type="text" name="fullName" value="${escapeHtml(checkoutCustomer.fullName || '')}" autocomplete="name" required>
-                    </label>
-                    <label>
-                        <span>Email</span>
-                        <input type="email" name="email" value="${escapeHtml(checkoutCustomer.email || '')}" autocomplete="email" required>
-                    </label>
-                    <label>
-                        <span>Téléphone</span>
-                        <input type="tel" name="phone" value="${escapeHtml(checkoutCustomer.phone || '')}" autocomplete="tel" required>
-                    </label>
-                    <label>
-                        <span>Code postal</span>
-                        <input type="text" name="postalCode" value="${escapeHtml(checkoutCustomer.postalCode || '')}" autocomplete="postal-code" required>
-                    </label>
-                    <label class="order-field-wide">
-                        <span>Adresse de livraison</span>
-                        <input type="text" name="address" value="${escapeHtml(checkoutCustomer.address || '')}" autocomplete="street-address" required>
-                    </label>
-                    <label>
-                        <span>Ville</span>
-                        <input type="text" name="city" value="${escapeHtml(checkoutCustomer.city || '')}" autocomplete="address-level2" required>
-                    </label>
-                    <label>
-                        <span>Complément</span>
-                        <input type="text" name="deliveryNote" value="${escapeHtml(checkoutCustomer.deliveryNote || '')}" placeholder="Bâtiment, étage...">
-                    </label>
-                </div>
-                <div class="order-summary">
-                    <div>
-                        <span>Total du panier</span>
-                        <strong>${formatPrice(total)}</strong>
-                    </div>
-                    <small>La commande est envoyée par email, sans paiement en ligne.</small>
-                </div>
-                <div class="order-actions">
-                    <button type="submit" class="btn btn-primary" id="emailOrderBtn">Valider le panier</button>
-                </div>
-            </form>
         </div>
     `;
-
-    initCheckoutHandlers(total);
 }
 
 function renderEmptyCheckoutMessage() {
     return `
         <div class="order-panel">
             <div class="order-header">
-                <h3>Valider le panier</h3>
-                <p>Ajoutez au moins un parfum au panier pour choisir vos échantillons et envoyer votre demande de commande.</p>
+                <h3>Envoyer votre panier</h3>
+                <p>Ajoutez vos parfums, prenez un screen du panier, puis envoyez-le à DCT FRANCE sur nos réseaux sociaux.</p>
             </div>
         </div>
     `;
-}
-
-function renderSampleValidation(total) {
-    const sampleCount = getEligibleSampleCount(total);
-    if (sampleCount === 0) return '';
-
-    const selectedCount = selectedSamples.filter(Boolean).length;
-    const statusClass = selectedCount === sampleCount ? 'is-complete' : 'is-missing';
-
-    return `
-        <div class="order-sample-status ${statusClass}">
-            <strong>${selectedCount}/${sampleCount} échantillon${sampleCount > 1 ? 's' : ''} choisi${sampleCount > 1 ? 's' : ''}</strong>
-            <span>${selectedCount === sampleCount ? 'Votre sélection est prête.' : 'Choisissez tous vos échantillons offerts avant de valider le panier.'}</span>
-        </div>
-    `;
-}
-
-function initCheckoutHandlers(total) {
-    const checkoutForm = document.getElementById('orderForm');
-    if (!checkoutForm) return;
-
-    checkoutForm.addEventListener('input', function() {
-        checkoutCustomer = getCheckoutCustomer(checkoutForm);
-        saveCheckoutCustomer();
-    });
-
-    checkoutForm.addEventListener('submit', function(event) {
-        event.preventDefault();
-        submitCartOrder(total, checkoutForm);
-    });
-}
-
-function submitCartOrder(total, form) {
-    if (!validateCheckout(total, form)) return;
-
-    const order = createOrder(total, form);
-    localStorage.setItem('dctPendingOrder', JSON.stringify(order));
-
-    const subject = encodeURIComponent(`Commande ${order.reference} - DCT FRANCE`);
-    const body = encodeURIComponent(formatOrderMessage(order));
-    window.location.href = `mailto:${orderConfig.contactEmail}?subject=${subject}&body=${body}`;
-}
-
-function validateCheckout(total, form) {
-    const requiredSampleCount = getEligibleSampleCount(total);
-    const selectedCount = selectedSamples.filter(Boolean).length;
-
-    if (selectedCount < requiredSampleCount) {
-        showNotification('Choisissez tous vos échantillons avant de valider le panier.');
-        return false;
-    }
-
-    if (!form.reportValidity()) {
-        return false;
-    }
-
-    checkoutCustomer = getCheckoutCustomer(form);
-    saveCheckoutCustomer();
-    return true;
-}
-
-function getCheckoutCustomer(form) {
-    const formData = new FormData(form);
-    return {
-        fullName: String(formData.get('fullName') || '').trim(),
-        email: String(formData.get('email') || '').trim(),
-        phone: String(formData.get('phone') || '').trim(),
-        address: String(formData.get('address') || '').trim(),
-        postalCode: String(formData.get('postalCode') || '').trim(),
-        city: String(formData.get('city') || '').trim(),
-        deliveryNote: String(formData.get('deliveryNote') || '').trim()
-    };
-}
-
-function saveCheckoutCustomer() {
-    localStorage.setItem('dctCheckoutCustomer', JSON.stringify(checkoutCustomer));
-}
-
-function createOrder(total, form) {
-    const customer = getCheckoutCustomer(form);
-    const reference = `DCT-${new Date().toISOString().slice(0, 10).replace(/-/g, '')}-${Math.random().toString(36).slice(2, 7).toUpperCase()}`;
-
-    return {
-        reference: reference,
-        createdAt: new Date().toISOString(),
-        customer: customer,
-        items: cart.map(item => ({
-            name: item.name,
-            brand: item.brand,
-            size: item.size,
-            price: item.price
-        })),
-        samples: selectedSamples.filter(Boolean),
-        total: total
-    };
-}
-
-function formatOrderMessage(order) {
-    const lines = [
-        `Référence: ${order.reference}`,
-        `Total: ${formatPrice(order.total)}`,
-        '',
-        'Client',
-        `Nom: ${order.customer.fullName}`,
-        `Email: ${order.customer.email}`,
-        `Téléphone: ${order.customer.phone}`,
-        `Adresse: ${order.customer.address}`,
-        `Ville: ${order.customer.postalCode} ${order.customer.city}`,
-        `Complément: ${order.customer.deliveryNote || '-'}`,
-        '',
-        'Articles'
-    ];
-
-    order.items.forEach((item, index) => {
-        lines.push(`${index + 1}. ${item.name} - ${item.brand} - ${item.size} ML - ${formatPrice(item.price)}`);
-    });
-
-    lines.push('', 'Échantillons offerts');
-    order.samples.forEach((sample, index) => {
-        lines.push(`${index + 1}. ${sample}`);
-    });
-
-    return lines.join('\n');
-}
-
-function formatPrice(value) {
-    return `${Number(value).toFixed(2)} €`;
 }
 
 function escapeHtml(value) {
