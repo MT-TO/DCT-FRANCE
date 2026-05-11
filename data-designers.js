@@ -6,10 +6,10 @@ window.designersData = [
         brand: 'DIOR',
         name: 'Gris Dior EDP',
         image: 'images/designers/gris dior.jpg',
-        pricePerMl: 3.5,
-        price5ml: 17.5,
-        price10ml: 35,
-        price30ml: 94
+        pricePerMl: 2,
+        price5ml: 10,
+        price10ml: 20,
+        price30ml: 50
     },
     {
         id: 'dior-2',
@@ -26,10 +26,10 @@ window.designersData = [
         brand: 'DIOR',
         name: 'Vanilla Diorama EDP',
         image: 'images/designers/vanilla-diorama.jpg',
-        pricePerMl: 3.5,
-        price5ml: 17.5,
-        price10ml: 35,
-        price30ml: 94
+        pricePerMl: 2,
+        price5ml: 10,
+        price10ml: 20,
+        price30ml: 50
     },
     {
         id: 'dior-10',
@@ -46,10 +46,10 @@ window.designersData = [
         brand: 'DIOR',
         name: 'Cuir Saddle EDP',
         image: 'images/designers/dior cuir saddle.webp',
-        pricePerMl: 3.5,
-        price5ml: 17.5,
-        price10ml: 35,
-        price30ml: 94
+        pricePerMl: 2,
+        price5ml: 10,
+        price10ml: 20,
+        price30ml: 50
     },
     {
         id: 'dior-7',
@@ -104,16 +104,6 @@ window.designersData = [
         price30ml: 85
     },
     {
-        id: 'lv-3',
-        brand: 'Louis Vuitton',
-        name: 'Afternoon Swim',
-        image: 'images/designers/afternoon swim lv.jpg',
-        pricePerMl: 3.5,
-        price5ml: 17.5,
-        price10ml: 35,
-        price30ml: 105
-    },
-    {
         id: 'lv-4',
         brand: 'Louis Vuitton',
         name: 'Spell on You',
@@ -133,27 +123,6 @@ window.designersData = [
         price10ml: 30,
         price30ml: 85
     },
-    {
-        id: 'lv-6',
-        brand: 'Louis Vuitton',
-        name: 'Symphony',
-        image: 'images/designers/louis-vuitton-symphony--LP0249_PM1_Interior view.webp',
-        pricePerMl: 3.9,
-        price5ml: 19.5,
-        price10ml: 39,
-        price30ml: 110
-    },
-    {
-        id: 'lv-7',
-        brand: 'Louis Vuitton',
-        name: 'Heure d\'Absences',
-        image: 'images/designers/heure d\'absences lv.jpg',
-        pricePerMl: 2.5,
-        price5ml: 12.5,
-        price10ml: 25,
-        price30ml: 70
-    },
-
     // YVES SAINT LAURENT
     {
         id: 'ysl-1',
