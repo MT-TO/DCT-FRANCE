@@ -123,6 +123,26 @@ window.designersData = [
         price10ml: 30,
         price30ml: 85
     },
+    {
+        id: 'lv-6',
+        brand: 'Louis Vuitton',
+        name: 'Symphony',
+        image: 'images/designers/louis-vuitton-symphony--LP0249_PM1_Interior view.webp',
+        pricePerMl: 3.9,
+        price5ml: 19.5,
+        price10ml: 39,
+        price30ml: 110
+    },
+    {
+        id: 'lv-7',
+        brand: 'Louis Vuitton',
+        name: 'Heure d\'Absences',
+        image: 'images/designers/heure d\'absences lv.jpg',
+        pricePerMl: 2.5,
+        price5ml: 12.5,
+        price10ml: 25,
+        price30ml: 70
+    },
     // YVES SAINT LAURENT
     {
         id: 'ysl-1',

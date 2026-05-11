@@ -15,6 +15,8 @@ const samplePerfumes = [
     'Prada Paradigme',
     'Babycat',
     'Imagination',
+    'Symphony',
+    'Heure d\'Absences',
     'Dior Homme Intense',
     'Sauvage Elixir',
     'Sauvage EDT',
