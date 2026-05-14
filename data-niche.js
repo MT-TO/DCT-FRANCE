@@ -35,6 +35,16 @@ window.nicheData = [
         price10ml: 25,
         price30ml: null
     },
+    {
+        id: 'fascent-2',
+        brand: 'Fascent',
+        name: 'Milky No Way',
+        image: 'images/niches/milky no way.jpg',
+        pricePerMl: 2.5,
+        price5ml: 12.5,
+        price10ml: 25,
+        price30ml: null
+    },
 
     // HAROLD & MAUDE
     {
