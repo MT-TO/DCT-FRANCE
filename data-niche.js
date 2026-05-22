@@ -133,7 +133,7 @@ window.nicheData = [
     // CUIR CARAMELO
     {
         id: 'cuir-caramelo-1',
-        brand: 'Cuir Caramelo',
+        brand: 'Yzkine',
         name: 'Cuir Caramelo',
         image: 'images/niches/cuir caramelo.webp',
         pricePerMl: 2.2,
@@ -145,7 +145,7 @@ window.nicheData = [
     // MIND GAMES
     {
         id: 'mind-games-1',
-        brand: 'Mind Games',
+        brand: 'Nobl’art',
         name: 'Mona Lisa',
         image: 'images/niches/mona lisa.webp',
         pricePerMl: 1.3,
