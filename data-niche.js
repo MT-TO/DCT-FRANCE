@@ -183,7 +183,7 @@ window.nicheData = [
         id: 'parfums-de-marly-1',
         brand: 'Parfums de Marly',
         name: 'Althaïr',
-        image: 'images/niches/althair marly.webp',
+        image: 'images/niches/Althaïr Marly .webp',
         pricePerMl: 1.9,
         price5ml: 9.5,
         price10ml: 19,
