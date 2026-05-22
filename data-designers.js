@@ -283,4 +283,16 @@ window.designersData = [
         price30ml: 50
     },
 
+    // CARTIER
+    {
+        id: 'cartier-1',
+        brand: 'Cartier',
+        name: 'Oud Vanille',
+        image: 'images/designers/oud cartier vanille.carprodcard.avif',
+        pricePerMl: 3,
+        price5ml: 15,
+        price10ml: 30,
+        price30ml: 80
+    },
+
 ];

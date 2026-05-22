@@ -104,5 +104,89 @@ window.nicheData = [
         price5ml: 10,
         price10ml: 20,
         price30ml: 55
+    },
+
+    // REINVENTED
+    {
+        id: 'reinvented-1',
+        brand: 'Reinvented',
+        name: 'Sacred Bond',
+        image: 'images/niches/sacred bond.webp',
+        pricePerMl: 2,
+        price5ml: 10,
+        price10ml: 20,
+        price30ml: 50
+    },
+
+    // GIARDINI DI TOSCANA
+    {
+        id: 'giardini-di-toscana-1',
+        brand: 'Giardini di Toscana',
+        name: 'Bianco Latte',
+        image: 'images/flacons entier/bianco latte.jpg',
+        pricePerMl: 1,
+        price5ml: 5,
+        price10ml: 10,
+        price30ml: 28
+    },
+
+    // CUIR CARAMELO
+    {
+        id: 'cuir-caramelo-1',
+        brand: 'Cuir Caramelo',
+        name: 'Cuir Caramelo',
+        image: 'images/niches/cuir caramelo.webp',
+        pricePerMl: 2.2,
+        price5ml: 11,
+        price10ml: 22,
+        price30ml: 60
+    },
+
+    // MIND GAMES
+    {
+        id: 'mind-games-1',
+        brand: 'Mind Games',
+        name: 'Mona Lisa',
+        image: 'images/niches/mona lisa.webp',
+        pricePerMl: 1.3,
+        price5ml: 6.5,
+        price10ml: 13,
+        price30ml: 30
+    },
+
+    // LIQUIDES IMAGINAIRES
+    {
+        id: 'liquides-imaginaires-1',
+        brand: 'Liquides Imaginaires',
+        name: 'Blanche Bête',
+        image: 'images/niches/blanche bete.webp',
+        pricePerMl: 3,
+        price5ml: 15,
+        price10ml: 30,
+        price30ml: 80
+    },
+
+    // FREDERIC MALLE
+    {
+        id: 'frederic-malle-1',
+        brand: 'Frederic Malle',
+        name: 'Musc Ravageur',
+        image: 'images/niches/musc ravageur.avif',
+        pricePerMl: 3,
+        price5ml: 15,
+        price10ml: 30,
+        price30ml: 85
+    },
+
+    // PARFUMS DE MARLY
+    {
+        id: 'parfums-de-marly-1',
+        brand: 'Parfums de Marly',
+        name: 'Althaïr',
+        image: 'images/niches/althair marly.webp',
+        pricePerMl: 1.9,
+        price5ml: 9.5,
+        price10ml: 19,
+        price30ml: 55
     }
 ];
