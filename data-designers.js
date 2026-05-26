@@ -118,10 +118,10 @@ window.designersData = [
         brand: 'Louis Vuitton',
         name: 'City of Stars',
         image: 'images/designers/louis-vuitton-city-of-stars--LP0282_PM2_Front view.webp',
-        pricePerMl: 3,
+        pricePerMl: 2.5,
         price5ml: 15,
         price10ml: 30,
-        price30ml: 85
+        price30ml: 70
     },
     {
         id: 'lv-6',
