@@ -13,7 +13,6 @@ const samplePerfumes = [
     'Invictus EDT',
     'Scandal Intense',
     'Prada Paradigme',
-    'Babycat',
     'Imagination',
     'Dior Homme Intense',
     'Sauvage Elixir',

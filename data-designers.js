@@ -143,18 +143,6 @@ window.designersData = [
         price10ml: 25,
         price30ml: 70
     },
-    // YVES SAINT LAURENT
-    {
-        id: 'ysl-1',
-        brand: 'Yves Saint Laurent',
-        name: 'Babycat',
-        image: 'images/designers/babycat ysl.webp',
-        pricePerMl: 3,
-        price5ml: 15,
-        price10ml: 30,
-        price30ml: 80
-    },
-    
     // JEAN PAUL GAULTIER
     {
         id: 'jpg-1',
