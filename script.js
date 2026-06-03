@@ -14,7 +14,6 @@ const samplePerfumes = [
     'Scandal Intense',
     'Prada Paradigme',
     'Imagination',
-    'Dior Homme Intense',
     'Sauvage Elixir',
     'Sauvage EDT',
     'Bois D\'argent EDP',
