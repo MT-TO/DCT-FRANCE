@@ -70,18 +70,6 @@ window.nicheData = [
         price30ml: 44.99
     },
 
-    // PLACE DE LA REVERIE
-    {
-        id: 'place-de-la-reverie-1',
-        brand: 'Place de la Reverie',
-        name: 'Santal de Paris',
-        image: 'images/niches/santal de paris place de la reverie.jpg',
-        pricePerMl: 4.5,
-        price5ml: 22.5,
-        price10ml: 45,
-        price30ml: 135
-    },
-
     // LA MANUFACTURE
     {
         id: 'manufacture-1',
