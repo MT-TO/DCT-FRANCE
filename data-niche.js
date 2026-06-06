@@ -176,5 +176,27 @@ window.nicheData = [
         price5ml: 9.5,
         price10ml: 19,
         price30ml: 55
+    },
+
+    // MAISON FRANCIS KURKDJIAN
+    {
+        id: 'mfk-1',
+        brand: 'Maison Francis Kurkdjian',
+        name: 'Grand Soir',
+        image: 'images/niches/grand soir mfk.webp',
+        pricePerMl: 2,
+        price5ml: 10,
+        price10ml: 20,
+        price30ml: 50
+    },
+    {
+        id: 'mfk-2',
+        brand: 'Maison Francis Kurkdjian',
+        name: 'Oud Satin Mood EDP',
+        image: 'images/niches/oud-satin-mood-mfk.webp',
+        pricePerMl: 2,
+        price5ml: 10,
+        price10ml: 20,
+        price30ml: 50
     }
 ];
