@@ -384,6 +384,20 @@ function renderCartInstructions() {
     const checkoutContainer = document.querySelector('.cart-message');
     if (!checkoutContainer) return;
 
+    const total = getCartTotal();
+    const minOrder = 15;
+
+    if (total < minOrder) {
+        checkoutContainer.innerHTML = `
+            <div class="order-panel">
+                <div class="order-header">
+                    <p style="color: #c0392b; font-weight: 600;">⚠️ Commande minimum : ${minOrder} €. Il vous manque ${(minOrder - total).toFixed(2)} € pour valider votre panier.</p>
+                </div>
+            </div>
+        `;
+        return;
+    }
+
     checkoutContainer.innerHTML = `
         <div class="order-panel">
             <div class="order-header">

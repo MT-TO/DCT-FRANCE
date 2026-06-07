@@ -1,17 +1,18 @@
 // Récupérer les données depuis les fichiers data
 let perfumesData = [];
-const availableSizes = [1, 2, 3, 4, 5, 10, 30];
+let availableSizes = [2, 5, 10, 30];
 let cartHandlerInitialized = false;
 
 // Initialisation
 document.addEventListener('DOMContentLoaded', function() {
     // Charger les données selon la page
-    if (Array.isArray(window.designersData)) {
+    if (Array.isArray(window.exclusiveData)) {
+        perfumesData = window.exclusiveData;
+        availableSizes = [5, 10, 30];
+    } else if (Array.isArray(window.designersData)) {
         perfumesData = window.designersData;
     } else if (Array.isArray(window.nicheData)) {
         perfumesData = window.nicheData;
-    } else if (Array.isArray(window.exclusiveData)) {
-        perfumesData = window.exclusiveData;
     }
     
     if (perfumesData && perfumesData.length > 0) {
