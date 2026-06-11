@@ -97,10 +97,10 @@ window.designersData = [
         brand: 'Louis Vuitton',
         name: 'Spell on You',
         image: 'images/designers/louis-vuitton-spell-on-you--LP0214_PM2_Front view.webp',
-        pricePerMl: 3,
-        price5ml: 15,
-        price10ml: 30,
-        price30ml: 85
+        pricePerMl: 2.5,
+        price5ml: 12.5,
+        price10ml: 25,
+        price30ml: 75
     },
     {
         id: 'lv-5',
@@ -108,19 +108,9 @@ window.designersData = [
         name: 'City of Stars',
         image: 'images/designers/louis-vuitton-city-of-stars--LP0282_PM2_Front view.webp',
         pricePerMl: 2.5,
-        price5ml: 15,
-        price10ml: 30,
-        price30ml: 70
-    },
-    {
-        id: 'lv-6',
-        brand: 'Louis Vuitton',
-        name: 'Symphony',
-        image: 'images/designers/louis-vuitton-symphony--LP0249_PM1_Interior view.webp',
-        pricePerMl: 3.9,
-        price5ml: 19.5,
-        price10ml: 39,
-        price30ml: 110
+        price5ml: 12.5,
+        price10ml: 25,
+        price30ml: 75
     },
     {
         id: 'lv-7',

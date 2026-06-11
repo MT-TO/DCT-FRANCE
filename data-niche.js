@@ -194,9 +194,9 @@ window.nicheData = [
         brand: 'Maison Francis Kurkdjian',
         name: 'Oud Satin Mood EDP',
         image: 'images/niches/oud-satin-mood-mfk.webp',
-        pricePerMl: 2,
-        price5ml: 10,
-        price10ml: 20,
-        price30ml: 50
+        pricePerMl: 3,
+        price5ml: 15,
+        price10ml: 30,
+        price30ml: 75
     }
 ];
