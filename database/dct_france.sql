@@ -1,0 +1,178 @@
+-- ============================================================
+-- DCT FRANCE — Base de données produits + intégration Stripe
+-- ============================================================
+-- Les prix sont stockés en CENTIMES (comme Stripe l'exige).
+-- stripe_product_id et stripe_price_id sont à renseigner
+-- après création des produits/prix dans le dashboard Stripe.
+-- ============================================================
+
+CREATE DATABASE IF NOT EXISTS dct_france CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+USE dct_france;
+
+-- ------------------------------------------------------------
+-- TABLE : products
+-- Un enregistrement = un parfum
+-- stripe_product_id = ID produit Stripe (ex: prod_XXXXXX)
+-- ------------------------------------------------------------
+CREATE TABLE products (
+    id              VARCHAR(60)     PRIMARY KEY,
+    brand           VARCHAR(100)    NOT NULL,
+    name            VARCHAR(150)    NOT NULL,
+    category        ENUM('designer','niche','exclusive') NOT NULL,
+    image           VARCHAR(255),
+    price_per_ml    DECIMAL(6,2)    NOT NULL,
+    stripe_product_id VARCHAR(50)   DEFAULT NULL,
+    created_at      TIMESTAMP       DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB;
+
+-- ------------------------------------------------------------
+-- TABLE : product_prices
+-- Un enregistrement = une déclinaison de taille (5ml, 10ml, 30ml)
+-- price_cents     = prix en centimes (EUR) → pour Stripe
+-- stripe_price_id = ID prix Stripe (ex: price_XXXXXX)
+-- ------------------------------------------------------------
+CREATE TABLE product_prices (
+    id              INT             AUTO_INCREMENT PRIMARY KEY,
+    product_id      VARCHAR(60)     NOT NULL,
+    size_ml         TINYINT         NOT NULL,        -- 5, 10 ou 30
+    price_cents     INT             NOT NULL,        -- ex: 1000 = 10,00 €
+    stripe_price_id VARCHAR(50)     DEFAULT NULL,
+    FOREIGN KEY (product_id) REFERENCES products(id) ON DELETE CASCADE,
+    UNIQUE KEY uq_product_size (product_id, size_ml)
+) ENGINE=InnoDB;
+
+-- ============================================================
+-- INSERTION — DESIGNERS
+-- ============================================================
+INSERT INTO products (id, brand, name, category, image, price_per_ml) VALUES
+('dior-1',      'DIOR',              'Gris Dior EDP',              'designer', 'images/designers/gris dior.jpg',                          2.00),
+('dior-2',      'DIOR',              'Bois D''argent EDP',          'designer', 'images/designers/bois-dargent-dior.webp',                 2.00),
+('dior-4',      'DIOR',              'Vanilla Diorama EDP',         'designer', 'images/designers/vanilla-diorama.jpg',                    2.00),
+('dior-6',      'DIOR',              'Cuir Saddle EDP',             'designer', 'images/designers/dior cuir saddle.webp',                  2.00),
+('dior-7',      'DIOR',              'Sauvage EDT',                 'designer', 'images/designers/dior-sauvage-edt.jpg',                   1.00),
+('dior-8',      'DIOR',              'Sauvage Elixir',              'designer', 'images/designers/sauvage-elixir.jpg',                     3.00),
+('dior-10',     'DIOR',              'Gris Dior Esprit',            'designer', 'images/designers/gris-dior-esprit-de-parfum.jpg',         4.00),
+('lv-1',        'Louis Vuitton',     'Imagination',                 'designer', 'images/designers/imagination-lv.webp',                    2.40),
+('lv-2',        'Louis Vuitton',     'Ombre Nomade',                'designer', 'images/designers/ombre-nomade-lv.jpg',                    3.00),
+('lv-4',        'Louis Vuitton',     'Spell on You',                'designer', 'images/designers/louis-vuitton-spell-on-you--LP0214_PM2_Front view.webp', 2.50),
+('lv-5',        'Louis Vuitton',     'City of Stars',               'designer', 'images/designers/louis-vuitton-city-of-stars--LP0282_PM2_Front view.webp', 2.50),
+('lv-7',        'Louis Vuitton',     'Heure d''Absences',           'designer', 'images/designers/heure d''absences lv.jpg',               2.50),
+('jpg-1',       'Jean Paul Gaultier','Le Mâle EDT',                 'designer', 'images/designers/le male jpg edt.webp',                   1.00),
+('jpg-2',       'Jean Paul Gaultier','Le Mâle Elixir',              'designer', 'images/designers/le-male-elixir.webp',                    2.00),
+('jpg-3',       'Jean Paul Gaultier','Scandal Intense',             'designer', 'images/designers/scandal-intense.jpg',                    1.50),
+('prada-1',     'Prada',             'Prada Paradigme',             'designer', 'images/designers/prada-paradigme.avif',                   2.00),
+('versace-1',   'Versace',           'Eros EDT',                    'designer', 'images/designers/versace-eros-edt.avif',                  1.00),
+('paco-1',      'Paco Rabanne',      'Invictus EDT',                'designer', 'images/designers/invictus-edt.jpg',                       1.00),
+('armani-2',    'Armani',            'Stronger With You Amber',     'designer', 'images/designers/stronger with you amber.webp',           2.00),
+('azzaro-1',    'Azzaro',            'Chrome EDT',                  'designer', 'images/designers/azzaro chrome edt.jpg',                  0.70),
+('azzaro-2',    'Azzaro',            'Chrome EDP',                  'designer', 'images/designers/azzaro chrome edp.webp',                 1.00),
+('valentino-1', 'Valentino',         'Born in Roma Intense',        'designer', 'images/designers/valentino-born-in-roma-intense.jpg',     1.00),
+('horace-1',    'Horace',            'Vintage Vanilla',             'designer', 'images/designers/horace vintage vanilla.png',             2.00),
+('cartier-1',   'Cartier',           'Oud Vanille',                 'designer', 'images/designers/oud cartier vanille.carprodcard.avif',   3.00);
+
+-- ============================================================
+-- INSERTION — NICHE
+-- ============================================================
+INSERT INTO products (id, brand, name, category, image, price_per_ml) VALUES
+('killian-1',               'Kilian',                   'Angels'' Share',       'niche', 'images/niches/angels-share.webp',                  4.00),
+('xerjoff-2',               'Xerjoff',                  'Erba Pura',            'niche', 'images/flacons entier/xerjoff erba pura.webp',     2.00),
+('fascent-1',               'Fascent',                  'Creme Brulante',       'niche', 'images/niches/fascent-creme-brulante.webp',        2.50),
+('fascent-2',               'Fascent',                  'Milky No Way',         'niche', 'images/niches/milky no way.jpg',                   2.50),
+('harold-1',                'Harold & Maude',            'Resolument Affranchi', 'niche', 'images/niches/resolument-affranchi.webp',          3.00),
+('rosendo-1',               'Rosendo Mateu',             'Rosendo Mateu 5',      'niche', 'images/flacons entier/R5.jpg',                     2.00),
+('manufacture-1',           'La Manufacture',            'Rare',                 'niche', 'images/niches/rare la manufacture.webp',           2.00),
+('les-eaux-primordiales-1', 'Les Eaux Primordiales',     'Ambre Supermassive',   'niche', 'images/niches/ambre supermassive.webp',            2.00),
+('reinvented-1',            'Reinvented',                'Sacred Bond',          'niche', 'images/niches/sacred bond.webp',                   2.00),
+('giardini-di-toscana-1',   'Giardini di Toscana',       'Bianco Latte',         'niche', 'images/flacons entier/bianco latte.jpg',           1.00),
+('cuir-caramelo-1',         'Yzkine',                    'Cuir Caramelo',        'niche', 'images/niches/cuir caramelo.webp',                 2.20),
+('mind-games-1',            'Nobl''art',                 'Mona Lisa',            'niche', 'images/niches/mona lisa.webp',                     1.30),
+('liquides-imaginaires-1',  'Liquides Imaginaires',      'Blanche Bête',         'niche', 'images/niches/blanche bete.webp',                  3.00),
+('frederic-malle-1',        'Frederic Malle',            'Musc Ravageur',        'niche', 'images/niches/musc ravageur.avif',                 3.00),
+('parfums-de-marly-1',      'Parfums de Marly',          'Althaïr',              'niche', 'images/niches/Althair-Parfums-de-Marly.webp',      1.90),
+('mfk-1',                   'Maison Francis Kurkdjian',  'Grand Soir',           'niche', 'images/niches/grand soir mfk.webp',               2.00),
+('mfk-2',                   'Maison Francis Kurkdjian',  'Oud Satin Mood EDP',   'niche', 'images/niches/oud-satin-mood-mfk.webp',           3.00);
+
+-- ============================================================
+-- INSERTION — EXCLUSIVE
+-- ============================================================
+INSERT INTO products (id, brand, name, category, image, price_per_ml) VALUES
+('exclusive-dior-1', 'DIOR', 'Vétiver Dior',                   'exclusive', 'images/designers/vetiver dior.jpg',           4.00),
+('exclusive-dior-2', 'DIOR', 'Fève Délicieuse Dior',           'exclusive', 'images/designers/feve delicieuse dior.webp',  4.00),
+('exclusive-dior-3', 'DIOR', 'Dior Homme Intense Batch 2011',  'exclusive', 'images/designers/dior homme intense 2011.jpg',5.00);
+
+-- ============================================================
+-- INSERTION — PRIX PAR TAILLE (en centimes)
+-- NULL price_cents = taille non disponible pour ce produit
+-- ============================================================
+
+-- Helpers : price_cents = prix JavaScript × 100
+
+INSERT INTO product_prices (product_id, size_ml, price_cents) VALUES
+-- DIOR
+('dior-1',      5,  1000), ('dior-1',  10, 2000), ('dior-1',  30, 5000),
+('dior-2',      5,  1000), ('dior-2',  10, 2000), ('dior-2',  30, 5000),
+('dior-4',      5,  1000), ('dior-4',  10, 2000), ('dior-4',  30, 5000),
+('dior-6',      5,  1000), ('dior-6',  10, 2000), ('dior-6',  30, 5000),
+('dior-7',      5,   500), ('dior-7',  10, 1000), ('dior-7',  30, 2000),
+('dior-8',      5,  1500), ('dior-8',  10, 3000), ('dior-8',  30, 7000),
+('dior-10',     5,  2000), ('dior-10', 10, 4000), ('dior-10', 30,11000),
+-- LOUIS VUITTON
+('lv-1',        5,  1200), ('lv-1',    10, 2400), ('lv-1',    30, 7000),
+('lv-2',        5,  1500), ('lv-2',    10, 3000), ('lv-2',    30, 8500),
+('lv-4',        5,  1250), ('lv-4',    10, 2500), ('lv-4',    30, 7500),
+('lv-5',        5,  1250), ('lv-5',    10, 2500), ('lv-5',    30, 7500),
+('lv-7',        5,  1250), ('lv-7',    10, 2500), ('lv-7',    30, 7000),
+-- JEAN PAUL GAULTIER
+('jpg-1',       5,   500), ('jpg-1',   10, 1000), ('jpg-1',   30, 2000),
+('jpg-2',       5,  1000), ('jpg-2',   10, 2000), ('jpg-2',   30, 3000),
+('jpg-3',       5,   750), ('jpg-3',   10, 1500), ('jpg-3',   30, 3000),
+-- AUTRES DESIGNERS
+('prada-1',     5,  1000), ('prada-1',    10, 2000), ('prada-1',    30, 4000),
+('versace-1',   5,   500), ('versace-1',  10, 1000), ('versace-1',  30, 2000),
+('paco-1',      5,   500), ('paco-1',     10, 1000), ('paco-1',     30, 2000),
+('armani-2',    5,  1000), ('armani-2',   10, 2000), ('armani-2',   30, 5000),
+('azzaro-1',    5,   350), ('azzaro-1',   10,  700), ('azzaro-1',   30, 1500),
+('azzaro-2',    5,   500), ('azzaro-2',   10, 1000), ('azzaro-2',   30, 2500),
+('valentino-1', 5,   500), ('valentino-1',10, 1000), ('valentino-1',30, 2000),
+('horace-1',    5,  1000), ('horace-1',   10, 2000), ('horace-1',   30, 5000),
+('cartier-1',   5,  1500), ('cartier-1',  10, 3000), ('cartier-1',  30, 8000),
+-- NICHE
+('killian-1',               5,  2000), ('killian-1',               10,  4000), ('killian-1',               30, 11000),
+('xerjoff-2',               5,  1000), ('xerjoff-2',               10,  2000), ('xerjoff-2',               30,  5000),
+('fascent-1',               5,  1250), ('fascent-1',               10,  2500),
+('fascent-2',               5,  1250), ('fascent-2',               10,  2500),
+('harold-1',                5,  1500), ('harold-1',                10,  3000), ('harold-1',                30,  8000),
+('rosendo-1',               5,  1000), ('rosendo-1',               10,  2000), ('rosendo-1',               30,  4499),
+('manufacture-1',           5,  1000), ('manufacture-1',           10,  2000), ('manufacture-1',           30,  5000),
+('les-eaux-primordiales-1', 5,  1000), ('les-eaux-primordiales-1', 10,  2000), ('les-eaux-primordiales-1', 30,  5500),
+('reinvented-1',            5,  1000), ('reinvented-1',            10,  2000), ('reinvented-1',            30,  5000),
+('giardini-di-toscana-1',   5,   500), ('giardini-di-toscana-1',   10,  1000), ('giardini-di-toscana-1',   30,  2800),
+('cuir-caramelo-1',         5,  1100), ('cuir-caramelo-1',         10,  2200), ('cuir-caramelo-1',         30,  6000),
+('mind-games-1',            5,   650), ('mind-games-1',            10,  1300), ('mind-games-1',            30,  3000),
+('liquides-imaginaires-1',  5,  1500), ('liquides-imaginaires-1',  10,  3000), ('liquides-imaginaires-1',  30,  8000),
+('frederic-malle-1',        5,  1500), ('frederic-malle-1',        10,  3000), ('frederic-malle-1',        30,  8500),
+('parfums-de-marly-1',      5,   950), ('parfums-de-marly-1',      10,  1900), ('parfums-de-marly-1',      30,  5500),
+('mfk-1',                   5,  1000), ('mfk-1',                   10,  2000), ('mfk-1',                   30,  5000),
+('mfk-2',                   5,  1500), ('mfk-2',                   10,  3000), ('mfk-2',                   30,  7500),
+-- EXCLUSIVE
+('exclusive-dior-1', 5, 2000), ('exclusive-dior-1', 10,  3200), ('exclusive-dior-1', 30, 10500),
+('exclusive-dior-2', 5, 2000), ('exclusive-dior-2', 10,  3200), ('exclusive-dior-2', 30, 10500),
+('exclusive-dior-3', 5, 2500), ('exclusive-dior-3', 10,  5000), ('exclusive-dior-3', 30, 14500);
+
+-- ============================================================
+-- VUE UTILE : catalogue complet avec prix formatés
+-- ============================================================
+CREATE VIEW v_catalogue AS
+SELECT
+    p.id,
+    p.brand,
+    p.name,
+    p.category,
+    p.price_per_ml,
+    MAX(CASE WHEN pp.size_ml = 5  THEN pp.price_cents END)  AS price_5ml_cents,
+    MAX(CASE WHEN pp.size_ml = 10 THEN pp.price_cents END)  AS price_10ml_cents,
+    MAX(CASE WHEN pp.size_ml = 30 THEN pp.price_cents END)  AS price_30ml_cents,
+    p.stripe_product_id
+FROM products p
+LEFT JOIN product_prices pp ON pp.product_id = p.id
+GROUP BY p.id;
