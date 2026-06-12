@@ -14,9 +14,10 @@ document.addEventListener('DOMContentLoaded', function() {
     } else if (Array.isArray(window.nicheData)) {
         perfumesData = window.nicheData;
     }
-    
+
     if (perfumesData && perfumesData.length > 0) {
         initCartButtons();
+        initFragranticaModal();
         renderPerfumes(perfumesData);
         populateBrandFilter(perfumesData);
         initFilters();
@@ -95,6 +96,57 @@ function confirmCartButton(button) {
     }, 900);
 }
 
+// Modal Fragrantica
+function initFragranticaModal() {
+    if (document.getElementById('fragranticaModal')) return;
+
+    document.body.insertAdjacentHTML('beforeend', `
+        <div id="fragranticaModal" class="fragrantica-modal" role="dialog" aria-modal="true">
+            <div class="fragrantica-modal-overlay"></div>
+            <div class="fragrantica-modal-content">
+                <button class="fragrantica-modal-close" aria-label="Fermer">&times;</button>
+                <img id="fragranticaModalImg" src="" alt="Notes du parfum">
+            </div>
+        </div>
+    `);
+
+    const modal = document.getElementById('fragranticaModal');
+    modal.querySelector('.fragrantica-modal-overlay').addEventListener('click', closeFragranticaModal);
+    modal.querySelector('.fragrantica-modal-close').addEventListener('click', closeFragranticaModal);
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') closeFragranticaModal();
+    });
+
+    const grid = document.getElementById('perfumesGrid');
+    if (grid) {
+        grid.addEventListener('click', function(e) {
+            const btn = e.target.closest('.fragrantica-btn');
+            if (!btn) return;
+            e.stopPropagation();
+            openFragranticaModal(btn.dataset.fragrantica, btn.dataset.name);
+        });
+    }
+}
+
+function openFragranticaModal(imagePath, name) {
+    const modal = document.getElementById('fragranticaModal');
+    const img = document.getElementById('fragranticaModalImg');
+    if (!modal || !img) return;
+    img.src = imagePath;
+    img.alt = 'Notes — ' + (name || '');
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeFragranticaModal() {
+    const modal = document.getElementById('fragranticaModal');
+    if (!modal) return;
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+    const img = document.getElementById('fragranticaModalImg');
+    if (img) img.src = '';
+}
+
 // Créer une carte de parfum
 function createPerfumeCard(perfume) {
     const formats = availableSizes.map((size) => {
@@ -148,10 +200,19 @@ function createPerfumeCard(perfume) {
         .replace(/^-|-$/g, '');
     const imagePath = perfume.image ? perfume.image : `${imageFolder}/${imageName}.jpg`;
     
+    const fragranticaBtn = perfume.fragranticaImage ? `
+        <button class="fragrantica-btn" data-fragrantica="${perfume.fragranticaImage}" data-name="${perfume.name}" title="Voir les notes Fragrantica" aria-label="Voir les notes">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+        </button>
+    ` : '';
+
     return `
         <div class="perfume-card">
             <div class="perfume-image-wrapper">
                 <img src="${imagePath}" alt="${perfume.name}" class="perfume-image" onerror="this.style.display='none'">
+                ${fragranticaBtn}
             </div>
             <div class="perfume-brand">${perfume.brand}</div>
             <h3 class="perfume-name">${perfume.name}</h3>
