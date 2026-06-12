@@ -24,16 +24,6 @@ window.designersData = [
         price30ml: 50
     },
     {
-        id: 'dior-4',
-        brand: 'DIOR',
-        name: 'Vanilla Diorama EDP',
-        image: 'images/designers/vanilla-diorama.jpg',
-        pricePerMl: 2,
-        price5ml: 10,
-        price10ml: 20,
-        price30ml: 50
-    },
-    {
         id: 'dior-10',
         brand: 'DIOR',
         name: 'Gris Dior Esprit',

@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (perfumesData && perfumesData.length > 0) {
         initCartButtons();
-        initFragranticaModal();
+        initCarouselArrows();
         renderPerfumes(perfumesData);
         populateBrandFilter(perfumesData);
         initFilters();
@@ -96,7 +96,27 @@ function confirmCartButton(button) {
     }, 900);
 }
 
-// Modal Fragrantica
+// Carousel flèches sur carte
+function initCarouselArrows() {
+    const grid = document.getElementById('perfumesGrid');
+    if (!grid) return;
+
+    grid.addEventListener('click', function(e) {
+        const arrow = e.target.closest('.carousel-arrow');
+        if (!arrow) return;
+        e.stopPropagation();
+        const wrapper = arrow.closest('.perfume-image-wrapper');
+        if (!wrapper) return;
+
+        if (arrow.classList.contains('carousel-arrow-right')) {
+            wrapper.classList.add('slid');
+        } else {
+            wrapper.classList.remove('slid');
+        }
+    });
+}
+
+// Modal Fragrantica (conservé pour compatibilité)
 function initFragranticaModal() {
     if (document.getElementById('fragranticaModal')) return;
 
@@ -200,20 +220,24 @@ function createPerfumeCard(perfume) {
         .replace(/^-|-$/g, '');
     const imagePath = perfume.image ? perfume.image : `${imageFolder}/${imageName}.jpg`;
     
-    const fragranticaBtn = perfume.fragranticaImage ? `
-        <button class="fragrantica-btn" data-fragrantica="${perfume.fragranticaImage}" data-name="${perfume.name}" title="Voir les notes Fragrantica" aria-label="Voir les notes">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <polyline points="9 18 15 12 9 6"></polyline>
-            </svg>
-        </button>
-    ` : '';
+    const imageWrapperHtml = perfume.fragranticaImage ? `
+            <div class="perfume-image-wrapper">
+                <div class="img-carousel-track">
+                    <img src="${imagePath}" alt="${perfume.name}" class="perfume-image" onerror="this.style.visibility='hidden'">
+                    <img src="${perfume.fragranticaImage}" alt="Notes — ${perfume.name}" class="carousel-frag-image">
+                </div>
+                <button class="carousel-arrow carousel-arrow-right" aria-label="Voir les notes Fragrantica">&#8250;</button>
+                <button class="carousel-arrow carousel-arrow-left" aria-label="Retour au parfum">&#8249;</button>
+            </div>
+    ` : `
+            <div class="perfume-image-wrapper">
+                <img src="${imagePath}" alt="${perfume.name}" class="perfume-image" onerror="this.style.display='none'">
+            </div>
+    `;
 
     return `
         <div class="perfume-card">
-            <div class="perfume-image-wrapper">
-                <img src="${imagePath}" alt="${perfume.name}" class="perfume-image" onerror="this.style.display='none'">
-                ${fragranticaBtn}
-            </div>
+            ${imageWrapperHtml}
             <div class="perfume-brand">${perfume.brand}</div>
             <h3 class="perfume-name">${perfume.name}</h3>
             ${perfume.pricePerMl ? `<div class="perfume-price-ml">${priceMlText}</div>` : ''}
