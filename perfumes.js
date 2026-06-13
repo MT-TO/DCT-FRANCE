@@ -108,9 +108,14 @@ function initCarouselArrows() {
         const wrapper = arrow.closest('.perfume-image-wrapper');
         if (!wrapper) return;
 
+        const img = wrapper.querySelector('.perfume-image');
+        if (!img) return;
+
         if (arrow.classList.contains('carousel-arrow-right')) {
+            img.src = img.dataset.frag;
             wrapper.classList.add('slid');
         } else {
+            img.src = img.dataset.original;
             wrapper.classList.remove('slid');
         }
     });
@@ -222,10 +227,7 @@ function createPerfumeCard(perfume) {
     
     const imageWrapperHtml = perfume.fragranticaImage ? `
             <div class="perfume-image-wrapper">
-                <div class="img-carousel-track">
-                    <img src="${imagePath}" alt="${perfume.name}" class="perfume-image" onerror="this.style.visibility='hidden'">
-                    <img src="${perfume.fragranticaImage}" alt="Notes — ${perfume.name}" class="carousel-frag-image">
-                </div>
+                <img src="${imagePath}" data-original="${imagePath}" data-frag="${perfume.fragranticaImage}" alt="${perfume.name}" class="perfume-image" onerror="this.style.visibility='hidden'">
                 <button class="carousel-arrow carousel-arrow-right" aria-label="Voir les notes Fragrantica">&#8250;</button>
                 <button class="carousel-arrow carousel-arrow-left" aria-label="Retour au parfum">&#8249;</button>
             </div>
