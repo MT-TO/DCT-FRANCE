@@ -23,6 +23,16 @@ window.exclusiveData = [
         price30ml: 105
     },
     {
+        id: 'exclusive-dior-4',
+        brand: 'DIOR',
+        name: 'Patchouli Impérial Dior',
+        image: 'images/designers/patchouli imperial dior.jpg',
+        pricePerMl: 4,
+        price5ml: 20,
+        price10ml: 32,
+        price30ml: 105
+    },
+    {
         id: 'exclusive-dior-3',
         brand: 'DIOR',
         name: 'Dior Homme Intense Batch 2011',
