@@ -47,7 +47,6 @@ CREATE TABLE product_prices (
 INSERT INTO products (id, brand, name, category, image, price_per_ml) VALUES
 ('dior-1',      'DIOR',              'Gris Dior EDP',              'designer', 'images/designers/gris dior.jpg',                          2.00),
 ('dior-2',      'DIOR',              'Bois D''argent EDP',          'designer', 'images/designers/bois-dargent-dior.webp',                 2.00),
-('dior-4',      'DIOR',              'Vanilla Diorama EDP',         'designer', 'images/designers/vanilla-diorama.jpg',                    2.00),
 ('dior-6',      'DIOR',              'Cuir Saddle EDP',             'designer', 'images/designers/dior cuir saddle.webp',                  2.00),
 ('dior-7',      'DIOR',              'Sauvage EDT',                 'designer', 'images/designers/dior-sauvage-edt.jpg',                   1.00),
 ('dior-8',      'DIOR',              'Sauvage Elixir',              'designer', 'images/designers/sauvage-elixir.jpg',                     3.00),
@@ -96,9 +95,10 @@ INSERT INTO products (id, brand, name, category, image, price_per_ml) VALUES
 -- INSERTION — EXCLUSIVE
 -- ============================================================
 INSERT INTO products (id, brand, name, category, image, price_per_ml) VALUES
-('exclusive-dior-1', 'DIOR', 'Vétiver Dior',                   'exclusive', 'images/designers/vetiver dior.jpg',           4.00),
-('exclusive-dior-2', 'DIOR', 'Fève Délicieuse Dior',           'exclusive', 'images/designers/feve delicieuse dior.webp',  4.00),
-('exclusive-dior-3', 'DIOR', 'Dior Homme Intense Batch 2011',  'exclusive', 'images/designers/dior homme intense 2011.jpg',5.00);
+('exclusive-dior-1', 'DIOR', 'Vétiver Dior',                   'exclusive', 'images/designers/vetiver dior.jpg',                4.00),
+('exclusive-dior-2', 'DIOR', 'Fève Délicieuse Dior',           'exclusive', 'images/designers/feve delicieuse dior.webp',   4.00),
+('exclusive-dior-4', 'DIOR', 'Patchouli Impérial Dior',        'exclusive', 'images/designers/patchouli imperial dior.jpg', 4.00),
+('exclusive-dior-3', 'DIOR', 'Dior Homme Intense Batch 2011',  'exclusive', 'images/designers/dior homme intense 2011.jpg', 5.00);
 
 -- ============================================================
 -- INSERTION — PRIX PAR TAILLE (en centimes)
@@ -111,7 +111,6 @@ INSERT INTO product_prices (product_id, size_ml, price_cents) VALUES
 -- DIOR
 ('dior-1',      5,  1000), ('dior-1',  10, 2000), ('dior-1',  30, 5000),
 ('dior-2',      5,  1000), ('dior-2',  10, 2000), ('dior-2',  30, 5000),
-('dior-4',      5,  1000), ('dior-4',  10, 2000), ('dior-4',  30, 5000),
 ('dior-6',      5,  1000), ('dior-6',  10, 2000), ('dior-6',  30, 5000),
 ('dior-7',      5,   500), ('dior-7',  10, 1000), ('dior-7',  30, 2000),
 ('dior-8',      5,  1500), ('dior-8',  10, 3000), ('dior-8',  30, 7000),
@@ -157,6 +156,7 @@ INSERT INTO product_prices (product_id, size_ml, price_cents) VALUES
 -- EXCLUSIVE
 ('exclusive-dior-1', 5, 2000), ('exclusive-dior-1', 10,  3200), ('exclusive-dior-1', 30, 10500),
 ('exclusive-dior-2', 5, 2000), ('exclusive-dior-2', 10,  3200), ('exclusive-dior-2', 30, 10500),
+('exclusive-dior-4', 5, 2000), ('exclusive-dior-4', 10,  3200), ('exclusive-dior-4', 30, 10500),
 ('exclusive-dior-3', 5, 2500), ('exclusive-dior-3', 10,  5000), ('exclusive-dior-3', 30, 14500);
 
 -- ============================================================

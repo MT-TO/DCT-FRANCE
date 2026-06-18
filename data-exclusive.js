@@ -27,6 +27,7 @@ window.exclusiveData = [
         brand: 'DIOR',
         name: 'Patchouli Impérial Dior',
         image: 'images/designers/patchouli imperial dior.jpg',
+        fragranticaImage: 'images fragrantica/patchouli imperial dior.JPG',
         pricePerMl: 4,
         price5ml: 20,
         price10ml: 32,
