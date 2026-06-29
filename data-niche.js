@@ -49,6 +49,28 @@ window.nicheData = [
         price10ml: 25,
         price30ml: null
     },
+    {
+        id: 'fascent-3',
+        brand: 'Fascent',
+        name: 'Corn Star',
+        image: 'images/niches/corn star.jpg',
+        fragranticaImage: 'images/images fragrantica/IMG_3592.JPG',
+        pricePerMl: 2.5,
+        price5ml: 12.5,
+        price10ml: 25,
+        price30ml: null
+    },
+    {
+        id: 'fascent-4',
+        brand: 'Fascent',
+        name: 'I Fig You',
+        image: 'images/niches/i fig you .jpg',
+        fragranticaImage: 'images/images fragrantica/IMG_3591.JPG',
+        pricePerMl: 2.5,
+        price5ml: 12.5,
+        price10ml: 25,
+        price30ml: null
+    },
 
     // HAROLD & MAUDE
     {
@@ -215,5 +237,18 @@ window.nicheData = [
         price5ml: 15,
         price10ml: 30,
         price30ml: 75
+    },
+
+    // MONTALE
+    {
+        id: 'montale-1',
+        brand: 'Montale',
+        name: 'Arabians Tonka',
+        image: 'images/niches/Arabians_tonka.webp',
+        fragranticaImage: 'images/images fragrantica/IMG_3594.JPG',
+        pricePerMl: 1,
+        price5ml: 5,
+        price10ml: 10,
+        price30ml: 25
     }
 ];

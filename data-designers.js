@@ -273,4 +273,17 @@ window.designersData = [
         price30ml: 80
     },
 
+    // VAN CLEEF & ARPELS
+    {
+        id: 'van-cleef-1',
+        brand: 'Van Cleef & Arpels',
+        name: "Bois d'Iris",
+        image: "images/designers/bois d'iris van clief.avif",
+        fragranticaImage: 'images/images fragrantica/IMG_3593.JPG',
+        pricePerMl: 2,
+        price5ml: 10,
+        price10ml: 20,
+        price30ml: 60
+    },
+
 ];

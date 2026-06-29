@@ -67,7 +67,8 @@ INSERT INTO products (id, brand, name, category, image, price_per_ml) VALUES
 ('azzaro-2',    'Azzaro',            'Chrome EDP',                  'designer', 'images/designers/azzaro chrome edp.webp',                 1.00),
 ('valentino-1', 'Valentino',         'Born in Roma Intense',        'designer', 'images/designers/valentino-born-in-roma-intense.jpg',     1.00),
 ('horace-1',    'Horace',            'Vintage Vanilla',             'designer', 'images/designers/horace vintage vanilla.png',             2.00),
-('cartier-1',   'Cartier',           'Oud Vanille',                 'designer', 'images/designers/oud cartier vanille.carprodcard.avif',   3.00);
+('cartier-1',   'Cartier',           'Oud Vanille',                 'designer', 'images/designers/oud cartier vanille.carprodcard.avif',   3.00),
+('van-cleef-1', 'Van Cleef & Arpels', "Bois d'Iris",               'designer', "images/designers/bois d'iris van clief.avif",              2.00);
 
 -- ============================================================
 -- INSERTION — NICHE
@@ -89,7 +90,10 @@ INSERT INTO products (id, brand, name, category, image, price_per_ml) VALUES
 ('frederic-malle-1',        'Frederic Malle',            'Musc Ravageur',        'niche', 'images/niches/musc ravageur.avif',                 3.00),
 ('parfums-de-marly-1',      'Parfums de Marly',          'Althaïr',              'niche', 'images/niches/Althair-Parfums-de-Marly.webp',      1.90),
 ('mfk-1',                   'Maison Francis Kurkdjian',  'Grand Soir',           'niche', 'images/niches/grand soir mfk.webp',               2.00),
-('mfk-2',                   'Maison Francis Kurkdjian',  'Oud Satin Mood EDP',   'niche', 'images/niches/oud-satin-mood-mfk.webp',           3.00);
+('mfk-2',                   'Maison Francis Kurkdjian',  'Oud Satin Mood EDP',   'niche', 'images/niches/oud-satin-mood-mfk.webp',           3.00),
+('fascent-3',               'Fascent',                   'Corn Star',            'niche', 'images/niches/corn star.jpg',                      2.50),
+('fascent-4',               'Fascent',                   'I Fig You',            'niche', 'images/niches/i fig you .jpg',                     2.50),
+('montale-1',               'Montale',                   'Arabians Tonka',       'niche', 'images/niches/Arabians_tonka.webp',                1.00);
 
 -- ============================================================
 -- INSERTION — EXCLUSIVE
@@ -135,6 +139,7 @@ INSERT INTO product_prices (product_id, size_ml, price_cents) VALUES
 ('valentino-1', 5,   500), ('valentino-1',10, 1000), ('valentino-1',30, 2000),
 ('horace-1',    5,  1000), ('horace-1',   10, 2000), ('horace-1',   30, 5000),
 ('cartier-1',   5,  1500), ('cartier-1',  10, 3000), ('cartier-1',  30, 8000),
+('van-cleef-1', 5,  1000), ('van-cleef-1', 10, 2000), ('van-cleef-1', 30, 6000),
 -- NICHE
 ('killian-1',               5,  2000), ('killian-1',               10,  4000), ('killian-1',               30, 11000),
 ('xerjoff-2',               5,  1000), ('xerjoff-2',               10,  2000), ('xerjoff-2',               30,  5000),
@@ -153,6 +158,9 @@ INSERT INTO product_prices (product_id, size_ml, price_cents) VALUES
 ('parfums-de-marly-1',      5,   950), ('parfums-de-marly-1',      10,  1900), ('parfums-de-marly-1',      30,  5500),
 ('mfk-1',                   5,  1000), ('mfk-1',                   10,  2000), ('mfk-1',                   30,  5000),
 ('mfk-2',                   5,  1500), ('mfk-2',                   10,  3000), ('mfk-2',                   30,  7500),
+('fascent-3',               5,  1250), ('fascent-3',               10,  2500),
+('fascent-4',               5,  1250), ('fascent-4',               10,  2500),
+('montale-1',               5,   500), ('montale-1',               10,  1000), ('montale-1',               30,  2500),
 -- EXCLUSIVE
 ('exclusive-dior-1', 5, 2000), ('exclusive-dior-1', 10,  3200), ('exclusive-dior-1', 30, 10500),
 ('exclusive-dior-2', 5, 2000), ('exclusive-dior-2', 10,  3200), ('exclusive-dior-2', 30, 10500),
