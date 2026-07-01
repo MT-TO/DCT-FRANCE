@@ -250,5 +250,29 @@ window.nicheData = [
         price5ml: 5,
         price10ml: 10,
         price30ml: 25
+    },
+
+    // PLACE DE LA REVERIE
+    {
+        id: 'place-de-la-reverie-1',
+        brand: 'Place de la Rêverie',
+        name: 'Passion Riviera',
+        image: 'images/niches/passion riviera place de la reverie.webp',
+        fragranticaImage: 'images/images fragrantica/IMG_3604.JPG',
+        pricePerMl: 4,
+        price5ml: 20,
+        price10ml: 40,
+        price30ml: 110
+    },
+    {
+        id: 'place-de-la-reverie-2',
+        brand: 'Place de la Rêverie',
+        name: 'Santal de Paris',
+        image: 'images/niches/santal de paris place de la reverie.webp',
+        fragranticaImage: 'images/images fragrantica/IMG_3605.JPG',
+        pricePerMl: 4,
+        price5ml: 20,
+        price10ml: 40,
+        price30ml: 110
     }
 ];

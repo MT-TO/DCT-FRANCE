@@ -93,7 +93,9 @@ INSERT INTO products (id, brand, name, category, image, price_per_ml) VALUES
 ('mfk-2',                   'Maison Francis Kurkdjian',  'Oud Satin Mood EDP',   'niche', 'images/niches/oud-satin-mood-mfk.webp',           3.00),
 ('fascent-3',               'Fascent',                   'Corn Star',            'niche', 'images/niches/corn star.jpg',                      2.50),
 ('fascent-4',               'Fascent',                   'I Fig You',            'niche', 'images/niches/i fig you .jpg',                     2.50),
-('montale-1',               'Montale',                   'Arabians Tonka',       'niche', 'images/niches/Arabians_tonka.webp',                1.00);
+('montale-1',               'Montale',                   'Arabians Tonka',       'niche', 'images/niches/Arabians_tonka.webp',                1.00),
+('place-de-la-reverie-1',  'Place de la Rêverie',       'Passion Riviera',      'niche', 'images/niches/passion riviera place de la reverie.webp', 4.00),
+('place-de-la-reverie-2',  'Place de la Rêverie',       'Santal de Paris',      'niche', 'images/niches/santal de paris place de la reverie.webp', 4.00);
 
 -- ============================================================
 -- INSERTION — EXCLUSIVE
@@ -161,6 +163,8 @@ INSERT INTO product_prices (product_id, size_ml, price_cents) VALUES
 ('fascent-3',               5,  1250), ('fascent-3',               10,  2500),
 ('fascent-4',               5,  1250), ('fascent-4',               10,  2500),
 ('montale-1',               5,   500), ('montale-1',               10,  1000), ('montale-1',               30,  2500),
+('place-de-la-reverie-1',  5,  2000), ('place-de-la-reverie-1',  10,  4000), ('place-de-la-reverie-1',  30, 11000),
+('place-de-la-reverie-2',  5,  2000), ('place-de-la-reverie-2',  10,  4000), ('place-de-la-reverie-2',  30, 11000),
 -- EXCLUSIVE
 ('exclusive-dior-1', 5, 2000), ('exclusive-dior-1', 10,  3200), ('exclusive-dior-1', 30, 10500),
 ('exclusive-dior-2', 5, 2000), ('exclusive-dior-2', 10,  3200), ('exclusive-dior-2', 30, 10500),
