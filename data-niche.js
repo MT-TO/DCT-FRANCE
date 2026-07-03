@@ -25,6 +25,17 @@ window.nicheData = [
         price10ml: 20,
         price30ml: 50
     },
+    {
+        id: 'xerjoff-3',
+        brand: 'Xerjoff',
+        name: 'Torino 21',
+        image: 'images/niches/torino 21.jpg',
+        fragranticaImage: 'images/images fragrantica/IMG_3613.JPG',
+        pricePerMl: 2.15,
+        price5ml: 10.75,
+        price10ml: 21.5,
+        price30ml: 55
+    },
 
     // FASCENT
     {
@@ -252,6 +263,19 @@ window.nicheData = [
         price30ml: 25
     },
 
+    // ACQUA DI PARMA
+    {
+        id: 'acqua-di-parma-1',
+        brand: 'Acqua di Parma',
+        name: 'Bergamotto di Calabria',
+        image: 'images/niches/bergamotto-di-calabria.jpg',
+        fragranticaImage: 'images/images fragrantica/IMG_3614.JPG',
+        pricePerMl: 1.9,
+        price5ml: 9.5,
+        price10ml: 19,
+        price30ml: 45
+    },
+
     // PLACE DE LA REVERIE
     {
         id: 'place-de-la-reverie-1',
@@ -260,6 +284,7 @@ window.nicheData = [
         image: 'images/niches/passion-riviera-place-de-la-reverie.webp',
         fragranticaImage: 'images/images fragrantica/IMG_3604.JPG',
         pricePerMl: 4,
+        price2ml: null,
         price5ml: 20,
         price10ml: 40,
         price30ml: 110
@@ -271,6 +296,19 @@ window.nicheData = [
         image: 'images/niches/santal-de-paris-place-de-la-reverie.webp',
         fragranticaImage: 'images/images fragrantica/IMG_3605.JPG',
         pricePerMl: 4,
+        price2ml: null,
+        price5ml: 20,
+        price10ml: 40,
+        price30ml: 110
+    },
+    {
+        id: 'place-de-la-reverie-3',
+        brand: 'Place de la Rêverie',
+        name: 'Fève Nectar',
+        image: 'images/niches/feve nectar place de la reverie.webp',
+        fragranticaImage: 'images/images fragrantica/IMG_3603.JPG',
+        pricePerMl: 4,
+        price2ml: null,
         price5ml: 20,
         price10ml: 40,
         price30ml: 110

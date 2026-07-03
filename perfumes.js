@@ -251,6 +251,9 @@ function createPerfumeCard(perfume) {
 }
 
 function getPriceForSize(perfume, size) {
+    if (size === 2 && Object.prototype.hasOwnProperty.call(perfume, 'price2ml')) {
+        return perfume.price2ml;
+    }
     if (size === 5 && perfume.price5ml) {
         return perfume.price5ml;
     }

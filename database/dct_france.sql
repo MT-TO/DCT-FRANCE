@@ -55,7 +55,6 @@ INSERT INTO products (id, brand, name, category, image, price_per_ml) VALUES
 ('dior-6', 'DIOR', 'Cuir Saddle EDP', 'designer', 'images/designers/dior-cuir-saddle.webp', 2.00),
 ('dior-7', 'DIOR', 'Sauvage EDT', 'designer', 'images/designers/dior-sauvage-edt.jpg', 1.00),
 ('dior-8', 'DIOR', 'Sauvage Elixir', 'designer', 'images/designers/sauvage-elixir.jpg', 3.00),
-('lv-1', 'Louis Vuitton', 'Imagination', 'designer', 'images/designers/imagination-lv.webp', 2.40),
 ('lv-2', 'Louis Vuitton', 'Ombre Nomade', 'designer', 'images/designers/ombre-nomade-lv.jpg', 3.00),
 ('lv-4', 'Louis Vuitton', 'Spell on You', 'designer', 'images/designers/louis-vuitton-spell-on-you-lp0214-pm2-front-view.webp', 2.50),
 ('lv-5', 'Louis Vuitton', 'City of Stars', 'designer', 'images/designers/louis-vuitton-city-of-stars-lp0282-pm2-front-view.webp', 2.50),
@@ -72,7 +71,8 @@ INSERT INTO products (id, brand, name, category, image, price_per_ml) VALUES
 ('valentino-1', 'Valentino', 'Born in Roma Intense', 'designer', 'images/designers/valentino-born-in-roma-intense.jpg', 1.00),
 ('horace-1', 'Horace', 'Vintage Vanilla', 'designer', 'images/designers/horace-vintage-vanilla.png', 2.00),
 ('cartier-1', 'Cartier', 'Oud Vanille', 'designer', 'images/designers/oud-cartier-vanille-carprodcard.avif', 3.00),
-('van-cleef-1', 'Van Cleef & Arpels', 'Bois d''Iris', 'designer', 'images/designers/bois-diris-van-clief.avif', 2.00);
+('van-cleef-1', 'Van Cleef & Arpels', 'Bois d''Iris', 'designer', 'images/designers/bois-diris-van-clief.avif', 2.00),
+('tomford-1', 'Tom Ford', 'Neroli Portofino', 'designer', 'images/designers/neroli portofino tom ford.avif', 4.10);
 
 -- ============================================================
 -- INSERTION — NICHE
@@ -80,6 +80,7 @@ INSERT INTO products (id, brand, name, category, image, price_per_ml) VALUES
 INSERT INTO products (id, brand, name, category, image, price_per_ml) VALUES
 ('killian-1', 'Kilian', 'Angels'' Share', 'niche', 'images/niches/angels-share.webp', 4.00),
 ('xerjoff-2', 'Xerjoff', 'Erba Pura', 'niche', 'images/flacons-entier/xerjoff-erba-pura.webp', 2.00),
+('xerjoff-3', 'Xerjoff', 'Torino 21', 'niche', 'images/niches/torino 21.jpg', 2.15),
 ('fascent-1', 'Fascent', 'Creme Brulante', 'niche', 'images/niches/fascent-creme-brulante.webp', 2.50),
 ('fascent-2', 'Fascent', 'Milky No Way', 'niche', 'images/niches/milky-no-way.jpg', 2.50),
 ('fascent-3', 'Fascent', 'Corn Star', 'niche', 'images/niches/corn-star.jpg', 2.50),
@@ -98,8 +99,10 @@ INSERT INTO products (id, brand, name, category, image, price_per_ml) VALUES
 ('mfk-1', 'Maison Francis Kurkdjian', 'Grand Soir', 'niche', 'images/niches/grand-soir-mfk.webp', 2.00),
 ('mfk-2', 'Maison Francis Kurkdjian', 'Oud Satin Mood EDP', 'niche', 'images/niches/oud-satin-mood-mfk.webp', 3.00),
 ('montale-1', 'Montale', 'Arabians Tonka', 'niche', 'images/niches/arabians-tonka.webp', 1.00),
+('acqua-di-parma-1', 'Acqua di Parma', 'Bergamotto di Calabria', 'niche', 'images/niches/bergamotto-di-calabria.jpg', 1.90),
 ('place-de-la-reverie-1', 'Place de la Rêverie', 'Passion Riviera', 'niche', 'images/niches/passion-riviera-place-de-la-reverie.webp', 4.00),
-('place-de-la-reverie-2', 'Place de la Rêverie', 'Santal de Paris', 'niche', 'images/niches/santal-de-paris-place-de-la-reverie.webp', 4.00);
+('place-de-la-reverie-2', 'Place de la Rêverie', 'Santal de Paris', 'niche', 'images/niches/santal-de-paris-place-de-la-reverie.webp', 4.00),
+('place-de-la-reverie-3', 'Place de la Rêverie', 'Fève Nectar', 'niche', 'images/niches/feve nectar place de la reverie.webp', 4.00);
 
 -- ============================================================
 -- INSERTION — EXCLUSIVE
@@ -132,9 +135,6 @@ INSERT INTO product_prices (product_id, size_ml, price_cents) VALUES
 ('dior-8', 5, 1500),
 ('dior-8', 10, 3000),
 ('dior-8', 30, 7000),
-('lv-1', 5, 1200),
-('lv-1', 10, 2400),
-('lv-1', 30, 7000),
 ('lv-2', 5, 1500),
 ('lv-2', 10, 3000),
 ('lv-2', 30, 8500),
@@ -186,12 +186,18 @@ INSERT INTO product_prices (product_id, size_ml, price_cents) VALUES
 ('van-cleef-1', 5, 1000),
 ('van-cleef-1', 10, 2000),
 ('van-cleef-1', 30, 6000),
+('tomford-1', 5, 2050),
+('tomford-1', 10, 4100),
+('tomford-1', 30, 11500),
 ('killian-1', 5, 2000),
 ('killian-1', 10, 4000),
 ('killian-1', 30, 11000),
 ('xerjoff-2', 5, 1000),
 ('xerjoff-2', 10, 2000),
 ('xerjoff-2', 30, 5000),
+('xerjoff-3', 5, 1075),
+('xerjoff-3', 10, 2150),
+('xerjoff-3', 30, 5500),
 ('fascent-1', 5, 1250),
 ('fascent-1', 10, 2500),
 ('fascent-2', 5, 1250),
@@ -242,12 +248,18 @@ INSERT INTO product_prices (product_id, size_ml, price_cents) VALUES
 ('montale-1', 5, 500),
 ('montale-1', 10, 1000),
 ('montale-1', 30, 2500),
+('acqua-di-parma-1', 5, 950),
+('acqua-di-parma-1', 10, 1900),
+('acqua-di-parma-1', 30, 4500),
 ('place-de-la-reverie-1', 5, 2000),
 ('place-de-la-reverie-1', 10, 4000),
 ('place-de-la-reverie-1', 30, 11000),
 ('place-de-la-reverie-2', 5, 2000),
 ('place-de-la-reverie-2', 10, 4000),
 ('place-de-la-reverie-2', 30, 11000),
+('place-de-la-reverie-3', 5, 2000),
+('place-de-la-reverie-3', 10, 4000),
+('place-de-la-reverie-3', 30, 11000),
 ('exclusive-dior-1', 5, 2000),
 ('exclusive-dior-1', 10, 3200),
 ('exclusive-dior-1', 30, 10500),

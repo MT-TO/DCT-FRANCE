@@ -69,17 +69,6 @@ window.designersData = [
     },
     // LOUIS VUITTON
     {
-        id: 'lv-1',
-        brand: 'Louis Vuitton',
-        name: 'Imagination',
-        image: 'images/designers/imagination-lv.webp',
-        fragranticaImage: 'images/images fragrantica/IMG_3511.JPG',
-        pricePerMl: 2.4,
-        price5ml: 12,
-        price10ml: 24,
-        price30ml: 70
-    },
-    {
         id: 'lv-2',
         brand: 'Louis Vuitton',
         name: 'Ombre Nomade',
@@ -284,6 +273,19 @@ window.designersData = [
         price5ml: 10,
         price10ml: 20,
         price30ml: 60
+    },
+
+    // TOM FORD
+    {
+        id: 'tomford-1',
+        brand: 'Tom Ford',
+        name: 'Neroli Portofino',
+        image: 'images/designers/neroli portofino tom ford.avif',
+        fragranticaImage: 'images/images fragrantica/IMG_3615.JPG',
+        pricePerMl: 4.1,
+        price5ml: 20.5,
+        price10ml: 41,
+        price30ml: 115
     },
 
 ];
