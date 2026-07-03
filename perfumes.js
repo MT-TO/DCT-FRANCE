@@ -227,13 +227,13 @@ function createPerfumeCard(perfume) {
     
     const imageWrapperHtml = perfume.fragranticaImage ? `
             <div class="perfume-image-wrapper">
-                <img src="${imagePath}" data-original="${imagePath}" data-frag="${perfume.fragranticaImage}" alt="${perfume.name}" class="perfume-image" onerror="this.style.visibility='hidden'">
+                <img src="${imagePath}" data-original="${imagePath}" data-frag="${perfume.fragranticaImage}" alt="${perfume.name}" class="perfume-image" loading="lazy" decoding="async" onerror="this.style.visibility='hidden'">
                 <button class="carousel-arrow carousel-arrow-right" aria-label="Voir les notes Fragrantica">&#8250;</button>
                 <button class="carousel-arrow carousel-arrow-left" aria-label="Retour au parfum">&#8249;</button>
             </div>
     ` : `
             <div class="perfume-image-wrapper">
-                <img src="${imagePath}" alt="${perfume.name}" class="perfume-image" onerror="this.style.display='none'">
+                <img src="${imagePath}" alt="${perfume.name}" class="perfume-image" loading="lazy" decoding="async" onerror="this.style.display='none'">
             </div>
     `;
 

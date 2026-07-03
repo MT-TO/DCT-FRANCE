@@ -73,6 +73,21 @@ Le système convertit automatiquement les noms des parfums en noms de fichiers.
 
 Même format pour `data-designers.js`
 
+## Base de données (database/dct_france.sql)
+
+Les fichiers `data-designers.js`, `data-niche.js` et `data-exclusive.js` sont
+la **seule source de vérité** pour le catalogue et les prix (ce sont eux qui
+alimentent le site). Le fichier `database/dct_france.sql` (schéma MySQL prêt
+pour une intégration Stripe) est **généré automatiquement** à partir de ces
+fichiers — ne l'éditez jamais à la main.
+
+Après toute modification de prix ou de catalogue dans les fichiers `data-*.js`,
+régénérez le SQL avec :
+
+```bash
+python3 scripts/generate_sql.py
+```
+
 ## Contact
 
 - **Snapchat** : dctfrance
