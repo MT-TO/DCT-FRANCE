@@ -79,7 +79,6 @@ INSERT INTO products (id, brand, name, category, image, price_per_ml) VALUES
 -- ============================================================
 INSERT INTO products (id, brand, name, category, image, price_per_ml) VALUES
 ('killian-1', 'Kilian', 'Angels'' Share', 'niche', 'images/niches/angels-share.webp', 4.00),
-('xerjoff-2', 'Xerjoff', 'Erba Pura', 'niche', 'images/flacons-entier/xerjoff-erba-pura.webp', 2.00),
 ('xerjoff-3', 'Xerjoff', 'Torino 21', 'niche', 'images/niches/torino 21.jpg', 2.15),
 ('fascent-1', 'Fascent', 'Creme Brulante', 'niche', 'images/niches/fascent-creme-brulante.webp', 2.50),
 ('fascent-2', 'Fascent', 'Milky No Way', 'niche', 'images/niches/milky-no-way.jpg', 2.50),
@@ -101,7 +100,6 @@ INSERT INTO products (id, brand, name, category, image, price_per_ml) VALUES
 ('montale-1', 'Montale', 'Arabians Tonka', 'niche', 'images/niches/arabians-tonka.webp', 1.00),
 ('acqua-di-parma-1', 'Acqua di Parma', 'Bergamotto di Calabria', 'niche', 'images/niches/bergamotto-di-calabria.jpg', 1.90),
 ('place-de-la-reverie-1', 'Place de la Rêverie', 'Passion Riviera', 'niche', 'images/niches/passion-riviera-place-de-la-reverie.webp', 4.00),
-('place-de-la-reverie-2', 'Place de la Rêverie', 'Santal de Paris', 'niche', 'images/niches/santal-de-paris-place-de-la-reverie.webp', 4.00),
 ('place-de-la-reverie-3', 'Place de la Rêverie', 'Fève Nectar', 'niche', 'images/niches/feve nectar place de la reverie.webp', 4.00);
 
 -- ============================================================
@@ -192,9 +190,6 @@ INSERT INTO product_prices (product_id, size_ml, price_cents) VALUES
 ('killian-1', 5, 2000),
 ('killian-1', 10, 4000),
 ('killian-1', 30, 11000),
-('xerjoff-2', 5, 1000),
-('xerjoff-2', 10, 2000),
-('xerjoff-2', 30, 5000),
 ('xerjoff-3', 5, 1075),
 ('xerjoff-3', 10, 2150),
 ('xerjoff-3', 30, 5500),
@@ -254,9 +249,6 @@ INSERT INTO product_prices (product_id, size_ml, price_cents) VALUES
 ('place-de-la-reverie-1', 5, 2000),
 ('place-de-la-reverie-1', 10, 4000),
 ('place-de-la-reverie-1', 30, 11000),
-('place-de-la-reverie-2', 5, 2000),
-('place-de-la-reverie-2', 10, 4000),
-('place-de-la-reverie-2', 30, 11000),
 ('place-de-la-reverie-3', 5, 2000),
 ('place-de-la-reverie-3', 10, 4000),
 ('place-de-la-reverie-3', 30, 11000),

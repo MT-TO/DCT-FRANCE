@@ -15,17 +15,6 @@ window.nicheData = [
 
     // XERJOFF
     {
-        id: 'xerjoff-2',
-        brand: 'Xerjoff',
-        name: 'Erba Pura',
-        image: 'images/flacons-entier/xerjoff-erba-pura.webp',
-        fragranticaImage: 'images/images fragrantica/IMG_3527.JPG',
-        pricePerMl: 2,
-        price5ml: 10,
-        price10ml: 20,
-        price30ml: 50
-    },
-    {
         id: 'xerjoff-3',
         brand: 'Xerjoff',
         name: 'Torino 21',
@@ -283,18 +272,6 @@ window.nicheData = [
         name: 'Passion Riviera',
         image: 'images/niches/passion-riviera-place-de-la-reverie.webp',
         fragranticaImage: 'images/images fragrantica/IMG_3604.JPG',
-        pricePerMl: 4,
-        price2ml: null,
-        price5ml: 20,
-        price10ml: 40,
-        price30ml: 110
-    },
-    {
-        id: 'place-de-la-reverie-2',
-        brand: 'Place de la Rêverie',
-        name: 'Santal de Paris',
-        image: 'images/niches/santal-de-paris-place-de-la-reverie.webp',
-        fragranticaImage: 'images/images fragrantica/IMG_3605.JPG',
         pricePerMl: 4,
         price2ml: null,
         price5ml: 20,
