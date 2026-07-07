@@ -15,6 +15,17 @@ window.nicheData = [
 
     // XERJOFF
     {
+        id: 'xerjoff-2',
+        brand: 'Xerjoff',
+        name: 'Naxos',
+        image: 'images/flacons-entier/xerjoff-naxos.jpg',
+        fragranticaImage: 'images/images fragrantica/IMG_3625.JPG',
+        pricePerMl: 2,
+        price5ml: 10,
+        price10ml: 20,
+        price30ml: 50
+    },
+    {
         id: 'xerjoff-3',
         brand: 'Xerjoff',
         name: 'Torino 21',
@@ -83,19 +94,6 @@ window.nicheData = [
         price5ml: 15,
         price10ml: 30,
         price30ml: 80
-    },
-
-    // ROSENDO MATEU
-    {
-        id: 'rosendo-1',
-        brand: 'Rosendo Mateu',
-        name: 'Rosendo Mateu 5',
-        image: 'images/flacons-entier/r5.jpg',
-        fragranticaImage: 'images/images fragrantica/IMG_3531.JPG',
-        pricePerMl: 2,
-        price5ml: 10,
-        price10ml: 20,
-        price30ml: 44.99
     },
 
     // LA MANUFACTURE
