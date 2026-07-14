@@ -65,14 +65,14 @@ INSERT INTO products (id, brand, name, category, image, price_per_ml) VALUES
 ('versace-1', 'Versace', 'Eros EDT', 'designer', 'images/designers/versace-eros-edt.avif', 1.00),
 ('jpg-3', 'Jean Paul Gaultier', 'Scandal Intense', 'designer', 'images/designers/scandal-intense.jpg', 1.50),
 ('paco-1', 'Paco Rabanne', 'Invictus EDT', 'designer', 'images/designers/invictus-edt.jpg', 1.00),
-('armani-2', 'Armani', 'Stronger With You Amber', 'designer', 'images/designers/stronger-with-you-amber.webp', 2.00),
 ('azzaro-1', 'Azzaro', 'Chrome EDT', 'designer', 'images/designers/azzaro-chrome-edt.jpg', 0.70),
 ('azzaro-2', 'Azzaro', 'Chrome EDP', 'designer', 'images/designers/azzaro-chrome-edp.webp', 1.00),
 ('valentino-1', 'Valentino', 'Born in Roma Intense', 'designer', 'images/designers/valentino-born-in-roma-intense.jpg', 1.00),
 ('horace-1', 'Horace', 'Vintage Vanilla', 'designer', 'images/designers/horace-vintage-vanilla.png', 2.00),
 ('cartier-1', 'Cartier', 'Oud Vanille', 'designer', 'images/designers/oud-cartier-vanille-carprodcard.avif', 3.00),
 ('van-cleef-1', 'Van Cleef & Arpels', 'Bois d''Iris', 'designer', 'images/designers/bois-diris-van-clief.avif', 2.00),
-('tomford-1', 'Tom Ford', 'Neroli Portofino', 'designer', 'images/designers/neroli portofino tom ford.avif', 4.10);
+('tomford-1', 'Tom Ford', 'Neroli Portofino', 'designer', 'images/designers/neroli portofino tom ford.avif', 4.10),
+('hermes-1', 'Hermès', 'Ambre Narguilé', 'designer', 'images/designers/ambre-narguile-hermes.webp', 2.70);
 
 -- ============================================================
 -- INSERTION — NICHE
@@ -89,7 +89,6 @@ INSERT INTO products (id, brand, name, category, image, price_per_ml) VALUES
 ('manufacture-1', 'La Manufacture', 'Rare', 'niche', 'images/niches/rare-la-manufacture.webp', 2.00),
 ('les-eaux-primordiales-1', 'Les Eaux Primordiales', 'Ambre Supermassive', 'niche', 'images/niches/ambre-supermassive.webp', 2.00),
 ('reinvented-1', 'Reinvented', 'Sacred Bond', 'niche', 'images/niches/sacred-bond.webp', 2.00),
-('giardini-di-toscana-1', 'Giardini di Toscana', 'Bianco Latte', 'niche', 'images/flacons-entier/bianco-latte.jpg', 1.00),
 ('cuir-caramelo-1', 'Yzkine', 'Cuir Caramelo', 'niche', 'images/niches/cuir-caramelo.webp', 2.20),
 ('mind-games-1', 'Nobl''art', 'Mona Lisa', 'niche', 'images/niches/mona-lisa.webp', 1.30),
 ('liquides-imaginaires-1', 'Liquides Imaginaires', 'Blanche Bête', 'niche', 'images/niches/blanche-bete.webp', 3.00),
@@ -100,6 +99,7 @@ INSERT INTO products (id, brand, name, category, image, price_per_ml) VALUES
 ('montale-1', 'Montale', 'Arabians Tonka', 'niche', 'images/niches/arabians-tonka.webp', 1.00),
 ('acqua-di-parma-1', 'Acqua di Parma', 'Bergamotto di Calabria', 'niche', 'images/niches/bergamotto-di-calabria.jpg', 1.90),
 ('place-de-la-reverie-1', 'Place de la Rêverie', 'Passion Riviera', 'niche', 'images/niches/passion-riviera-place-de-la-reverie.webp', 4.00),
+('place-de-la-reverie-2', 'Place de la Rêverie', 'Santal de Paris', 'niche', 'images/niches/santal-de-paris-place-de-la-reverie.webp', 4.00),
 ('place-de-la-reverie-3', 'Place de la Rêverie', 'Fève Nectar', 'niche', 'images/niches/feve nectar place de la reverie.webp', 4.00);
 
 -- ============================================================
@@ -163,9 +163,6 @@ INSERT INTO product_prices (product_id, size_ml, price_cents) VALUES
 ('paco-1', 5, 500),
 ('paco-1', 10, 1000),
 ('paco-1', 30, 2000),
-('armani-2', 5, 1000),
-('armani-2', 10, 2000),
-('armani-2', 30, 5000),
 ('azzaro-1', 5, 350),
 ('azzaro-1', 10, 700),
 ('azzaro-1', 30, 1500),
@@ -187,6 +184,9 @@ INSERT INTO product_prices (product_id, size_ml, price_cents) VALUES
 ('tomford-1', 5, 2050),
 ('tomford-1', 10, 4100),
 ('tomford-1', 30, 11500),
+('hermes-1', 5, 1350),
+('hermes-1', 10, 2700),
+('hermes-1', 30, 7500),
 ('killian-1', 5, 2000),
 ('killian-1', 10, 4000),
 ('killian-1', 30, 11000),
@@ -216,9 +216,6 @@ INSERT INTO product_prices (product_id, size_ml, price_cents) VALUES
 ('reinvented-1', 5, 1000),
 ('reinvented-1', 10, 2000),
 ('reinvented-1', 30, 5000),
-('giardini-di-toscana-1', 5, 500),
-('giardini-di-toscana-1', 10, 1000),
-('giardini-di-toscana-1', 30, 2800),
 ('cuir-caramelo-1', 5, 1100),
 ('cuir-caramelo-1', 10, 2200),
 ('cuir-caramelo-1', 30, 6000),
@@ -249,6 +246,9 @@ INSERT INTO product_prices (product_id, size_ml, price_cents) VALUES
 ('place-de-la-reverie-1', 5, 2000),
 ('place-de-la-reverie-1', 10, 4000),
 ('place-de-la-reverie-1', 30, 11000),
+('place-de-la-reverie-2', 5, 2000),
+('place-de-la-reverie-2', 10, 4000),
+('place-de-la-reverie-2', 30, 11000),
 ('place-de-la-reverie-3', 5, 2000),
 ('place-de-la-reverie-3', 10, 4000),
 ('place-de-la-reverie-3', 30, 11000),

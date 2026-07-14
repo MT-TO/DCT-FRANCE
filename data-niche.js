@@ -135,19 +135,6 @@ window.nicheData = [
         price30ml: 50
     },
 
-    // GIARDINI DI TOSCANA
-    {
-        id: 'giardini-di-toscana-1',
-        brand: 'Giardini di Toscana',
-        name: 'Bianco Latte',
-        image: 'images/flacons-entier/bianco-latte.jpg',
-        fragranticaImage: 'images/images fragrantica/IMG_3535.JPG',
-        pricePerMl: 1,
-        price5ml: 5,
-        price10ml: 10,
-        price30ml: 28
-    },
-
     // CUIR CARAMELO
     {
         id: 'cuir-caramelo-1',
@@ -270,6 +257,18 @@ window.nicheData = [
         name: 'Passion Riviera',
         image: 'images/niches/passion-riviera-place-de-la-reverie.webp',
         fragranticaImage: 'images/images fragrantica/IMG_3604.JPG',
+        pricePerMl: 4,
+        price2ml: null,
+        price5ml: 20,
+        price10ml: 40,
+        price30ml: 110
+    },
+    {
+        id: 'place-de-la-reverie-2',
+        brand: 'Place de la Rêverie',
+        name: 'Santal de Paris',
+        image: 'images/niches/santal-de-paris-place-de-la-reverie.webp',
+        fragranticaImage: 'images/images fragrantica/IMG_3605.JPG',
         pricePerMl: 4,
         price2ml: null,
         price5ml: 20,

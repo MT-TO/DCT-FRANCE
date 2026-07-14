@@ -9,7 +9,6 @@ const samplePerfumes = [
     'Azzaro Chrome EDP',
     'Azzaro Chrome EDT',
     'Horace Vintage Vanilla',
-    'Stronger With You Amber',
     'Invictus EDT',
     'Scandal Intense',
     'Prada Paradigme',

@@ -188,19 +188,6 @@ window.designersData = [
         price30ml: 20
     },
 
-    // ARMANI
-    {
-        id: 'armani-2',
-        brand: 'Armani',
-        name: 'Stronger With You Amber',
-        image: 'images/designers/stronger-with-you-amber.webp',
-        fragranticaImage: 'images/images fragrantica/IMG_3522.JPG',
-        pricePerMl: 2,
-        price5ml: 10,
-        price10ml: 20,
-        price30ml: 50
-    },
-
     // AZZARO
     {
         id: 'azzaro-1',
@@ -286,6 +273,19 @@ window.designersData = [
         price5ml: 20.5,
         price10ml: 41,
         price30ml: 115
+    },
+
+    // HERMES
+    {
+        id: 'hermes-1',
+        brand: 'Hermès',
+        name: 'Ambre Narguilé',
+        image: 'images/designers/ambre-narguile-hermes.webp',
+        fragranticaImage: 'images/images fragrantica/IMG_3688.JPG',
+        pricePerMl: 2.7,
+        price5ml: 13.5,
+        price10ml: 27,
+        price30ml: 75
     },
 
 ];
