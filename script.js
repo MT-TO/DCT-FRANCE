@@ -17,12 +17,13 @@ const samplePerfumes = [
     'Bois D\'argent EDP',
     'Cuir Saddle EDP',
     'Vanilla Diorama EDP',
-    'Gris Dior EDP',
     'Angels\' Share',
     'Creme Brulante',
     'Resolument Affranchi',
-    'Rosendo Mateu 5',
-    'Rare'
+    'Rare',
+    'Mona Lisa',
+    'Acqua di Parma',
+    'Oud Satin Mood'
 ];
 
 // Initialisation
