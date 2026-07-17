@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Décantes Designers - DCT France</title>
-    <meta name="description" content="Décants de parfums de designers (Dior, Louis Vuitton, Jean Paul Gaultier, Prada...) en formats 5, 10 et 30 ml chez DCT France.">
+    <title>Packs - DCT France</title>
+    <meta name="description" content="Découvrez nos packs de décants de parfums chez DCT France : Pack Dior discontinué collection privée et Pack découverte niche.">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="DCT France">
-    <meta property="og:title" content="Décantes Designers - DCT France">
-    <meta property="og:description" content="Les créations emblématiques des grandes maisons, en décants.">
+    <meta property="og:title" content="Packs - DCT France">
+    <meta property="og:description" content="Des coffrets pensés pour découvrir plusieurs fragrances d'exception en un seul pack.">
     <meta property="og:locale" content="fr_FR">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,10 +25,10 @@
                 <ul class="nav-menu">
                     <li><a href="index.html" class="nav-link">Accueil</a></li>
                     <li><a href="presentation.html" class="nav-link">Présentation</a></li>
-                    <li><a href="designers.html" class="nav-link active">Décantes Designers</a></li>
+                    <li><a href="designers.html" class="nav-link">Décantes Designers</a></li>
                     <li><a href="niche.html" class="nav-link">Décantes Niches</a></li>
                     <li><a href="exclusive.html" class="nav-link">Décantes Exclusive</a></li>
-                    <li><a href="packs.html" class="nav-link">Packs</a></li>
+                    <li><a href="packs.html" class="nav-link active">Packs</a></li>
                     <li><a href="#panier" class="nav-link cart-link">
                         Panier <span class="cart-count" id="cartCount">0</span>
                     </a></li>
@@ -45,18 +45,11 @@
     <main>
         <section class="perfumes-section">
             <div class="container">
-                <h1 class="page-title">Décantes Designers</h1>
-                <p class="section-subtitle">Les créations emblématiques des grandes maisons</p>
-                
-                <div class="filter-bar">
-                    <input type="text" id="searchInput" placeholder="Rechercher un parfum..." class="search-input">
-                    <select id="brandFilter" class="filter-select">
-                        <option value="">Toutes les marques</option>
-                    </select>
-                </div>
+                <h1 class="page-title">Packs</h1>
+                <p class="section-subtitle">Des coffrets pensés pour découvrir plusieurs fragrances d'exception en un seul pack</p>
 
-                <div id="perfumesGrid" class="perfumes-grid">
-                    <!-- Les parfums seront chargés ici par JavaScript -->
+                <div id="packsGrid" class="packs-grid">
+                    <!-- Les packs seront chargés ici par JavaScript -->
                 </div>
             </div>
         </section>
@@ -86,8 +79,8 @@
         </div>
     </footer>
 
-    <script src="data-designers.js"></script>
+    <script src="data-packs.js"></script>
     <script src="script.js"></script>
-    <script src="perfumes.js"></script>
+    <script src="packs.js"></script>
 </body>
 </html>
