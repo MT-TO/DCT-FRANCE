@@ -174,6 +174,7 @@ function closeFragranticaModal() {
 
 // Créer une carte de parfum
 function createPerfumeCard(perfume) {
+    const isAvailable = perfume.available !== false;
     const formats = availableSizes.map((size) => {
         const price = getPriceForSize(perfume, size);
         if (!price || price <= 0) return null;
@@ -194,12 +195,12 @@ function createPerfumeCard(perfume) {
                 <span class="format-size-label">Format</span>
             </div>
             <div class="format-actions">
-                <select class="size-select" data-perfume-id="${perfume.id}">
+                <select class="size-select" data-perfume-id="${perfume.id}" ${isAvailable ? '' : 'disabled'}>
                     ${optionsHtml}
                 </select>
                 <span class="size-price format-price" data-perfume-id="${perfume.id}"></span>
-                <button type="button" class="add-to-cart-btn" data-perfume-id="${perfume.id}">
-                    Ajouter au panier
+                <button type="button" class="add-to-cart-btn" data-perfume-id="${perfume.id}" ${isAvailable ? '' : 'disabled'}>
+                    ${isAvailable ? 'Ajouter au panier' : 'Indisponible'}
                 </button>
             </div>
         </div>
@@ -225,20 +226,24 @@ function createPerfumeCard(perfume) {
         .replace(/^-|-$/g, '');
     const imagePath = perfume.image ? perfume.image : `${imageFolder}/${imageName}.jpg`;
     
+    const unavailableBadgeHtml = isAvailable ? '' : '<span class="unavailable-badge">Indisponible</span>';
+
     const imageWrapperHtml = perfume.fragranticaImage ? `
             <div class="perfume-image-wrapper">
+                ${unavailableBadgeHtml}
                 <img src="${imagePath}" data-original="${imagePath}" data-frag="${perfume.fragranticaImage}" alt="${perfume.name}" class="perfume-image" loading="lazy" decoding="async" onerror="this.style.visibility='hidden'">
                 <button class="carousel-arrow carousel-arrow-right" aria-label="Voir les notes Fragrantica">&#8250;</button>
                 <button class="carousel-arrow carousel-arrow-left" aria-label="Retour au parfum">&#8249;</button>
             </div>
     ` : `
             <div class="perfume-image-wrapper">
+                ${unavailableBadgeHtml}
                 <img src="${imagePath}" alt="${perfume.name}" class="perfume-image" loading="lazy" decoding="async" onerror="this.style.display='none'">
             </div>
     `;
 
     return `
-        <div class="perfume-card">
+        <div class="perfume-card${isAvailable ? '' : ' perfume-card--unavailable'}">
             ${imageWrapperHtml}
             <div class="perfume-brand">${perfume.brand}</div>
             <h3 class="perfume-name">${perfume.name}</h3>
@@ -251,19 +256,13 @@ function createPerfumeCard(perfume) {
 }
 
 function getPriceForSize(perfume, size) {
-    if (size === 2 && Object.prototype.hasOwnProperty.call(perfume, 'price2ml')) {
-        return perfume.price2ml;
+    // Si le champ de prix pour ce format est explicitement présent (même à null),
+    // on respecte ce choix plutôt que de retomber sur pricePerMl : null = format non proposé.
+    const sizeKey = { 2: 'price2ml', 5: 'price5ml', 10: 'price10ml', 30: 'price30ml' }[size];
+    if (sizeKey && Object.prototype.hasOwnProperty.call(perfume, sizeKey)) {
+        return perfume[sizeKey];
     }
-    if (size === 5 && perfume.price5ml) {
-        return perfume.price5ml;
-    }
-    if (size === 10 && perfume.price10ml) {
-        return perfume.price10ml;
-    }
-    if (size === 30 && perfume.price30ml) {
-        return perfume.price30ml;
-    }
-    
+
     if (perfume.pricePerMl) {
         return perfume.pricePerMl * size;
     }

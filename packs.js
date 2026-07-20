@@ -34,13 +34,15 @@ function renderPacks(packs) {
 
 // Créer une carte de pack
 function createPackCard(pack) {
+    const isAvailable = pack.available !== false;
     const optionsHtml = packSizes.map((size) => `
         <option value="${size}" data-price="${pack.prices[size].toFixed(2)}">${size} ML</option>
     `).join('');
 
     return `
-        <div class="pack-card">
+        <div class="pack-card${isAvailable ? '' : ' perfume-card--unavailable'}">
             <div class="pack-image-wrapper">
+                ${isAvailable ? '' : '<span class="unavailable-badge">Indisponible</span>'}
                 <img src="${pack.image}" alt="${pack.name}" class="pack-image" loading="lazy" decoding="async" onerror="this.style.visibility='hidden'">
             </div>
             <div class="pack-body">
@@ -52,12 +54,12 @@ function createPackCard(pack) {
                             <span class="format-size-label">Format</span>
                         </div>
                         <div class="format-actions">
-                            <select class="size-select" data-pack-id="${pack.id}">
+                            <select class="size-select" data-pack-id="${pack.id}" ${isAvailable ? '' : 'disabled'}>
                                 ${optionsHtml}
                             </select>
                             <span class="size-price format-price" data-pack-id="${pack.id}"></span>
-                            <button type="button" class="add-to-cart-btn" data-pack-id="${pack.id}">
-                                Ajouter au panier
+                            <button type="button" class="add-to-cart-btn" data-pack-id="${pack.id}" ${isAvailable ? '' : 'disabled'}>
+                                ${isAvailable ? 'Ajouter au panier' : 'Indisponible'}
                             </button>
                         </div>
                     </div>

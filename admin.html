@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administration - DCT France</title>
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body class="admin-body">
+
+    <header class="admin-header">
+        <div class="admin-header-inner">
+            <div class="admin-title">
+                <h1>DCT FRANCE</h1>
+                <span>Administration du catalogue</span>
+            </div>
+            <div class="admin-connection">
+                <span id="connectionStatus" class="connection-status connection-status--off">Dossier non connecté</span>
+                <button type="button" id="connectBtn" class="btn btn-primary">Connecter le dossier du site</button>
+                <input type="file" id="fallbackFileInput" accept=".js" multiple hidden>
+                <a href="index.html" class="btn btn-ghost">Voir le site</a>
+            </div>
+        </div>
+    </header>
+
+    <div id="compatBanner" class="compat-banner" hidden>
+        Votre navigateur ne permet pas d'écrire directement dans les fichiers du site (fonctionnalité disponible sur Chrome ou Edge, ordinateur uniquement).
+        Vous pouvez tout de même charger les fichiers <code>data-*.js</code> pour les modifier, puis télécharger chaque fichier modifié et remplacer manuellement l'ancien dans le dossier du site.
+        <button type="button" id="fallbackLoadBtn" class="btn btn-secondary">Charger les fichiers data-*.js</button>
+    </div>
+
+    <div id="toast" class="toast" hidden></div>
+
+    <main class="admin-main" id="adminMain" hidden>
+
+        <nav class="admin-tabs" id="adminTabs">
+            <button type="button" class="admin-tab active" data-category="designers">Designers</button>
+            <button type="button" class="admin-tab" data-category="niche">Niches</button>
+            <button type="button" class="admin-tab" data-category="exclusive">Exclusifs</button>
+            <button type="button" class="admin-tab" data-category="packs">Packs</button>
+        </nav>
+
+        <section class="admin-panel" id="panel-designers" data-category="designers"></section>
+        <section class="admin-panel" id="panel-niche" data-category="niche" hidden></section>
+        <section class="admin-panel" id="panel-exclusive" data-category="exclusive" hidden></section>
+        <section class="admin-panel" id="panel-packs" data-category="packs" hidden></section>
+
+    </main>
+
+    <div class="admin-empty" id="adminEmpty">
+        <p>Connectez le dossier du site pour commencer à modifier les prix, la disponibilité, ou ajouter / supprimer des parfums.</p>
+        <p class="admin-empty-note">Rien n'est envoyé sur internet : tout se passe en local, dans votre navigateur.</p>
+    </div>
+
+    <!-- Modal ajout / édition -->
+    <div class="modal admin-modal" id="itemModal">
+        <div class="modal-content admin-modal-content">
+            <div class="modal-header">
+                <h2 id="itemModalTitle">Ajouter un parfum</h2>
+                <span class="close" id="itemModalClose">&times;</span>
+            </div>
+            <div class="modal-body">
+                <form id="itemForm">
+                    <input type="hidden" id="fieldId">
+
+                    <div class="form-row" id="rowBrand">
+                        <label for="fieldBrand">Marque</label>
+                        <input type="text" id="fieldBrand" placeholder="Ex : Dior">
+                    </div>
+
+                    <div class="form-row">
+                        <label for="fieldName">Nom <span id="nameOrPackLabel"></span></label>
+                        <input type="text" id="fieldName" placeholder="Ex : Sauvage EDT" required>
+                    </div>
+
+                    <div class="form-row" id="rowSubtitle">
+                        <label for="fieldSubtitle">Sous-titre (packs uniquement)</label>
+                        <input type="text" id="fieldSubtitle" placeholder="Ex : Composition du pack">
+                    </div>
+
+                    <div class="form-row">
+                        <label>Image principale</label>
+                        <div class="image-field">
+                            <input type="text" id="fieldImage" placeholder="images/designers/nom-du-parfum.jpg">
+                            <label class="btn btn-secondary btn-file">
+                                Importer…
+                                <input type="file" id="fieldImageFile" accept="image/*" hidden>
+                            </label>
+                        </div>
+                        <img id="imagePreview" class="image-preview" hidden>
+                    </div>
+
+                    <div class="form-row" id="rowFragrantica">
+                        <label>Image des notes Fragrantica (optionnel)</label>
+                        <div class="image-field">
+                            <input type="text" id="fieldFragrantica" placeholder="images/images fragrantica/IMG_XXXX.JPG">
+                            <label class="btn btn-secondary btn-file">
+                                Importer…
+                                <input type="file" id="fieldFragranticaFile" accept="image/*" hidden>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-row" id="rowPricePerMl">
+                        <label for="fieldPricePerMl">Prix / ml (€)</label>
+                        <input type="number" step="0.01" min="0" id="fieldPricePerMl" placeholder="Ex : 2">
+                    </div>
+
+                    <div class="form-row form-row--prices" id="rowPricesPerfume">
+                        <label>Prix par format (€) — laisser vide si le format n'est pas proposé</label>
+                        <div class="price-grid">
+                            <div><span>5 ml</span><input type="number" step="0.01" min="0" id="fieldPrice5"></div>
+                            <div><span>10 ml</span><input type="number" step="0.01" min="0" id="fieldPrice10"></div>
+                            <div><span>30 ml</span><input type="number" step="0.01" min="0" id="fieldPrice30"></div>
+                        </div>
+                    </div>
+
+                    <div class="form-row form-row--prices" id="rowPricesPack" hidden>
+                        <label>Prix par format (€) — tous requis pour un pack</label>
+                        <div class="price-grid price-grid--4">
+                            <div><span>2 ml</span><input type="number" step="0.01" min="0" id="fieldPackPrice2"></div>
+                            <div><span>5 ml</span><input type="number" step="0.01" min="0" id="fieldPackPrice5"></div>
+                            <div><span>10 ml</span><input type="number" step="0.01" min="0" id="fieldPackPrice10"></div>
+                            <div><span>30 ml</span><input type="number" step="0.01" min="0" id="fieldPackPrice30"></div>
+                        </div>
+                    </div>
+
+                    <div class="form-row form-row--checkbox">
+                        <label class="switch-label">
+                            <input type="checkbox" id="fieldAvailable" checked>
+                            <span>Disponible à la vente</span>
+                        </label>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-ghost" id="itemModalCancel">Annuler</button>
+                        <button type="submit" class="btn btn-primary">Enregistrer ce parfum</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Template d'une ligne du tableau -->
+    <template id="rowTemplate">
+        <tr class="admin-row">
+            <td class="cell-image"><img class="row-thumb" loading="lazy"></td>
+            <td class="cell-brand"></td>
+            <td class="cell-name"></td>
+            <td class="cell-price cell-price-ml"></td>
+            <td class="cell-price"><input type="number" step="0.01" min="0" class="inline-price" data-field="price5ml"></td>
+            <td class="cell-price"><input type="number" step="0.01" min="0" class="inline-price" data-field="price10ml"></td>
+            <td class="cell-price"><input type="number" step="0.01" min="0" class="inline-price" data-field="price30ml"></td>
+            <td class="cell-available">
+                <label class="switch">
+                    <input type="checkbox" class="row-available">
+                    <span class="switch-slider"></span>
+                </label>
+            </td>
+            <td class="cell-actions">
+                <button type="button" class="btn btn-small btn-secondary row-edit">Modifier</button>
+                <button type="button" class="btn btn-small btn-danger row-delete">Supprimer</button>
+            </td>
+        </tr>
+    </template>
+
+    <template id="packRowTemplate">
+        <tr class="admin-row">
+            <td class="cell-image"><img class="row-thumb" loading="lazy"></td>
+            <td class="cell-brand" colspan="2">
+                <div class="pack-row-name"></div>
+                <div class="pack-row-subtitle"></div>
+            </td>
+            <td class="cell-price"><input type="number" step="0.01" min="0" class="inline-price" data-field="2"></td>
+            <td class="cell-price"><input type="number" step="0.01" min="0" class="inline-price" data-field="5"></td>
+            <td class="cell-price"><input type="number" step="0.01" min="0" class="inline-price" data-field="10"></td>
+            <td class="cell-price"><input type="number" step="0.01" min="0" class="inline-price" data-field="30"></td>
+            <td class="cell-available">
+                <label class="switch">
+                    <input type="checkbox" class="row-available">
+                    <span class="switch-slider"></span>
+                </label>
+            </td>
+            <td class="cell-actions">
+                <button type="button" class="btn btn-small btn-secondary row-edit">Modifier</button>
+                <button type="button" class="btn btn-small btn-danger row-delete">Supprimer</button>
+            </td>
+        </tr>
+    </template>
+
+    <template id="panelTemplate">
+        <div class="panel-toolbar">
+            <input type="text" class="panel-search" placeholder="Rechercher une marque ou un nom…">
+            <span class="panel-count"></span>
+            <div class="panel-toolbar-actions">
+                <button type="button" class="btn btn-secondary panel-add">+ Ajouter</button>
+                <button type="button" class="btn btn-primary panel-save" disabled>Enregistrer les modifications</button>
+            </div>
+        </div>
+        <div class="panel-table-wrapper">
+            <table class="panel-table">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Marque</th>
+                        <th>Nom</th>
+                        <th>€/ml</th>
+                        <th>5 ml</th>
+                        <th>10 ml</th>
+                        <th>30 ml</th>
+                        <th>Disponible</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody class="panel-tbody"></tbody>
+            </table>
+        </div>
+        <details class="panel-preview">
+            <summary>Aperçu du fichier qui sera enregistré</summary>
+            <pre class="panel-preview-code"></pre>
+        </details>
+    </template>
+
+    <template id="panelTemplatePacks">
+        <div class="panel-toolbar">
+            <input type="text" class="panel-search" placeholder="Rechercher un pack…">
+            <span class="panel-count"></span>
+            <div class="panel-toolbar-actions">
+                <button type="button" class="btn btn-secondary panel-add">+ Ajouter un pack</button>
+                <button type="button" class="btn btn-primary panel-save" disabled>Enregistrer les modifications</button>
+            </div>
+        </div>
+        <div class="panel-table-wrapper">
+            <table class="panel-table">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th colspan="2">Pack</th>
+                        <th>2 ml</th>
+                        <th>5 ml</th>
+                        <th>10 ml</th>
+                        <th>30 ml</th>
+                        <th>Disponible</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody class="panel-tbody"></tbody>
+            </table>
+        </div>
+        <details class="panel-preview">
+            <summary>Aperçu du fichier qui sera enregistré</summary>
+            <pre class="panel-preview-code"></pre>
+        </details>
+    </template>
+
+    <script src="admin.js"></script>
+</body>
+</html>

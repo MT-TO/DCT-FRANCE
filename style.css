@@ -870,6 +870,7 @@ section {
 }
 
 .pack-image-wrapper {
+    position: relative;
     width: 100%;
     aspect-ratio: 1103 / 1560;
     overflow: hidden;
@@ -877,6 +878,26 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+/* Indisponibilité */
+.perfume-card--unavailable {
+    opacity: 0.6;
+}
+
+.unavailable-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 5;
+    background-color: #8b1e1e;
+    color: #ffffff;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
 }
 
 .pack-image {
