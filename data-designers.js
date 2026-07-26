@@ -123,6 +123,18 @@ window.designersData = [
         price30ml: 70,
         available: true
     },
+    {
+        id: 'lv-8',
+        brand: 'Louis Vuitton',
+        name: 'Imagination',
+        image: 'images/designers/louis-vuitton-imagination-lp0219.jpg',
+        fragranticaImage: 'images/images fragrantica/IMG_3511.JPG',
+        pricePerMl: 2.5,
+        price5ml: 12.5,
+        price10ml: 25,
+        price30ml: 75,
+        available: false
+    },
 
     // JEAN PAUL GAULTIER
     {
