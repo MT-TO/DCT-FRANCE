@@ -10,7 +10,8 @@ window.designersData = [
         pricePerMl: 2,
         price5ml: 10,
         price10ml: 20,
-        price30ml: 50
+        price30ml: 50,
+        available: false
     },
     {
         id: 'dior-2',
@@ -21,7 +22,8 @@ window.designersData = [
         pricePerMl: 2,
         price5ml: 10,
         price10ml: 20,
-        price30ml: 50
+        price30ml: 50,
+        available: true
     },
     {
         id: 'dior-10',
@@ -32,7 +34,8 @@ window.designersData = [
         pricePerMl: 4,
         price5ml: 20,
         price10ml: 40,
-        price30ml: 110
+        price30ml: 110,
+        available: true
     },
     {
         id: 'dior-6',
@@ -43,7 +46,8 @@ window.designersData = [
         pricePerMl: 2,
         price5ml: 10,
         price10ml: 20,
-        price30ml: 50
+        price30ml: 50,
+        available: true
     },
     {
         id: 'dior-7',
@@ -54,7 +58,8 @@ window.designersData = [
         pricePerMl: 1,
         price5ml: 5,
         price10ml: 10,
-        price30ml: 20
+        price30ml: 20,
+        available: true
     },
     {
         id: 'dior-8',
@@ -65,8 +70,10 @@ window.designersData = [
         pricePerMl: 3,
         price5ml: 15,
         price10ml: 30,
-        price30ml: 70
+        price30ml: 70,
+        available: true
     },
+
     // LOUIS VUITTON
     {
         id: 'lv-2',
@@ -77,7 +84,8 @@ window.designersData = [
         pricePerMl: 3,
         price5ml: 15,
         price10ml: 30,
-        price30ml: 85
+        price30ml: 85,
+        available: true
     },
     {
         id: 'lv-4',
@@ -88,7 +96,8 @@ window.designersData = [
         pricePerMl: 2.5,
         price5ml: 12.5,
         price10ml: 25,
-        price30ml: 75
+        price30ml: 75,
+        available: true
     },
     {
         id: 'lv-5',
@@ -99,7 +108,8 @@ window.designersData = [
         pricePerMl: 2.5,
         price5ml: 12.5,
         price10ml: 25,
-        price30ml: 75
+        price30ml: 75,
+        available: true
     },
     {
         id: 'lv-7',
@@ -110,8 +120,10 @@ window.designersData = [
         pricePerMl: 2.5,
         price5ml: 12.5,
         price10ml: 25,
-        price30ml: 70
+        price30ml: 70,
+        available: true
     },
+
     // JEAN PAUL GAULTIER
     {
         id: 'jpg-1',
@@ -122,7 +134,8 @@ window.designersData = [
         pricePerMl: 1,
         price5ml: 5,
         price10ml: 10,
-        price30ml: 20
+        price30ml: 20,
+        available: true
     },
     {
         id: 'jpg-2',
@@ -133,7 +146,20 @@ window.designersData = [
         pricePerMl: 2,
         price5ml: 10,
         price10ml: 20,
-        price30ml: 30
+        price30ml: 30,
+        available: true
+    },
+    {
+        id: 'jpg-3',
+        brand: 'Jean Paul Gaultier',
+        name: 'Scandal Intense',
+        image: 'images/designers/scandal-intense.jpg',
+        fragranticaImage: 'images/images fragrantica/IMG_3520.JPG',
+        pricePerMl: 1.5,
+        price5ml: 7.5,
+        price10ml: 15,
+        price30ml: 30,
+        available: true
     },
 
     // PRADA
@@ -146,7 +172,8 @@ window.designersData = [
         pricePerMl: 2,
         price5ml: 10,
         price10ml: 20,
-        price30ml: 40
+        price30ml: 40,
+        available: true
     },
 
     // VERSACE
@@ -159,20 +186,8 @@ window.designersData = [
         pricePerMl: 1,
         price5ml: 5,
         price10ml: 10,
-        price30ml: 20
-    },
-
-    // JEAN PAUL GAULTIER (NOUVEAUTES)
-    {
-        id: 'jpg-3',
-        brand: 'Jean Paul Gaultier',
-        name: 'Scandal Intense',
-        image: 'images/designers/scandal-intense.jpg',
-        fragranticaImage: 'images/images fragrantica/IMG_3520.JPG',
-        pricePerMl: 1.5,
-        price5ml: 7.5,
-        price10ml: 15,
-        price30ml: 30
+        price30ml: 20,
+        available: true
     },
 
     // PACO RABANNE
@@ -185,7 +200,8 @@ window.designersData = [
         pricePerMl: 1,
         price5ml: 5,
         price10ml: 10,
-        price30ml: 20
+        price30ml: 20,
+        available: true
     },
 
     // AZZARO
@@ -197,7 +213,8 @@ window.designersData = [
         pricePerMl: 0.7,
         price5ml: 3.5,
         price10ml: 7,
-        price30ml: 15
+        price30ml: 15,
+        available: true
     },
     {
         id: 'azzaro-2',
@@ -207,7 +224,8 @@ window.designersData = [
         pricePerMl: 1,
         price5ml: 5,
         price10ml: 10,
-        price30ml: 25
+        price30ml: 25,
+        available: true
     },
 
     // VALENTINO
@@ -220,7 +238,8 @@ window.designersData = [
         pricePerMl: 1,
         price5ml: 5,
         price10ml: 10,
-        price30ml: 20
+        price30ml: 20,
+        available: true
     },
 
     // HORACE
@@ -233,7 +252,8 @@ window.designersData = [
         pricePerMl: 2,
         price5ml: 10,
         price10ml: 20,
-        price30ml: 50
+        price30ml: 50,
+        available: true
     },
 
     // CARTIER
@@ -246,20 +266,22 @@ window.designersData = [
         pricePerMl: 3,
         price5ml: 15,
         price10ml: 30,
-        price30ml: 80
+        price30ml: 80,
+        available: true
     },
 
     // VAN CLEEF & ARPELS
     {
         id: 'van-cleef-1',
         brand: 'Van Cleef & Arpels',
-        name: "Bois d'Iris",
-        image: "images/designers/bois-diris-van-clief.avif",
+        name: 'Bois d\'Iris',
+        image: 'images/designers/bois-diris-van-clief.avif',
         fragranticaImage: 'images/images fragrantica/IMG_3593.JPG',
         pricePerMl: 2,
         price5ml: 10,
         price10ml: 20,
-        price30ml: 60
+        price30ml: 60,
+        available: true
     },
 
     // TOM FORD
@@ -272,10 +294,11 @@ window.designersData = [
         pricePerMl: 4.1,
         price5ml: 20.5,
         price10ml: 41,
-        price30ml: 115
+        price30ml: 115,
+        available: true
     },
 
-    // HERMES
+    // HERMÈS
     {
         id: 'hermes-1',
         brand: 'Hermès',
@@ -285,7 +308,7 @@ window.designersData = [
         pricePerMl: 2.7,
         price5ml: 13.5,
         price10ml: 27,
-        price30ml: 75
-    },
-
+        price30ml: 75,
+        available: true
+    }
 ];
