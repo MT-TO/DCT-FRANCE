@@ -73,6 +73,31 @@ window.designersData = [
         price30ml: 70,
         available: true
     },
+    {
+        id: 'dior-9',
+        brand: 'DIOR',
+        name: 'Sauvage Extrait',
+        image: 'images/designers/sauvage dior extrait.png',
+        fragranticaImage: 'images/images fragrantica/IMG_4007.JPG',
+        pricePerMl: 3.5,
+        price2ml: 7,
+        price5ml: 17,
+        price10ml: 35,
+        price30ml: 95,
+        available: true
+    },
+    {
+        id: 'dior-11',
+        brand: 'DIOR',
+        name: 'Bois D\'argent Esprit',
+        image: 'images/designers/bois-dargent-esprit-de-parfum.png',
+        fragranticaImage: 'images/images fragrantica/IMG_4011.JPG',
+        pricePerMl: 4,
+        price5ml: 20,
+        price10ml: 40,
+        price30ml: 110,
+        available: true
+    },
 
     // LOUIS VUITTON
     {
@@ -133,7 +158,7 @@ window.designersData = [
         price5ml: 12.5,
         price10ml: 25,
         price30ml: 75,
-        available: false
+        available: true
     },
 
     // JEAN PAUL GAULTIER
@@ -321,6 +346,51 @@ window.designersData = [
         price5ml: 13.5,
         price10ml: 27,
         price30ml: 75,
+        available: true
+    },
+
+    // MAISON MARGIELA
+    {
+        id: 'margiela-1',
+        brand: 'Maison Margiela',
+        name: 'By the Fireplace',
+        image: 'images/designers/by the fireplace maison margiela.avif',
+        fragranticaImage: 'images/images fragrantica/IMG_4023.JPG',
+        pricePerMl: 1,
+        price2ml: 2,
+        price5ml: 5,
+        price10ml: 10,
+        price30ml: 25,
+        available: true
+    },
+
+    // GIVENCHY
+    {
+        id: 'givenchy-1',
+        brand: 'Givenchy',
+        name: 'L\'Interdit Rouge EDP',
+        image: 'images/designers/l\'interdit rouge.avif',
+        fragranticaImage: 'images/images fragrantica/IMG_4008.JPG',
+        pricePerMl: 1.2,
+        price2ml: 2.4,
+        price5ml: 6,
+        price10ml: 12,
+        price30ml: 35,
+        available: true
+    },
+
+    // GIORGIO ARMANI
+    {
+        id: 'armani-1',
+        brand: 'Giorgio Armani',
+        name: 'Stronger With You Intensely',
+        image: 'images/designers/stronger-with-you-intensely.jpg',
+        fragranticaImage: 'images/images fragrantica/IMG_4009.JPG',
+        pricePerMl: 1,
+        price2ml: 2,
+        price5ml: 5,
+        price10ml: 10,
+        price30ml: 25,
         available: true
     }
 ];

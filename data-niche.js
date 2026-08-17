@@ -286,5 +286,61 @@ window.nicheData = [
         price5ml: 20,
         price10ml: 40,
         price30ml: 110
+    },
+
+    // MAISON MAGISTRAL
+    {
+        id: 'maison-magistral-1',
+        brand: 'Maison Magistral',
+        name: 'Sweet Venin',
+        image: 'images/niches/sweet venin maison magistral.png',
+        fragranticaImage: 'images/images fragrantica/IMG_4021.JPG',
+        pricePerMl: 1.7,
+        price2ml: 3.4,
+        price5ml: 8.5,
+        price10ml: 17,
+        price30ml: 47
+    },
+
+    // MANCERA
+    {
+        id: 'mancera-1',
+        brand: 'Mancera',
+        name: 'Roses Vanille',
+        image: 'images/niches/roses-vanille-mancera.jpg',
+        fragranticaImage: 'images/images fragrantica/IMG_4022.JPG',
+        pricePerMl: 0.9,
+        price2ml: 1.8,
+        price5ml: 4.5,
+        price10ml: 9,
+        price30ml: 25
+    },
+
+    // NISHANE
+    {
+        id: 'nishane-1',
+        brand: 'Nishane',
+        name: 'Ani',
+        image: 'images/niches/ani nishane extrait.jpg',
+        fragranticaImage: 'images/images fragrantica/IMG_4024.JPG',
+        pricePerMl: 1.5,
+        price2ml: 3,
+        price5ml: 7.5,
+        price10ml: 15,
+        price30ml: 40
+    },
+
+    // MAISON FRAGRANZA
+    {
+        id: 'fragranza-1',
+        brand: 'Maison Fragranza',
+        name: 'Rosa Vento',
+        image: 'images/niches/rosa vento.webp',
+        fragranticaImage: 'images/images fragrantica/IMG_4010.JPG',
+        pricePerMl: 0.7,
+        price2ml: 1.4,
+        price5ml: 3.5,
+        price10ml: 7,
+        price30ml: 20
     }
 ];
