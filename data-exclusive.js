@@ -32,16 +32,5 @@ window.exclusiveData = [
         price5ml: 20,
         price10ml: 32,
         price30ml: 105
-    },
-    {
-        id: 'exclusive-dior-3',
-        brand: 'DIOR',
-        name: 'Dior Homme Intense Batch 2011',
-        image: 'images/designers/dior-homme-intense-2011.jpg',
-        fragranticaImage: 'images/images fragrantica/IMG_3545.JPG',
-        pricePerMl: 5,
-        price5ml: 25,
-        price10ml: 50,
-        price30ml: 145
     }
 ];

@@ -16,14 +16,16 @@ const samplePerfumes = [
     'Sauvage EDT',
     'Bois D\'argent EDP',
     'Cuir Saddle EDP',
-    'Vanilla Diorama EDP',
     'Angels\' Share',
     'Creme Brulante',
     'Resolument Affranchi',
     'Rare',
     'Mona Lisa',
-    'Acqua di Parma',
-    'Oud Satin Mood'
+    'Bergamotto di Calabria',
+    'Oud Satin Mood',
+    'Rosa Vento',
+    'Roses Vanille',
+    'By the Fireplace'
 ];
 
 // Initialisation
