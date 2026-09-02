@@ -342,5 +342,43 @@ window.nicheData = [
         price5ml: 3.5,
         price10ml: 7,
         price30ml: 20
+    },
+
+    // ESSENTIAL PARFUMS
+    {
+        id: 'essential-parfums-1',
+        brand: 'Essential Parfums',
+        name: 'Divine Vanille',
+        image: 'images/niches/divine vanille.jpg',
+        fragranticaImage: 'images/images fragrantica/IMG_4082.JPG',
+        pricePerMl: 1,
+        price2ml: 2,
+        price5ml: 5,
+        price10ml: 10,
+        price30ml: 30
+    },
+    {
+        id: 'essential-parfums-2',
+        brand: 'Essential Parfums',
+        name: 'The Musc',
+        image: 'images/niches/the musc.jpg',
+        fragranticaImage: 'images/images fragrantica/IMG_4081.JPG',
+        pricePerMl: 1,
+        price2ml: 2,
+        price5ml: 5,
+        price10ml: 10,
+        price30ml: 30
+    },
+    {
+        id: 'essential-parfums-3',
+        brand: 'Essential Parfums',
+        name: 'Bois Impérial',
+        image: 'images/niches/bois-imperial-essential-parfums.jpg',
+        fragranticaImage: 'images/images fragrantica/IMG_4080.JPG',
+        pricePerMl: 1,
+        price2ml: 2,
+        price5ml: 5,
+        price10ml: 10,
+        price30ml: 30
     }
 ];
