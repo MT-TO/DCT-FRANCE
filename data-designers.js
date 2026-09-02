@@ -160,6 +160,18 @@ window.designersData = [
         price30ml: 75,
         available: true
     },
+    {
+        id: 'lv-9',
+        brand: 'Louis Vuitton',
+        name: 'LV Lovers',
+        image: 'images/designers/lv lovers.webp',
+        fragranticaImage: 'images/images fragrantica/IMG_4076.JPG',
+        pricePerMl: 2.5,
+        price5ml: 12.5,
+        price10ml: 25,
+        price30ml: 75,
+        available: true
+    },
 
     // JEAN PAUL GAULTIER
     {

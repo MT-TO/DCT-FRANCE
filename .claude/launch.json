@@ -6,6 +6,12 @@
       "runtimeExecutable": "python3",
       "runtimeArgs": ["-m", "http.server", "8756"],
       "port": 8756
+    },
+    {
+      "name": "webaudit",
+      "runtimeExecutable": "/Users/mt/.local/webaudit-node/bin/node",
+      "runtimeArgs": ["/Users/mt/Desktop/MT idea/webaudit/server.js"],
+      "port": 4321
     }
   ]
 }
