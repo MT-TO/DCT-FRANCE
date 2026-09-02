@@ -5,7 +5,6 @@ let selectedSamples = readStorageArray('dctSamples');
 const samplePerfumes = [
     'JPG Le Mâle EDT',
     'JPG Le Mâle Elixir',
-    'Valentino Born in Roma Intense',
     'Azzaro Chrome EDP',
     'Azzaro Chrome EDT',
     'Horace Vintage Vanilla',

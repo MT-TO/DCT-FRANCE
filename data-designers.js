@@ -277,20 +277,6 @@ window.designersData = [
         available: true
     },
 
-    // VALENTINO
-    {
-        id: 'valentino-1',
-        brand: 'Valentino',
-        name: 'Born in Roma Intense',
-        image: 'images/designers/valentino-born-in-roma-intense.jpg',
-        fragranticaImage: 'images/images fragrantica/IMG_3523.JPG',
-        pricePerMl: 1,
-        price5ml: 5,
-        price10ml: 10,
-        price30ml: 20,
-        available: true
-    },
-
     // HORACE
     {
         id: 'horace-1',
