@@ -7,10 +7,10 @@ window.nicheData = [
         name: 'Angels\' Share',
         image: 'images/niches/angels-share.webp',
         fragranticaImage: 'images/images fragrantica/IMG_3526.JPG',
-        pricePerMl: 4,
-        price5ml: 20,
-        price10ml: 40,
-        price30ml: 110
+        pricePerMl: 2.2,
+        price5ml: 11,
+        price10ml: 22,
+        price30ml: 66
     },
 
     // XERJOFF
@@ -159,19 +159,6 @@ window.nicheData = [
         price5ml: 6.5,
         price10ml: 13,
         price30ml: 30
-    },
-
-    // LIQUIDES IMAGINAIRES
-    {
-        id: 'liquides-imaginaires-1',
-        brand: 'Liquides Imaginaires',
-        name: 'Blanche Bête',
-        image: 'images/niches/blanche-bete.webp',
-        fragranticaImage: 'images/images fragrantica/IMG_3538.JPG',
-        pricePerMl: 3,
-        price5ml: 15,
-        price10ml: 30,
-        price30ml: 80
     },
 
     // FREDERIC MALLE
@@ -323,11 +310,11 @@ window.nicheData = [
         name: 'Ani',
         image: 'images/niches/ani nishane extrait.jpg',
         fragranticaImage: 'images/images fragrantica/IMG_4024.JPG',
-        pricePerMl: 1.5,
-        price2ml: 3,
-        price5ml: 7.5,
-        price10ml: 15,
-        price30ml: 40
+        pricePerMl: 1.9,
+        price2ml: 3.8,
+        price5ml: 9.5,
+        price10ml: 19,
+        price30ml: 50
     },
 
     // MAISON FRAGRANZA
