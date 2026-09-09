@@ -118,10 +118,10 @@ window.designersData = [
         name: 'Spell on You',
         image: 'images/designers/louis-vuitton-spell-on-you-lp0214-pm2-front-view.webp',
         fragranticaImage: 'images/images fragrantica/IMG_3513.JPG',
-        pricePerMl: 2.5,
-        price5ml: 12.5,
-        price10ml: 25,
-        price30ml: 75,
+        pricePerMl: 2.75,
+        price5ml: 13.75,
+        price10ml: 27.5,
+        price30ml: 80,
         available: true
     },
     {
@@ -130,10 +130,10 @@ window.designersData = [
         name: 'City of Stars',
         image: 'images/designers/louis-vuitton-city-of-stars-lp0282-pm2-front-view.webp',
         fragranticaImage: 'images/images fragrantica/IMG_3514.JPG',
-        pricePerMl: 2.5,
-        price5ml: 12.5,
-        price10ml: 25,
-        price30ml: 75,
+        pricePerMl: 2.75,
+        price5ml: 13.75,
+        price10ml: 27.5,
+        price30ml: 80,
         available: true
     },
     {
@@ -142,10 +142,10 @@ window.designersData = [
         name: 'Heure d\'Absences',
         image: 'images/designers/heure-dabsences-lv.jpg',
         fragranticaImage: 'images/images fragrantica/IMG_3515.JPG',
-        pricePerMl: 2.5,
-        price5ml: 12.5,
-        price10ml: 25,
-        price30ml: 70,
+        pricePerMl: 2.75,
+        price5ml: 13.75,
+        price10ml: 27.5,
+        price30ml: 80,
         available: true
     },
     {
@@ -154,10 +154,10 @@ window.designersData = [
         name: 'Imagination',
         image: 'images/designers/louis-vuitton-imagination-lp0219.jpg',
         fragranticaImage: 'images/images fragrantica/IMG_3511.JPG',
-        pricePerMl: 2.5,
-        price5ml: 12.5,
-        price10ml: 25,
-        price30ml: 75,
+        pricePerMl: 2.75,
+        price5ml: 13.75,
+        price10ml: 27.5,
+        price30ml: 80,
         available: true
     },
     {
@@ -166,10 +166,10 @@ window.designersData = [
         name: 'LV Lovers',
         image: 'images/designers/lv lovers.webp',
         fragranticaImage: 'images/images fragrantica/IMG_4076.JPG',
-        pricePerMl: 2.5,
-        price5ml: 12.5,
-        price10ml: 25,
-        price30ml: 75,
+        pricePerMl: 2.75,
+        price5ml: 13.75,
+        price10ml: 27.5,
+        price30ml: 80,
         available: true
     },
 
