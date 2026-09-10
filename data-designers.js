@@ -172,6 +172,18 @@ window.designersData = [
         price30ml: 80,
         available: true
     },
+    {
+        id: 'lv-10',
+        brand: 'Louis Vuitton',
+        name: 'Pacific Chill',
+        image: 'images/designers/pacific chill.webp',
+        fragranticaImage: 'images/images fragrantica/IMG_4187.JPG',
+        pricePerMl: 2.75,
+        price5ml: 13.75,
+        price10ml: 27.5,
+        price30ml: 80,
+        available: true
+    },
 
     // JEAN PAUL GAULTIER
     {
