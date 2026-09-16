@@ -191,6 +191,7 @@ window.designersData = [
         brand: 'Yves Saint Laurent',
         name: 'Babycat',
         image: 'images/designers/babycat-ysl.webp',
+        fragranticaImage: 'images/images fragrantica/IMG_4207.JPG',
         pricePerMl: 2.5,
         price5ml: 12.5,
         price10ml: 25,

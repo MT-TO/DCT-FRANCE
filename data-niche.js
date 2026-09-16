@@ -39,17 +39,6 @@ window.nicheData = [
 
     // FASCENT
     {
-        id: 'fascent-1',
-        brand: 'Fascent',
-        name: 'Creme Brulante',
-        image: 'images/niches/fascent-creme-brulante.webp',
-        fragranticaImage: 'images/images fragrantica/IMG_3528.JPG',
-        pricePerMl: 2.5,
-        price5ml: 12.5,
-        price10ml: 25,
-        price30ml: null
-    },
-    {
         id: 'fascent-2',
         brand: 'Fascent',
         name: 'Milky No Way',
@@ -96,19 +85,6 @@ window.nicheData = [
         price30ml: 80
     },
 
-    // LA MANUFACTURE
-    {
-        id: 'manufacture-1',
-        brand: 'La Manufacture',
-        name: 'Rare',
-        image: 'images/niches/rare-la-manufacture.webp',
-        fragranticaImage: 'images/images fragrantica/IMG_3532.JPG',
-        pricePerMl: 2,
-        price5ml: 10,
-        price10ml: 20,
-        price30ml: 50
-    },
-
     // LES EAUX PRIMORDIALES
     {
         id: 'les-eaux-primordiales-1',
@@ -133,19 +109,6 @@ window.nicheData = [
         price5ml: 10,
         price10ml: 20,
         price30ml: 50
-    },
-
-    // CUIR CARAMELO
-    {
-        id: 'cuir-caramelo-1',
-        brand: 'Yzkine',
-        name: 'Cuir Caramelo',
-        image: 'images/niches/cuir-caramelo.webp',
-        fragranticaImage: 'images/images fragrantica/IMG_3536.JPG',
-        pricePerMl: 2.2,
-        price5ml: 11,
-        price10ml: 22,
-        price30ml: 60
     },
 
     // MIND GAMES
