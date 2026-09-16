@@ -3,6 +3,10 @@ let perfumesData = [];
 let availableSizes = [2, 5, 10, 30];
 let cartHandlerInitialized = false;
 
+// TEST : variante "Travel Size" du 10 ML, facturée 1 € de plus que le 10 ML classique.
+const TRAVEL_SIZE_BASE_ML = 10;
+const TRAVEL_SIZE_EXTRA = 1;
+
 // Initialisation
 document.addEventListener('DOMContentLoaded', function() {
     // Charger les données selon la page
@@ -71,11 +75,12 @@ function initCartButtons() {
 
         if (!perfume || !option) return;
 
-        const size = option.value;
+        const size = option.dataset.size || option.value;
+        const sizeLabel = option.dataset.label || `${size} ML`;
         const price = parseFloat(option.dataset.price);
 
         if (typeof addToCart === 'function' && !Number.isNaN(price)) {
-            const wasAdded = addToCart(perfume.name, perfume.brand, size, price);
+            const wasAdded = addToCart(perfume.name, perfume.brand, size, price, sizeLabel);
             if (!wasAdded) return;
 
             confirmCartButton(button);
@@ -175,18 +180,26 @@ function closeFragranticaModal() {
 // Créer une carte de parfum
 function createPerfumeCard(perfume) {
     const isAvailable = perfume.available !== false;
-    const formats = availableSizes.map((size) => {
+    const formats = availableSizes.flatMap((size) => {
         const price = getPriceForSize(perfume, size);
-        if (!price || price <= 0) return null;
-        return {
+        if (!price || price <= 0) return [];
+        const format = {
+            value: String(size),
             size: size,
             price: price,
             label: `${size} ML`
         };
-    }).filter(Boolean);
+        if (size !== TRAVEL_SIZE_BASE_ML) return [format];
+        return [format, {
+            value: `${size}-travel`,
+            size: size,
+            price: price + TRAVEL_SIZE_EXTRA,
+            label: `${size} ML (Travel Size)`
+        }];
+    });
     
     const optionsHtml = formats.map((format) => `
-        <option value="${format.size}" data-price="${format.price.toFixed(2)}">${format.label}</option>
+        <option value="${format.value}" data-size="${format.size}" data-label="${format.label}" data-price="${format.price.toFixed(2)}">${format.label}</option>
     `).join('');
     
     const formatsHtml = `

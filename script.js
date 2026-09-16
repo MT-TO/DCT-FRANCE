@@ -69,6 +69,7 @@ function normalizeCartItems(items) {
                 name: item.name || '',
                 brand: item.brand || '',
                 size: item.size || '',
+                sizeLabel: item.sizeLabel || '',
                 price: price
             };
         })
@@ -172,7 +173,7 @@ function closeCartModal() {
 }
 
 // Ajouter au panier
-function addToCart(perfumeName, brand, size, price) {
+function addToCart(perfumeName, brand, size, price, sizeLabel) {
     const parsedPrice = parseFloat(price);
     if (Number.isNaN(parsedPrice)) {
         showNotification('Prix indisponible pour cet article.');
@@ -184,6 +185,7 @@ function addToCart(perfumeName, brand, size, price) {
         name: perfumeName,
         brand: brand,
         size: size,
+        sizeLabel: sizeLabel || `${size} ML`,
         price: parsedPrice
     };
     
@@ -290,7 +292,7 @@ function renderCart() {
             <div class="cart-item">
                 <div class="cart-item-info">
                     <div class="cart-item-name">${item.name}</div>
-                    <div class="cart-item-details">${item.brand} - ${item.size} ML</div>
+                    <div class="cart-item-details">${item.brand} - ${item.sizeLabel || `${item.size} ML`}</div>
                 </div>
                 <div style="display: flex; align-items: center;">
                     <span class="cart-item-price">${item.price.toFixed(2)} €</span>
