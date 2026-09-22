@@ -1,5 +1,5 @@
 // Administration DCT FRANCE
-// Lit et réécrit directement data-designers.js / data-niche.js / data-exclusive.js / data-packs.js
+// Lit et réécrit directement data-designers.js / data-niche.js / data-packs.js
 // via l'API File System Access (Chrome / Edge). Rien n'est envoyé sur un serveur : tout reste local.
 
 const CATEGORY_CONFIG = {
@@ -18,14 +18,6 @@ const CATEGORY_CONFIG = {
         kind: 'perfume',
         imageFolder: 'images/niches',
         headerComment: 'Données des parfums de niche'
-    },
-    exclusive: {
-        file: 'data-exclusive.js',
-        varName: 'exclusiveData',
-        label: 'Exclusifs',
-        kind: 'perfume',
-        imageFolder: 'images/designers',
-        headerComment: 'Données des parfums exclusifs'
     },
     packs: {
         file: 'data-packs.js',
@@ -123,9 +115,7 @@ function formatNum(value) {
 
 function generateId(category, seed, existingIds) {
     let base;
-    if (category === 'exclusive') {
-        base = `exclusive-${slugify(seed) || 'item'}`;
-    } else if (category === 'packs') {
+    if (category === 'packs') {
         base = `pack-${slugify(seed) || 'pack'}`;
     } else {
         base = slugify(seed) || category;
@@ -294,7 +284,7 @@ function validateCategory(key) {
     }
 
     const idCounts = new Map();
-    ['designers', 'niche', 'exclusive'].forEach((k) => {
+    ['designers', 'niche'].forEach((k) => {
         state[k].items.forEach((it) => {
             idCounts.set(it.id, (idCounts.get(it.id) || 0) + 1);
         });
@@ -691,7 +681,7 @@ itemForm.addEventListener('submit', (e) => {
             state.packs.items.forEach((it) => existingIds.add(it.id));
             item = { id: generateId('packs', name, existingIds) };
         } else {
-            ['designers', 'niche', 'exclusive'].forEach((k) => {
+            ['designers', 'niche'].forEach((k) => {
                 state[k].items.forEach((it) => existingIds.add(it.id));
             });
             item = { id: generateId(category, fieldBrand.value.trim(), existingIds) };

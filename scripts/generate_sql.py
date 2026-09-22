@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Régénère database/dct_france.sql à partir des fichiers data-*.js.
 
-Les fichiers data-designers.js, data-niche.js et data-exclusive.js sont la
+Les fichiers data-designers.js et data-niche.js sont la
 SEULE source de vérité pour le catalogue et les prix (ce sont eux qui
 alimentent le site). Ce script les relit et régénère le fichier SQL en
 conséquence, pour qu'il ne puisse jamais diverger silencieusement.
@@ -19,7 +19,6 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SOURCES = [
     ("data-designers.js", "designer"),
     ("data-niche.js", "niche"),
-    ("data-exclusive.js", "exclusive"),
 ]
 
 FIELD_RE = re.compile(
@@ -94,7 +93,7 @@ def generate(products):
     lines.append("-- DCT FRANCE — Base de données produits + intégration Stripe")
     lines.append("-- ============================================================")
     lines.append("-- FICHIER GÉNÉRÉ AUTOMATIQUEMENT — NE PAS ÉDITER À LA MAIN.")
-    lines.append("-- Source de vérité : data-designers.js / data-niche.js / data-exclusive.js")
+    lines.append("-- Source de vérité : data-designers.js / data-niche.js")
     lines.append("-- Régénérer avec : python3 scripts/generate_sql.py")
     lines.append("--")
     lines.append("-- Les prix sont stockés en CENTIMES (comme Stripe l'exige).")
@@ -114,7 +113,7 @@ def generate(products):
     lines.append("    id              VARCHAR(60)     PRIMARY KEY,")
     lines.append("    brand           VARCHAR(100)    NOT NULL,")
     lines.append("    name            VARCHAR(150)    NOT NULL,")
-    lines.append("    category        ENUM('designer','niche','exclusive') NOT NULL,")
+    lines.append("    category        ENUM('designer','niche') NOT NULL,")
     lines.append("    image           VARCHAR(255),")
     lines.append("    price_per_ml    DECIMAL(6,2)    NOT NULL,")
     lines.append("    stripe_product_id VARCHAR(50)   DEFAULT NULL,")

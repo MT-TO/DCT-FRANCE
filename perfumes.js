@@ -10,10 +10,7 @@ const TRAVEL_SIZE_EXTRA = 1;
 // Initialisation
 document.addEventListener('DOMContentLoaded', function() {
     // Charger les données selon la page
-    if (Array.isArray(window.exclusiveData)) {
-        perfumesData = window.exclusiveData;
-        availableSizes = [5, 10, 30];
-    } else if (Array.isArray(window.designersData)) {
+    if (Array.isArray(window.designersData)) {
         perfumesData = window.designersData;
     } else if (Array.isArray(window.nicheData)) {
         perfumesData = window.nicheData;

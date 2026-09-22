@@ -2,7 +2,7 @@
 -- DCT FRANCE — Base de données produits + intégration Stripe
 -- ============================================================
 -- FICHIER GÉNÉRÉ AUTOMATIQUEMENT — NE PAS ÉDITER À LA MAIN.
--- Source de vérité : data-designers.js / data-niche.js / data-exclusive.js
+-- Source de vérité : data-designers.js / data-niche.js
 -- Régénérer avec : python3 scripts/generate_sql.py
 --
 -- Les prix sont stockés en CENTIMES (comme Stripe l'exige).
@@ -22,7 +22,7 @@ CREATE TABLE products (
     id              VARCHAR(60)     PRIMARY KEY,
     brand           VARCHAR(100)    NOT NULL,
     name            VARCHAR(150)    NOT NULL,
-    category        ENUM('designer','niche','exclusive') NOT NULL,
+    category        ENUM('designer','niche') NOT NULL,
     image           VARCHAR(255),
     price_per_ml    DECIMAL(6,2)    NOT NULL,
     stripe_product_id VARCHAR(50)   DEFAULT NULL,
@@ -110,14 +110,6 @@ INSERT INTO products (id, brand, name, category, image, price_per_ml) VALUES
 ('essential-parfums-1', 'Essential Parfums', 'Divine Vanille', 'niche', 'images/niches/divine vanille.jpg', 1.00),
 ('essential-parfums-2', 'Essential Parfums', 'The Musc', 'niche', 'images/niches/the musc.jpg', 1.00),
 ('essential-parfums-3', 'Essential Parfums', 'Bois Impérial', 'niche', 'images/niches/bois-imperial-essential-parfums.jpg', 1.00);
-
--- ============================================================
--- INSERTION — EXCLUSIVE
--- ============================================================
-INSERT INTO products (id, brand, name, category, image, price_per_ml) VALUES
-('exclusive-dior-1', 'DIOR', 'Vétiver Dior', 'exclusive', 'images/designers/vetiver-dior.jpg', 4.00),
-('exclusive-dior-2', 'DIOR', 'Fève Délicieuse Dior', 'exclusive', 'images/designers/feve-delicieuse-dior.webp', 4.00),
-('exclusive-dior-4', 'DIOR', 'Patchouli Impérial Dior', 'exclusive', 'images/designers/patchouli-imperial-dior.jpg', 4.00);
 
 -- ============================================================
 -- INSERTION — PRIX PAR TAILLE (en centimes)
@@ -287,16 +279,7 @@ INSERT INTO product_prices (product_id, size_ml, price_cents) VALUES
 ('essential-parfums-2', 30, 3000),
 ('essential-parfums-3', 5, 500),
 ('essential-parfums-3', 10, 1000),
-('essential-parfums-3', 30, 3000),
-('exclusive-dior-1', 5, 2000),
-('exclusive-dior-1', 10, 3200),
-('exclusive-dior-1', 30, 10500),
-('exclusive-dior-2', 5, 2000),
-('exclusive-dior-2', 10, 3200),
-('exclusive-dior-2', 30, 10500),
-('exclusive-dior-4', 5, 2000),
-('exclusive-dior-4', 10, 3200),
-('exclusive-dior-4', 30, 10500);
+('essential-parfums-3', 30, 3000);
 
 -- ============================================================
 -- VUE UTILE : catalogue complet avec prix formatés
